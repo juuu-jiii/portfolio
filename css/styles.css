@@ -397,8 +397,7 @@ a:active {
         grid-template-rows: 53% 5% 37% 5%;
         grid-template-areas: "project-1-gallery"
                              "project-1-title"
-                             "project-1-description"
-                             "project-1-link";
+                             "project-1-description";
     }
 
     /* Move titles and links into their appropriate locations. */
