@@ -4,6 +4,41 @@ GREY 403d39
 BLACK 252422
 BLUE 294066 */
 
+/*********************** test ***************************/
+
+/* The grid: Three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 25%;
+    padding: 50px;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .containerTab {
+    padding: 20px;
+    color: white;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Closable button inside the image */
+  .closebtn {
+    float: right;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+  }
+
+/*********************** test ***************************/
+
 * {
     /* Debugging */
     border: 1px solid transparent;
