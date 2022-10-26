@@ -8,8 +8,8 @@
     <title>Szun Kidd Choi | Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
         integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
-        crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/styles-updated.css">
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles-faulty.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap" rel="stylesheet">
 </head>
@@ -53,7 +53,7 @@
         </nav>
     </div> -->
 
-    <div id="bio-wrapper">
+    <div id="wrapper">
         <!-- Bio -->
         <header>
             <div class="bio">
@@ -62,25 +62,34 @@
             </div>
         </header>
         <h3>
-            Nice having you here!<br /><br />
+            Nice having you here!<br><br>
             I'm a Game Design and Development student at RIT pursuing minors in Computer
             Science and Math. I'm especially interested in technical game design, as I
             have affinities for both designing interactive experiences and architecting
-            them digitally in code!<br /><br />
+            them digitally in code!<br><br>
             <!-- I'm a Game Design and Development student at RIT minoring in Computer
                 Science and Math. I have some experience with Unity and Unreal 4, and
                 have also done some web development. I'm passionate about creating
-                quality digital experiences, both memorable and immersive.<br /><br /> -->
+                quality digital experiences, both memorable and immersive.<br><br> -->
 
             My primary programming languages are C# and C/C++. I also know some
             JavaScript and Python. On top of that, I am familiar with both Unity and
-            Unreal Engine.<br /><br />
+            Unreal Engine.<br><br>
         </h3>
-    </div>
-    <div id="wrapper">
         <main>
-            <div class="content">
-                <div class="content-card">
+            <!-- Flexbox -->
+            <div class="flex">
+                <img class="content-card-img" src="media/project1-1.png">
+                <img class="content-card-img" src="media/project1-1.png">
+                <img class="content-card-img" src="media/project1-1.png">
+                <img class="content-card-img" src="media/project1-1.png">
+            </div>
+        </main>
+    </div>
+    <!-- <div id="wrapper"> -->
+        <!-- <main> -->
+            <!-- <div class="content-1">
+                <div class="content-card" id="p1">
                     <img class="content-card-img" src="media/project1-1.png">
                     <div class="overlay-caption">
                         <h1>mrbl.</h1>
@@ -88,16 +97,16 @@
                             <i>mrbl.</i> seeks to answer the question: what would happen if
                             Luxor, Puzzle Bobble, and Brick Breaker met, shook hands, and
                             immediately decided to join forces?
-                            <br /><br />
+                            <br><br>
                             I designed a matching system that tracks the number of balls in the
                             arena, such that only colours that exist are presented to the player.
                             I also made the system manage ball speed based on quantity to prevent
                             crowded levels from being too overwhelming.
-                        </p>
+                        </p> -->
                         <!-- <button>Learn more</button> -->
-                    </div>
+                    <!-- </div>
                 </div>
-                <div class="content-card">
+                <div class="content-card" id="p2">
                     <img class="content-card-img" src="media/project1-1.png">
                     <div class="overlay-caption">
                         <h1>Project Orca</h1>
@@ -106,14 +115,14 @@
                             accelerate, brake, steer 90 degrees, and strafe sideways. The
                             camera's locked, so timing, judgment, and reflexes are vital to
                             avoid crashes and set fast laptimes!
-                            <br /><br />
+                            <br><br>
                             I designed the movement system of this game with simplicity and
                             snappiness in mind, and had to work around Unreal's physics to
                             achieve this.
                         </p>
                     </div>
                 </div>
-                <div class="content-card">
+                <div class="content-card" id="p3">
                     <img class="content-card-img" src="media/project1-1.png">
                     <div class="overlay-caption">
                         <h1>The Tunnels</h1>
@@ -122,37 +131,37 @@
                             sees you take the role of a student trying to find their way back
                             to their dorm after a long day of classes. The walk seems longer than
                             usual, however, and it's eerily quiet. Did you go down the right path?
-                            Why are the lights flickering? Are you being followed? <br /><br />
+                            Why are the lights flickering? Are you being followed? <br><br>
                             I worked on level, sound, and environment design to ensure
                             triggers and audio/visual cues were placed strategically to contribute
                             to the creation of an unsettling atmosphere riddled with dread.
                         </p>
                     </div>
                 </div>
-                <div class="content-card">
+                <div class="content-card" id="p4">
                     <img class="content-card-img" src="media/project1-1.png">
                     <div class="overlay-caption">
                         <h1>mrbl.</h1>
                         <p>
                             This prototype seeks to answer the question: what would happen if
                             Luxor, Puzzle Bobble, and Brick Breaker met, shook hands, and
-                            immediately decided to join forces?<br /><br />
+                            immediately decided to join forces?<br><br>
                             I designed a matching system that tracks the number of balls in the
                             arena, such that only colours that exist are presented to the player.
                             I also made the system manage ball speed based on quantity to prevent
                             crowded levels from being too overwhelming.
                         </p>
                     </div>
-                </div>
-            </div>
-        </main>
-    </div>
+                </div> -->
+            <!-- </div> -->
+        <!-- </main> -->
+    <!-- </div> -->
 
     <footer>
         <!-- Contact info and resume -->
         <!-- <div id="contact-info">
             <h3>Socials:</h3>
-            <p><a href="">LinkedIn</a><br /><a href="">GitHub</a><br /><a href="">Email</a></p>
+            <p><a href="">LinkedIn</a><br><a href="">GitHub</a><br><a href="">Email</a></p>
         </div>
         <div id="resume">
             <h3><a href="">Resume</a></h3>
@@ -164,7 +173,7 @@
                     LinkedIn</a>&emsp;
                 <a href="mailto:sc4020@rit.edu"><i class="fas fa-at"></i> Email</a>&emsp;
                 <a href="media/szunkiddchoi_resume.pdf" target="resume"><i class="fas fa-file"></i>
-                    Resume</a>&emsp;<br />
+                    Resume</a>&emsp;<br>
                 <small>&copy; Szun Kidd Choi 2021. All lefts reversed.</small>
             </p>
         </div>
