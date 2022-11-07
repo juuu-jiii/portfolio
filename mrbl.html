@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szun Kidd Choi's Portfolio • mrbl.</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles-updated.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="navigation">
+        <div id="navigation-container">
+            <nav class="navbar">
+                <!-- Jump to the top if name is clicked. -->
+                <a href="#">Szun Kidd Choi • Game Designer & Programmer</a>
+            </nav>
+            <!-- Second dropdown: links to connect -->
+            <div class="dropdown">
+                <button class="dropdown-button">connect</button>
+                <div class="dropdown-content">
+                    <a href="https://github.com/juuu-jiii" target="github"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://www.linkedin.com/in/szunkidd/" target="linkedin"><i class="fab fa-linkedin"></i>
+                        LinkedIn</a>
+                    <a href="mailto:sc4020@rit.edu"><i class="fas fa-at"></i> Email</a>
+                    <a href="media/szunkiddchoi_resume.pdf" target="resume"><i class="fas fa-file"></i> Resume</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="wrapper">
+        <p><a href="blank-slate.html">&lt; Back to Home</a></p>
+        <div class="slick-carousel">
+            <div class="slick-item">
+                <div class="img">
+                    <img class="content-card-img" src="media/project1-1.png">
+                </div>
+            </div>
+            <div class="slick-item">
+                <div class="img">
+                    <img class="content-card-img" src="media/project1-2.png">
+                </div>
+            </div>
+            <div class="slick-item">
+                <div class="img">
+                    <img class="content-card-img" src="media/project1-3.png">
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <h1>mrbl.</h1>
+            <h2>Fast Facts</h2>
+            <p>
+                <b>Role: </b>Sole Developer<br>
+                <b>Timeframe: </b>2.5 months, on-and-off<br>
+                <b>Language: </b>C#<br>
+                <b>Engine: </b>Unity3D<br>
+            </p>
+            <h2>Concept</h2>
+            <p>
+                <i>mrbl.</i> is mashup of the action puzzle shooters Luxor, Bust-a-Move, and Breakout. I remixed aspects
+                of each title's mechanics to create a new-yet-familiar medley of an experience, where speed, precision,
+                and colour matching are the focus of gameplay.
+
+
+                <!-- I designed a matching system that tracks the number of balls in the arena, such that only colours that
+                exist are presented to the player. I also made the system manage ball speed based on quantity to prevent
+                crowded levels from being too overwhelming. -->
+            </p>
+            <p>
+                The main goal is to use your trusty cannon to clear a bunch of marbles bouncing around an arena by
+                launching projectiles of the same colour at them. However, if a projectile either touches a marble of
+                the wrong colour or remains unmatched for too long, it becomes "stale", and joins other marbles in
+                aimlessly bouncing around the arena. While your goal is to clear marbles, you should also keep your
+                cannon away from them, as they will destroy it upon impact!
+            </p>
+            <!-- <h2>Responsibilities</h2>
+            <ul>
+                <li>this</li>
+                <li>is</li>
+                <li>a</li>
+                <li>list</li>
+                <li>of</li>
+                <li>your</li>
+                <li>responsibilities</li>
+            </ul> -->
+            <h2>Getting Familiar with Unity's Quirks</h2>
+            <p>
+                I used this project to get more deeply acquainted with Unity's intricacies. Because bouncy physics are
+                a cornerstone to <i>mrbl.</i>, I had to tinker around with its built-in physics engine until the way the
+                marbles and projectiles behaved felt just right. I also learned about how to implement certain design
+                patterns in Unity. This included creating a singleton GameManager class that could persist between
+                scenes during runtime, and modifying a MonoBehaviour to behave like a generic C# class. I also learned
+                about the different lifecycle hooks Unity affords, and how to leverage them to ensure that classes and
+                GameObjects are populated with all the data they need each time a new scene gets loaded.
+            </p>
+            <h2>Target System</h2>
+            <p>
+                I wanted to find ways to reward the player for successfully pulling off cleverly-positioned trick shots,
+                because of how the bouncy game physics lends itself to such play styles. This gave rise to the
+                target system where the player can knock down targets placed in harder-to-reach areas to earn a point
+                bonus. However, hitting targets is completely optional, and isn't required of the player to complete a
+                level.
+            </p>
+            <h2>Colour Matching System</h2>
+            <p>
+                Because levels are complete as soon as all marbles in the arena are cleared across all waves, I found it
+                important that the player's cannon always gets loaded with a projectile whose colour matches at least
+                one existing marble in the arena. This prevents levels from dragging on due to situations where the
+                player isn't given the colour they need, which can be construed as unfair.
+            </p>
+            <p>
+                This inherent need to keep an active inventory of all the projectiles and marbles in the arena meant
+                that dictionaries were the best data structure for the job. The key for the dictionary is the colour,
+                and the value is a running total of marbles/projectiles of that colour. Projectile colours are selected
+                at random from the dictionary's keys. Colours are removed from the dictionary when their count reaches
+                zero to ensure that a valid selection always occurs for the next projectile's colour.
+            </p>
+            <h2>Preventing Players from Feeling Overwhelmed</h2>
+            <p>
+                It's easy for players to overcrowd the arena if they spam-launch a large number of projectiles
+                continuously or just happen to make a lot of misses due to poor aim. Either way, this causes the arena
+                to fill up with bouncing marbles very quickly, making it very challenging for the player to avoid
+                collisions. This can be overwhelming, as it forces the player to focus more on dodging marbles instead
+                of clearing them, thus going against the goal of the game.
+            </p>
+            <p>
+                The current iteration tries to mitigate this issue by decreasing the speed at which marbles travel
+                around based on how many there are in total bouncing around in the arena. The larger the number of
+                marbles present, the slower they travel, until a certain lower bound is reached. As soon as the player
+                is able to clear enough marbles, they start speeding up again to maintain a balance of difficulty.
+            </p>
+            <p>
+                In a future iteration, I may also look into adding restrictions on how often the player is allowed
+                to fire projectiles.
+            </p>
+            <h2>Next Steps</h2>
+            <p>
+                Precision and finding ways to leverage the bouncy game physics has always been at the heart of
+                <i>mrbl.</i>
+                As such, I want to encourage players to take more risks with the physics system. As it stands,
+                however, the only reason players really have to make trick shots is to try and knock down targets. To
+                further incentivise this style of play, I would like to modify the scoring mechanic such that
+                longer-distance shots are acknowledged and rewarded appropriately. An alternative is to account for the
+                number of bounces a projectile makes before matching with a marble, and factoring that into the player's
+                score.
+            </p>
+            <p>
+                Because much of <i>mrbl.</i>'s gameplay mechanics revolve around the use of colour, it is very important
+                that I design for accessibility at some point. One way to do this would be to use symbols to denote each
+                colour in the game. Another option would be to provide preset, or even fully-customisable, colour
+                palettes such that folks of different backgrounds can be accommodated accordingly.
+            </p>
+            <!-- <h2>
+                Design Goals
+            </h2>
+            <p>
+                What do you want players to feel while playing this game, and how did this influence your design
+                choices?
+                Did this evolve over time? How and why? What about the level design? The aesthetics? Audio? Environment
+                design?
+                How do all of this come together to support your design goals?
+            </p> -->
+            <!-- <h2>Core Systems</h2>
+            <p>
+                What are the core systems in the game? Why were these included? What is their individual significance in
+                contributing to the overall result?
+            </p>
+            <h2>
+                Additional Sections
+            </h2> -->
+            <!-- <p>
+                Add more sections here based on project-specific details worth discussing in more detail, or just
+                implementation specifics you're proud of and want to show off. For
+                example:<br>
+                <b>Design Goals: </b>What do you want players to feel while playing this game, and how did this
+                influence your design
+                choices?
+                Did this evolve over time? How and why? What about the level design? The aesthetics? Audio? Environment
+                design?
+                How do all of this come together to support your design goals?<br>
+                <b>Core Systems: </b>What are the core systems in the game? Why were these included? What is their
+                individual significance in
+                contributing to the overall result?<br>
+                <b>Next steps, Game economy, tool creation, documentation, content creation, challenges you ran into,
+                    pattern recognition, why you made some decisions</b>
+
+            </p> -->
+
+        </div>
+    </div>
+    <footer>
+        <!-- Contact info and resume -->
+        <!-- <div id="contact-info">
+            <h3>Socials:</h3>
+            <p><a href="">LinkedIn</a><br><a href="">GitHub</a><br><a href="">Email</a></p>
+        </div>
+        <div id="resume">
+            <h3><a href="">Resume</a></h3>
+        </div> -->
+        <div class="footer-div">
+            <p>
+                <a href="https://github.com/juuu-jiii" target="github"><i class="fab fa-github"></i>
+                    GitHub</a>&emsp;&emsp;•&emsp;
+                <a href="https://www.linkedin.com/in/szunkidd/" target="linkedin"><i class="fab fa-linkedin"></i>
+                    LinkedIn</a>&emsp;&emsp;•&emsp;
+                <a href="mailto:sc4020@rit.edu"><i class="fas fa-at"></i> Email</a>&emsp;&emsp;•&emsp;
+                <a href="media/szunkiddchoi_resume.pdf" target="resume"><i class="fas fa-file"></i>
+                    Resume</a>&emsp;<br>
+                <small>&copy; Szun Kidd Choi 2021. All lefts reversed.</small>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Slick -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <!-- Slick function -->
+    <script type="text/javascript">
+        // $('.fade').slick();
+        $(document).ready(function () {
+            $('.slick-carousel').slick({
+                // dots: true,
+                infinite: true,
+                speed: 500,
+                fade: true,
+                cssEase: 'linear',
+                // zIndex: 9999,
+                // nextArrow: 'next-arrow',
+                nextArrow: '<span class="slick-prev slick-arrow prev-arrow" aria-label="Next" type="button" style=""><i class="fas fa-angle-double-left"></i></span>',
+                prevArrow: '<span class="slick-prev slick-arrow next-arrow" aria-label="Previous" type="button" style=""><i class="fas fa-angle-double-right"></i></span>',
+                // variableWidth: true,
+                // adaptableHeight: true
+                // prevArrow: '<span class="prev-arrow"><i class="fas fa-angle-double-left"></i></span>'
+                // arrows: true,
+                // centerMode: true,
+                // centerPadding: '50px',
+                // initialSlide: 0,
+                // autoplay: true,
+                // autoplaySpeed: 6500,
+                // draggable: true,
+                // focusOnSelect: true,
+                // infinite: true,
+                // pauseOnHover: true,
+                // variableWidth: true,
+                // adaptiveHeight: true,
+                // slidesToShow: 3,
+                // slidesToScroll: 1,
+                // responsive: [
+                //     {
+                //         breakpoint: 410,
+                //         settings: {
+                //             centerPadding: '10px',
+                //             slidesToShow: 3
+                //         }
+                //     }
+                // ]
+            });
+        });
+    </script>
+</body>
+
+</html>
