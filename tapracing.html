@@ -65,6 +65,8 @@
                 <b>Timeframe: </b>7 weeks<br>
                 <b>Engine: </b>Unreal 4<br>
                 <b>Language: </b>Blueprints<br>
+                <b>Assets: </b>Car Model - <a href="https://opengameart.org/content/vroum-car"
+                    target="vroum-car">Gundy</a>
             </p>
             <h2>Concept</h2>
             <p>
@@ -74,13 +76,11 @@
                 complete laps as quickly as possible.
             </p>
             <p>
-                You can only steer 90 degrees in either direction and strafe sideways
-
-                The main goal is to use your trusty cannon to clear a bunch of marbles bouncing around an arena by
-                launching projectiles of the same colour at them. However, if a projectile either touches a marble of
-                the wrong colour or remains unmatched for too long, it becomes "stale", and joins other marbles in
-                aimlessly bouncing around the arena. While your goal is to clear marbles, you should also keep your
-                cannon away from them, as they will destroy it upon impact!
+                Vehicles can only steer 90 degrees in either direction and strafe sideways. The camera follows the
+                player vehicle around the track, but is locked to the same orientation throughout, so being able to
+                differentiate right from left throughout the race is important! Whilst on the track, players will also
+                need to avoid collisions. Grinding against a barrier will slow their vehicle down, while driving
+                straight into a wall will result in a crash and the player being reset, costing them valuable time.
             </p>
             <!-- <h2>Responsibilities</h2>
             <ul>
@@ -94,75 +94,87 @@
             </ul> -->
             <h2>Running the Gamut</h2>
             <p>
-                Everything in this project was built from scratch (except the car model due to time constraints).
-                Challenged myself to learn as
-                much as possible about the things the engine has to offer.
+                Everything in this project was built from scratch within the Unreal Editor, save for the car model due
+                to time constraints. I wanted to use this project to challenge myself to learn as much about the
+                different tools I had at my disposal from within the engine. It involved a fair bit of exploration,
+                tinkering around the engine, and looking resources up online, but I think I was quite successful in
+                accomplishing the goals I set out to achieve. I have managed to familiarise myself with the interfaces
+                for the editors for materials, UI widgets, and visual effects (Niagara). I have also gotten a decent
+                understanding of Unreal's blueprint system. Besides that, I've become pretty comfortable with traversing
+                Unreal's forums and online documentation, having spent a fair amount of time perusing those in
+                conjunction with video tutorials.
 
-                I used this project to get more deeply acquainted with Unity's intricacies. Because bouncy physics are
+                <!-- I used this project to get more deeply acquainted with Unity's intricacies. Because bouncy physics are
                 a cornerstone to <i>mrbl.</i>, I had to tinker around with its built-in physics engine until the way the
                 marbles and projectiles behaved felt just right. I also learned about how to implement certain design
                 patterns in Unity. This included creating a singleton GameManager class that could persist between
                 scenes during runtime, and modifying a MonoBehaviour to behave like a generic C# class. I also learned
                 about the different lifecycle hooks Unity affords, and how to leverage them to ensure that classes and
-                GameObjects are populated with all the data they need each time a new scene gets loaded.
+                GameObjects are populated with all the data they need each time a new scene gets loaded. -->
             </p>
-            <h2>Target System</h2>
+            <h2>Snappy Controls</h2>
             <p>
-                I wanted to find ways to reward the player for successfully pulling off cleverly-positioned trick shots,
-                because of how the bouncy game physics lends itself to such play styles. This gave rise to the
-                target system where the player can knock down targets placed in harder-to-reach areas to earn a point
-                bonus. However, hitting targets is completely optional, and isn't required of the player to complete a
-                level.
+                At the heart of <i>TapRacing</i> is its snappy and responsive control system. If tracks are to be
+                constructed such that their geometry features sets of consecutive corners and tight turns, then players
+                need to be equipped with the means to navigate such perils. It was thus important that vehicles in the
+                game be able to turn at the push of a button, because of the intended fast-paced, reflex-reliant player
+                experience. To this end, I had to make sure that the physics were tweaked such that the handling model
+                performed as expected.
             </p>
-            <h2>Colour Matching System</h2>
+            <h2>Checkpoint System</h2>
             <p>
-                Because levels are complete as soon as all marbles in the arena are cleared across all waves, I found it
-                important that the player's cannon always gets loaded with a projectile whose colour matches at least
-                one existing marble in the arena. This prevents levels from dragging on due to situations where the
-                player isn't given the colour they need, which can be construed as unfair.
-            </p>
-            <p>
-                This inherent need to keep an active inventory of all the projectiles and marbles in the arena meant
-                that dictionaries were the best data structure for the job. The key for the dictionary is the colour,
-                and the value is a running total of marbles/projectiles of that colour. Projectile colours are selected
-                at random from the dictionary's keys. Colours are removed from the dictionary when their count reaches
-                zero to ensure that a valid selection always occurs for the next projectile's colour.
-            </p>
-            <h2>Preventing Players from Feeling Overwhelmed</h2>
-            <p>
-                It's easy for players to overcrowd the arena if they spam-launch a large number of projectiles
-                continuously or just happen to make a lot of misses due to poor aim. Either way, this causes the arena
-                to fill up with bouncing marbles very quickly, making it very challenging for the player to avoid
-                collisions. This can be overwhelming, as it forces the player to focus more on dodging marbles instead
-                of clearing them, thus going against the goal of the game.
+                The handling model is set up to treat head-on collisions with barriers as crashes, after which
+                the player gets reset on the track following a one-second delay. In order to prevent player
+                frustration, a checkpoint system was added to identify the best location on the track to reset player
+                vehicles. Currently, the player is reset a small distance from the corner where the impact occurred.
+                This was done to give them enough time to react and clear the corner as soon as they step on the
+                accelerator.
             </p>
             <p>
-                The current iteration tries to mitigate this issue by decreasing the speed at which marbles travel
-                around based on how many there are in total bouncing around in the arena. The larger the number of
-                marbles present, the slower they travel, until a certain lower bound is reached. As soon as the player
-                is able to clear enough marbles, they start speeding up again to maintain a balance of difficulty.
-            </p>
-            <p>
-                In a future iteration, I may also look into adding restrictions on how often the player is allowed
-                to fire projectiles.
+                The checkpoint system also serves as a way to mitigate cheating behaviours. Because all checkpoints in
+                a track must be cleared in order before the player is considered to have completed a lap, this means
+                that attempts to cut corners and find "shortcuts" around tracks are discouraged. Through playtesting
+                and understanding where cheating is more likely to occur, it will become clearer as to which areas
+                should feature more checkpoints or, in more extreme cases, have their geometry reworked.
             </p>
             <h2>Next Steps</h2>
+            <h3>AI Cars</h3>
             <p>
-                Precision and finding ways to leverage the bouncy game physics has always been at the heart of
-                <i>mrbl.</i>
-                As such, I want to encourage players to take more risks with the physics system. As it stands,
-                however, the only reason players really have to make trick shots is to try and knock down targets. To
-                further incentivise this style of play, I would like to modify the scoring mechanic such that
-                longer-distance shots are acknowledged and rewarded appropriately. An alternative is to account for the
-                number of bounces a projectile makes before matching with a marble, and factoring that into the player's
-                score.
+                It would be cool to have AI vehicles that the player can race against in a single player race mode. At
+                the very least, AI agents must be able to "see" ahead, anticipate approaching corners, and establish
+                the direction in which they must steer. Because of the way the handling model is set up to only allow 90
+                degree turns and sideways strafing, however, regular pathfinding behaviours coupled with steering forces
+                added to the AI vehicle will not comply with the movement rules the player conforms to.
             </p>
             <p>
-                Because much of <i>mrbl.</i>'s gameplay mechanics revolve around the use of colour, it is very important
-                that I design for accessibility at some point. One way to do this would be to use symbols to denote each
-                colour in the game. Another option would be to provide preset, or even fully-customisable, colour
-                palettes such that folks of different backgrounds can be accommodated accordingly.
+                A quick solution would be to add track and corner information into the checkpoint system itself. As AI
+                vehicles pass through these checkpoints, they will obtain data that they can then use to navigate the
+                track, such as the distance to the next corner and the direction they will need to steer in (a binary
+                left/right value). Their movement vectors can then be modified directly. The risk
+                with this approach is that agents' behaviours may not seem "natural" enough. If all agents receive the
+                same track data and have nothing else to differentiate between them, then they will likely all drive the
+                exact same way around the course. To remedy this, a heuristic could be added to each agent that impacts
+                their individual ability to estimate when to turn into a corner. This might result in more organic
+                behaviour, such as making mistakes and crashing or taking suboptimal lines through turns. Nevertheless,
+                this approach ignores more complex behaviours expected of a driver, such as identifying when to overtake
+                a vehicle directly ahead, and taking an optimal driving line.
             </p>
+            <h3>An Updated Handling Model</h3>
+            <p>
+                It might also be interesting to play around with different handling models to see what adds more
+                dimension to the game. Modifying behaviour such that vehicles slow down slightly when steering
+                will allow for the inclusion of a "handling" stat to vehicles in the future that references this amount
+                of speed lost while cornering. A better handling stat could mean less speed lost, and vice versa. As
+                with the addition of any other stat, though, this will require fine-tuning, balancing, and playtesting
+                to prevent certain vehicles from being disproportionately powerful compared to others.
+            </p>
+
+            <!-- Something about making it so players can't always hug the inside of turns and dominate the track
+            Balancing boost systems, adding ability to slipstream, so at least cars from behind can have a chance
+            of overtaking the one in front. Also, worse handling means more "drift" sideways when taking corners,
+            and, as a result, more speed reduction.
+
+            Different game modes, adding AI, animating crashes instead of having only text show up. -->
             <!-- <h2>
                 Design Goals
             </h2>
