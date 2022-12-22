@@ -74,11 +74,29 @@
             </p>
             <h2>Concept</h2>
             <p>
-                <i>Golf With Your Friends</i>, but with even more insanity! <i>For The Love of Golf</i> (<i>floG</i>)
-                is a networked multiplayer simultaneous minigolf game where players race to be the first to sink their
-                balls... but there's a chaotic twist! In <i>floG</i>, the course is the weapon; players can trigger
-                hazards and moving obstacles to derail their opponents. They can also opt to open temporary shortcuts to
-                give themselves an edge over the competition. Because anyone can trigger anything, no one is safe!
+                <!-- <i>For The Love of Golf</i> (<i>floG</i>) is a networked multiplayer simultaneous minigolf game where
+                players race to be the first to sink their balls... but there's a chaotic twist for added insanity! In
+                <i>floG</i>, the course is the weapon; players can toggle MapMovers, which hazards and move obstacles to slow down their
+                opponents by aimimg for triggers on the map. In the same way, they can also opt to open temporary
+                shortcuts to give themselves an edge over the competition. Because anyone can trigger anything, no
+                one is safe! -->
+
+                <i>For The Love of Golf</i> (<i>floG</i>) is a networked multiplayer simultaneous minigolf game
+                with a chaotic twist for added insanity! Courses feature dynamic and and player-alterable layouts
+                through the use of MapMovers: hazards and movable objects that are activated using triggers
+                distributed over the course. Good aim and timing are the key to sabotaging opponents whilst staying
+                below par. Because anyone can trigger anything, no one is safe!
+                <!-- This is achieved by the use of a feature
+                called MapMovers: hazards and movable objects that are toggled by the player entering triggers
+                laid out on the course. Players tee off while trying to sabotage each other
+
+                Players tee off against each other while
+                players race to be the first to sink their balls... but there's a chaotic twist for added insanity! In
+                <i>floG</i>, the course is the weapon; players can toggle MapMovers, which hazards and move obstacles to
+                slow down their
+                opponents by aimimg for triggers on the map. In the same way, they can also opt to open temporary
+                shortcuts to give themselves an edge over the competition. Because anyone can trigger anything, no
+                one is safe! -->
 
                 <!-- Players race to be the first to sink a hole while triggering moving obstacles or toggling hazards to
                     sabotage their opponents, and opening shortcuts to give themselves an edge over the competition.
@@ -95,23 +113,48 @@
                     to the creation of an unsettling atmosphere riddled with dread. -->
             </p>
             <p>
+                <i>floG</i> currently supports multiplayer games hosted via both Steam and IP address.
+            </p>
+            <!-- <p>
                 (this might fall under design goals, perhaps)
                 Gameplay is focused on forcing confrontations between players during intense battles to finish in first.
                 Linear spatial design is therefore blended with non-linear elements, to create multiple possible routes
-                that players can take to reach the hole.
-                <!-- spatial design hones in on creating multiple -->
+                that players can take to reach the hole. -->
+            <!-- spatial design hones in on creating multiple -->
 
 
-                <!-- Between levels where the player is running from their pursuer (chase rooms), they are also tasked with
+            <!-- Between levels where the player is running from their pursuer (chase rooms), they are also tasked with
                 mini puzzle rooms where a key must be found in order to unlock a door that leads them to the next
                 level. There are a total of six levels in <i>The Tunnels</i>: four puzzle rooms and two chase rooms. -->
-            </p>
+            <!-- </p> -->
             <h2>Responsibilities</h2>
             <ul>
+                <!-- 
+                    Derailing (includes moving obstacles)
+                    Level design, multiplayer maps
+                    Menu screen UI
+                    Networking, replication of movement across client and server
+                    Investigated use of advanced Steam sessions plugin for project
+                    Investigated use of joining games via IP address
+                 -->
                 <li>
-                    Constructed level geometry and placed environmental objects within levels.
+                    Designed the MapMovers system, allowing the player to leverage objects in their environment to
+                    derail opponents
                 </li>
                 <li>
+                    Created maps whose layouts encourage confrontation and interaction among players
+                </li>
+                <li>
+                    Networked player movement and MapMovers interactions across client and server devices
+                </li>
+                <li>
+                    Investigated and contributed to incorporation of both AdvancedSteamSessions plugin and IP address to
+                    host/join games
+                </li>
+                <li>
+                    Designed and implemented menu screen UI
+                </li>
+                <!-- <li>
                     Took part in design discussions regarding the game's narrative and pacing.
                 </li>
                 <li>
@@ -129,25 +172,98 @@
                 </li>
                 <li>
                     Created and maintained core documentation.
-                </li>
+                </li> -->
                 <!-- environmental narrative (vignettes), pacing, modular level design
                 what you would change? make the process modular to speed up the process of generating new rooms AND make
                 use of available room better, narrower tunnels to give heightened sense of anxiety, guide the player a
                 little better using lighting, UI hint system to show them where the key is -->
             </ul>
-            <h2>Design Goals</h2>
+            <h2>Design Goal</h2>
             <p>
-                From the outset, the team collectively agreed that the horror featured in-game would be purely
-                psychological. The team decided on this because we wanted to challenge ourselves to deliver an
-                experience laced with fear without any overt use of grotesque, gory, or violent themes. It was also
-                based on the fact that the "entity" chasing the player is, in fact, nothing more than a balloon
-                version of our school mascot, lovingly referred to as Balloon Ritchie among the student body.
+                The main design pillar for this project was to create an experience that, at the forefront, gave players
+                the ability to interact directly with each other. Thus, it was important that gameplay be designed such
+                that it centred around forcing confrontations between players during intense battles to finish in first.
+            </p>
+            <!-- <p>
+                The synchronous nature of <i>floG</i> meant that degenerate player strategies needed to be accounted
+                for.
+                Initially, player performance was measured through the use of
+            </p> -->
+            <h2>MapMovers and Multiplayer Level Design</h2>
+            <!-- Level design supports the target player experience throughout, by blending together linear and
+                non-linear spatial design elements. This results in multiple possible routes that players can take to
+                reach the hole. It also creates mini choke points where players are put in the danger zone of a hazard
+                or moving obstacle. Additionally, triggers to toggle and move said hazards and obstacles were placed off
+                optimal routes to the hole, so that both timing and judgment become critical factors in players'
+                decisions on whether to aim for a trigger or not. -->
+
+            <!-- Gameplay is focused on forcing confrontations between players during intense battles to finish in first.
+                Linear spatial design is therefore blended with non-linear elements, to create multiple possible routes
+                that players can take to reach the hole. -->
+
+            <!-- Position triggers that are just out of the way so that there is risk vs reward situation going on -->
+            <p>
+                This was my first time designing levels for multiplayer gameplay in general, and so it was challenging
+                to experiment and come up with map layouts that supported player interaction throughout. My final
+                approach involved blending together linear and non-linear spatial design elements. This resulted in maps
+                containing multiple possible routes that players can take to reach the hole. I also placed MapMovers at
+                choke points formed by converging routes to increase player tension and engagement.
             </p>
             <p>
-                In addition, the keywords used to describe the target player experience were "paranoid",
-                "eerie", and "unsettling". Level design in the game supports these main themes and the player's emotions
-                over time. These were all defining rules, and as such, got used heavily to inform design
-                choices for the game throughout the process.
+                Additionally, I tried to balance player usage of MapMovers by positioning triggers off optimal routes to
+                the hole. This was done in order to create a cost associated with activating MapMovers, since players
+                might need to sacrifice a shot in order to sabotage others.
+                <!-- balance
+                    outside of optimal routes to the hole. This was done to encourage players to consider both
+                    timing and judgment as critical factors when deciding whether to aim for a trigger or not. -->
+                <!-- TODO: might be a good idea to include some napkin sketches for before and after process shots -->
+            </p>
+            <h2>Networked Multiplayer</h2>
+            <p>
+                Networked multiplayer systems were fully built using Unreal's Blueprints functionality. I learned about
+                actor and pawn replication on client and server machines for simple physics and animations. I
+                obtained a basic understanding of how to configure projects to support networked sessions using both
+                Steam multiplayer and IP addresses, as well as the benefits and drawbacks for each approach.
+                <!-- It involved
+                the consumption of many a YouTube video and the traversal of even more Unreal Forums posts, but I  -->
+            </p>
+            <p>
+                Much of the challenges we faced were related to the incorporation of Steam Multiplayer. We had to log
+                data to the screen to fix Steam-related bugs, since we couldn't figure out how to attach debuggers to
+                the standalone processes we were running to test Steam functionality.
+                <!-- though it sometimes required knowing the way memory was laid out
+                in order to view data contained in, for example, a struct being passed around. -->
+                Testing games hosted on Steam in itself was also challenging, since it meant we always needed at least
+                two computers at any time.
+                <!-- Can mention that Unreal does allow for basic testing of multiplayer functionality, and we used
+                that to ensure that MapMovers and physics were being replicated correctly across server and clients.
+                But if it involved Steam, then standalone process. And even if we had multiple standalone processes
+                running on one machine, we still couldn't figure out how to test on a single machine, due to only
+                being able to be logged on to a single account at a time. -->
+            </p>
+            <h2>What I Would Improve</h2>
+            <h3>Preventing Degenerate Strategies</h3>
+            <p>
+                Because time isn't factored into the current implementation of our scoring system, players can simply
+                wait at the start line for their opponents to wreak havoc on each other, before slowly making their way
+                to the hole without the need to worry about MapMovers being triggered. Players could either be penalised
+                for staying still for too long. Alternatively, players could be scoring based on time alone, and not the
+                number of strokes made.
+            </p>
+            <h3>Getting a Better Grasp of AdvancedSteamSessions</h3>
+            <p>
+                Given more time, I'd like to dig deeper into the use of the AdvancedSteamSessions, and get a better 
+                understanding of how the plugin works. The multiplayer systems we've created to-date <em>work</em>,
+                but they don't work <em>well</em>. There are a lot of bugs that ruin the overall player experience.
+            </p>
+            <h3>Better Signalling MapMovers to the Player</h3>
+            <p>
+                It can be difficult for a player to navigate MapMovers that get triggered; environments lack indexical
+                elements that help convey where "danger zones" lie. Players also sometimes struggle to make the
+                connection between a trigger and the MapMover it affects, since they aren't always placed within sight
+                of each other. Overall, making improvements to the environment and the placement of triggers in
+                relation to their corresponding MapMovers will be valuable in helping players find their way around
+                courses better.
             </p>
             <!-- <p>
 
@@ -166,7 +282,7 @@
 
                 audio/visual cues
             </p> -->
-            <h2>Pacing and Audio/Visual Cues</h2>
+            <!-- <h2>Pacing and Audio/Visual Cues</h2>
             <p>
                 I arranged chase and puzzle rooms in a certain sequence to facilitate pacing, in an attempt to
                 strike a balance between periods of engagement (chase rooms) and rest (puzzle rooms) for the
@@ -193,12 +309,12 @@
                 danger to the player. Ceiling lights turn red to create an ominous atmosphere. Background music
                 features a higher BPM, dissonant chords, and a high-pitched raid siren intro to fuel a perception of
                 urgency.
-            </p>
+            </p> -->
             <!-- <p>
                 In chase rooms, graffiti is used on walls to signal the player about the upcoming encounter with Balloon
                 Ritchie. Ceiling lights turn red to produce an enhanced sense of danger. In conjunction with this, a  (red lights, raid siren, chase music. scope, so we had to outsource this music)
             </p> -->
-            <h2>Creating an Environmental Narrative</h2>
+            <!-- <h2>Creating an Environmental Narrative</h2>
             <p>
                 Part of early team discussions revolved around the game's narrative design, and how that would be
                 delivered to the player. One stretch goal included using alternate textures on the walls and pipes
@@ -207,7 +323,7 @@
                 Because of scope concerns and time constraints, however, I included the storyline as "hidden" vignettes
                 in-game. More specifically, by exploring the levels, the player will discover small posters whose
                 content, if put together, serves to give them context and clue them in on the backstory.
-            </p>
+            </p> -->
             <!-- <h2>Audiovisual Cues</h2>
             <p>
                 Using a bunch of triggers
@@ -237,9 +353,9 @@
                 and understanding where cheating is more likely to occur, it will become clearer as to which areas
                 should feature more checkpoints or, in more extreme cases, have their geometry reworked.
             </p> -->
-            <h2>What I Would Improve</h2>
+            <!-- <h2>What I Would Improve</h2> -->
             <!-- <h3>AI Cars</h3> -->
-            <ul>
+            <!-- <ul>
                 <li>
                     Playtests revealed that finding keys in puzzle levels can be frustratingly difficult. More keys were
                     added to the larger puzzle rooms to remedy this, with little to no avail. Leveraging lighting
@@ -252,14 +368,14 @@
                     sometimes caught playtesters off-guard. As a result, pacing could use some improvement in
                     this section of the game. Alternatively, the graffiti on the walls in this level could be made more
                     prominent to better signal the player about the upcoming encounter with Balloon Ritchie.
-                </li><br>
+                </li><br> -->
                 <!-- <li>
                     Something about the UI and how it can be improved. It's difficult to see the keys and the doors and
                     figure out which is the right door and which isn't. Players also struggled to figure out what they
                     needed to do at the beginning despite the instructional text at the top left, meaning onboarding can
                     also use some improvement
                 </li><br> -->
-                <li>
+                <!-- <li>
                     Level layout could be improved by adding an increased variety of textures and environmental objects
                     (such as posters and litter) to make the tunnels look more "lived in". To make the levels more
                     claustrophic and create a more pronounced sensation of anxiety in players, pathways could be made
@@ -271,7 +387,7 @@
                     away from the player and slower when nearby may help produce a more balanced (and therefore
                     engaging) experience overall.
                 </li>
-            </ul>
+            </ul> -->
             <!-- <p> -->
             <!-- napkin sketches - would probably have made the level layouts much more interesting, since what we did
                 was OH let's just create a map however we feel like it. -->
