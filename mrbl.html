@@ -82,7 +82,7 @@
                 launching projectiles of the same colour at them. However, if a projectile either touches a marble of
                 the wrong colour or remains unmatched for too long, it becomes "stale", and joins other marbles in
                 aimlessly bouncing around the arena. While the goal is to clear marbles, players will also need to keep
-                their cannon away from them, as the marbles will destroy it upon impact!
+                their cannon away from them, as the marbles will destroy it upon impact! Players can also aim for targets that are placed in obscure locations throughout levels to gain bonus points.
             </p>
             <!-- TODO: design goals? -->
             <!-- TODO: capitalise on the way you handle the colour matching. You might have to refine this -->
@@ -98,11 +98,32 @@
                 <li>your</li>
                 <li>responsibilities</li>
             </ul> -->
-            <h2></h2>
-            <h2>Thing's I'm Particularly Proud Of</h2>
+            <h2>Technical Details</h2>
+            <h2>OOP Design</h2>
+            <p>
+                In the current iteration, levels are loaded in sequence as the player completes them. The loading of levels, as well as other state-related data, is handled by a singleton StateManager class that persists in-between scenes. 
+            <h2> Projectile vs Marble System</h2>
+            <p>
+            Marbles keep track of their individual colour, as well as whether they have been cleared by a projectile, Projectiles also keep track of their colour, but have additional collision-related logic added. Besides
+            Structurally speaking, it made sense for projectiles to inherit from a base marble class, with additional collision-related logic being added. 
+            </p>
+                
+                you could also make
+                I also learned about how to implement certain design
+                patterns in Unity. This included creating a singleton GameManager class that could persist between
+                scenes during runtime, and modifying a MonoBehaviour to behave like a generic C# class. I also learned
+                about the different lifecycle hooks Unity affords, and how to leverage them to ensure that classes and
+                GameObjects are populated with all the data they need each time a new scene gets loaded.
+                
+                TODO: And you can also talk about how you determine which of a projectile and a marble to destroy upon collision, since you dont want to call destroy on an object that doesnt exist anymore
+            </p>
+            <h2>Things I'm Particularly Proud Of</h2>
             <ul>
                 <li>
-                    Programming bouncy physics for marbles and projectiles that felt just right
+                    Programming bouncy physics for marbles and projectiles that felt just right and weren't overwhelmingly difficult to control
+                </li>
+                <li>
+                    
                 </li>
                 <li>
                     Playing
@@ -175,6 +196,7 @@
                 colour in the game. Another option would be to provide preset, or even fully-customisable, colour
                 palettes such that folks of different backgrounds can be accommodated accordingly.
             </p>
+            <p>powerups</p>
 
             <!-- <h2>
                 Design Goals
