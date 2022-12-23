@@ -76,10 +76,10 @@
                 complete laps as quickly as possible.
             </p>
             <p>
-                Vehicles can only steer 90 degrees in either direction and strafe sideways. The camera follows the
-                player vehicle around the track, but is locked to the same orientation throughout, so being able to
-                differentiate right from left throughout the race is important! Whilst on the track, players will also
-                need to avoid collisions. Grinding against a barrier will slow their vehicle down, while driving
+                Vehicles can only steer 90 degrees instantaneously in either direction, and strafe sideways. The camera
+                follows the player vehicle around the track, but is locked to the same orientation throughout, so being
+                able to differentiate right from left throughout races is important! Whilst on the track, players will
+                also need to avoid collisions. Grinding against a barrier will slow their vehicle down, while driving
                 straight into a wall will result in a crash and the player being reset, costing them valuable time.
             </p>
             <!-- TODO: design goals??? -->
@@ -96,15 +96,20 @@
             </ul> -->
             <h2>Running the Gamut</h2>
             <p>
-                Everything in this project was built from scratch within the Unreal Editor, save for the car model due
+                I wanted to use this project to challenge myself to learn as much about the different tools I had at my
+                disposal from within the engine. As a result, everything in this project (except the car model) was
+                implemented from scratch, using inbuilt engine tools.
+                <!-- Everything in this project was built from scratch within the Unreal Editor, save for the car model due
                 to time constraints. I wanted to use this project to challenge myself to learn as much about the
-                different tools I had at my disposal from within the engine. It involved a fair bit of exploration,
+                different tools I had at my disposal from within the engine. -->
+                <!-- It involved a fair bit of exploration,
                 tinkering around the engine, and looking resources up online, but I think I was quite successful in
                 accomplishing the goals I set out to achieve. I have managed to familiarise myself with the interfaces
-                for the editors for materials, UI widgets, and visual effects (Niagara). I have also gotten a decent
+                for the editors for materials, UI widgets, and visual effects (Niagara).  -->
+                <!-- I have also gotten a decent
                 understanding of Unreal's blueprint system. Besides that, I've become pretty comfortable with traversing
                 Unreal's forums and online documentation, having spent a fair amount of time perusing those in
-                conjunction with video tutorials.
+                conjunction with video tutorials. -->
 
                 <!-- I used this project to get more deeply acquainted with Unity's intricacies. Because bouncy physics are
                 a cornerstone to <i>mrbl.</i>, I had to tinker around with its built-in physics engine until the way the
@@ -114,31 +119,66 @@
                 about the different lifecycle hooks Unity affords, and how to leverage them to ensure that classes and
                 GameObjects are populated with all the data they need each time a new scene gets loaded. -->
             </p>
-            <h2>Snappy Controls</h2>
+            <h2>Snappy Controls and Handling Model</h2>
             <p>
+                Gameplay is fast-paced, so it was important that controls were designed to be simple and
+                snappy, resulting in the simple handling model and "instantaneous" control system. Players can thus take
+                corners quickly as needed, making their success in-game reflex-reliant. To this end, instead of applying
+                steering forces, vehicles travel in the direction they are facing and are rotated instantaneously
+                at the push of a button.
+                <!-- to the current system where players can steer instantaneously 90 degrees in either direction, to ensure
+                they can take corners quickly as needed, with the only thing limiting their ability to do so being their
+                reflexes.
+
                 At the heart of <i>TapRacing</i> is its snappy and responsive control system. If tracks are to be
                 constructed such that their geometry features sets of consecutive corners and tight turns, then players
                 need to be equipped with the means to navigate such perils. It was thus important that vehicles in the
                 game be able to turn at the push of a button, because of the intended fast-paced, reflex-reliant player
-                experience. To this end, I had to make sure that the physics were tweaked such that the handling model
-                performed as expected.
+                experience. To this end, instead of applying steering forces, vehicles simply travel in the direction
+                they are facing and are rotated instantaneously as required. -->
             </p>
+            <!-- <h2>Player FSM</h2>
+            <p>
+                Because of the game's simple physics, it made sense to describe player movement using a simple FSM with
+                four distinct states: Stopped, Moving, Grinding, and Crashed. 
+            </p> -->
             <h2>Checkpoint System</h2>
             <p>
+                Checkpoints have been implemented as a series of triggers spread out along the track. A
+                CheckpointManager blueprint holds references to each of these in an array, and ensures the player
+                traverses the track correctly by checking that the player visits each checkpoint in the specified order.
+                When all checkpoints have been visited by the player in sequence, a lap is complete. This discourages
+                cheating behaviours like corner cutting. Players also get reset to the location of the last checkpoint
+                visited if they crash their vehicle. Crashes usually take place when cornering, and so additional
+                checkpoints have been placed right before each turn.
+
+                <!-- The checkpoint system also helps determine where to reset
+                the player if they crash their vehicle. Players get reset to the location of the last checkpoint Players
+                usually crash when cornering, and so additional
+                checkpoints were placed right before each turn. -->
+                <!-- keeping track of the last checkpoint cleared, and the next
+                Checkpoints have been placed throughout the track for multiple reasons. First, they help track lap
+                progress, and prevent cheating in doing so. Since all checkpoints must be cleared for a lap to be
+                considered completed, corner-cutting is discouraged. Second, they also help with resetting the
+                player after they crash their vehicle. As players usually crash when cornering, checkpoints are
+                placed right before each turn. -->
+                <!-- When the player crashes their vehicle, they get reset on the track after a one-second delay, at the last
+                checkpoint location cleared. As crashes usually occur while players are cornering, checkpoints were
+                placed right before each turn. Players gets
                 The handling model is set up to treat head-on collisions with barriers as crashes, after which
                 the player gets reset on the track following a one-second delay. In order to prevent player
                 frustration, a checkpoint system was added to identify the best location on the track to reset player
                 vehicles. Currently, the player is reset a small distance from the corner where the impact occurred.
                 This was done to give them enough time to react and clear the corner as soon as they step on the
-                accelerator.
+                accelerator. -->
             </p>
-            <p>
+            <!-- <p>
                 The checkpoint system also serves as a way to mitigate cheating behaviours. Because all checkpoints in
                 a track must be cleared in order before the player is considered to have completed a lap, this means
                 that attempts to cut corners and find "shortcuts" around tracks are discouraged. Through playtesting
                 and understanding where cheating is more likely to occur, it will become clearer as to which areas
                 should feature more checkpoints or, in more extreme cases, have their geometry reworked.
-            </p>
+            </p> -->
             <h2>Next Steps</h2>
             <h3>AI Cars</h3>
             <p>
