@@ -145,8 +145,8 @@
             <h2>Checkpoint System</h2>
             <p>
                 Checkpoints have been implemented as a series of triggers spread out along the track. A
-                CheckpointManager blueprint holds references to each of these in an array, and ensures the player
-                traverses the track correctly by checking that the player visits each checkpoint in the specified order.
+                CheckpointManager blueprint holds references to each of these in an array. It ensures the player
+                traverses the track properly by checking that they visit each checkpoint in the specified order.
                 When all checkpoints have been visited by the player in sequence, a lap is complete. This discourages
                 cheating behaviours like corner cutting. Players also get reset to the location of the last checkpoint
                 visited if they crash their vehicle. Crashes usually take place when cornering, and so additional
@@ -182,6 +182,23 @@
             <h2>Next Steps</h2>
             <h3>AI Cars</h3>
             <p>
+                At the very least, AI agents must be able to anticipate the direction of, and distance toward, upcoming
+                corners. A quick solution would be to integrate this information into the checkpoint system itself, with
+                the timing at which agents steer into corners being varied at random to produce more natural behaviour.
+            </p>
+            <p>
+                A more robust approach would be to leverage raycasting, using "feelers" from the front and sides of
+                vehicles to give agents spatial awareness. This can produce more complex behaviours expected of a
+                driver, such as determining optimal racing lines or identifying when to perform overtaking manoeuvres.
+                <!-- expected of a driver. -->
+
+                <!-- To remedy this, a heuristic could be added to each agent that impacts
+                their individual ability to estimate when to turn into a corner. This might result in more organic
+                behaviour, such as making mistakes and crashing or taking suboptimal lines through turns. Nevertheless,
+                this approach ignores more complex behaviours expected of a driver, such as identifying when to overtake
+                a vehicle directly ahead, and taking an optimal driving line. -->
+            </p>
+            <!-- <p>
                 It would be cool to have AI vehicles that the player can race against in a single player race mode. At
                 the very least, AI agents must be able to "see" ahead, anticipate approaching corners, and establish
                 the direction in which they must steer. Because of the way the handling model is set up to only allow 90
@@ -200,16 +217,31 @@
                 behaviour, such as making mistakes and crashing or taking suboptimal lines through turns. Nevertheless,
                 this approach ignores more complex behaviours expected of a driver, such as identifying when to overtake
                 a vehicle directly ahead, and taking an optimal driving line.
-            </p>
+            </p> -->
             <h3>An Updated Handling Model</h3>
             <p>
+                I'd like to adjust physics such that vehicles slow down when cornering and strafing. This will add a
+                layer of complexity to overtaking manoeuvres, as players will need to be careful about how much they 
+                can afford to strafe to defend their position 
+                
+                look at the ig page
+
+                it is currently easy for players to defend their position,
+                as strafing and cornering do not reduce vehicle speed.
+                This will add a
+                layer of complexity to overtaking and defending positions, to make overtaking
+                and defending positions
+                . The amount by which speed is impacted could then be referenced via the use of a "handling"
+                stat. As with the addition of any other stat, this will require fine-tuning, balancing, and playtesting.
+            </p>
+            <!-- <p>
                 It might also be interesting to play around with different handling models to see what adds more
                 dimension to the game. Modifying behaviour such that vehicles slow down slightly when steering
                 will allow for the inclusion of a "handling" stat to vehicles in the future that references this amount
                 of speed lost while cornering. A better handling stat could mean less speed lost, and vice versa. As
                 with the addition of any other stat, though, this will require fine-tuning, balancing, and playtesting
                 to prevent certain vehicles from being disproportionately powerful compared to others.
-            </p>
+            </p> -->
 
             <!-- Something about making it so players can't always hug the inside of turns and dominate the track
             Balancing boost systems, adding ability to slipstream, so at least cars from behind can have a chance
