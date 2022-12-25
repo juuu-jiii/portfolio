@@ -202,17 +202,32 @@
                 for.
                 Initially, player performance was measured through the use of
             </p> -->
-            <h2>Networked Multiplayer</h2>
+            <h2>Networked Multiplayer Gameplay</h2>
             <!-- TODO: write about which was computed on server only (physics) and which was allowed to run on clients,
             and why. Then talk about obstacles, why they run on the server, and which need to run on all (dragon) 
             Can also talk about choice between replicate, RepNotify decisions. Which variables need to be replicated
             and so on. The architecture basically .-->
             <p>
-                Because it was crucial for physics and MapMovers systems to be synchronised across all networked
-                machines, we decided to handle vital calculations solely on the server through reliable RPC calls.
-                "Cosmetic" gameplay events that communicate the activation of MapMovers (like the spawning of particle
-                systems) were executed on all devices to ensure every instance of the game world had the most up-to-date
-                visual data pertinent to gameplay. (TODO: dragon example)
+                Because it was crucial for data for systems like scoring, physics, and MapMovers to be synchronised
+                across all networked machines, we decided to handle vital calculations solely on the server through
+                reliable RPC calls, for the fairest play experience. On the other hand, because the usage of
+                MapMovers sometimes involved "cosmetic" gameplay events (like the spawning of particle systems) to
+                communicate their activation to other players, these events needed to be reliably executed on
+                all devices to ensure every player had the most up-to-date gameplay visuals.
+                
+                Any events that needed to be invoked when relevant replicated variables got updated were run
+                via
+                RepNotify functions
+                (TODO: dragon example)
+
+                Summary of mapmovers systems
+                - move once (pos1 --> pos2)
+                - timed move (pos1 --> pos2; delay; pos2 --> pos1)
+                - timed toggle (toggle; delay; toggle)
+                - toggle move (pos1 --> pos2 OR pos2 --> pos1)
+                - general form: pass through a trigger and something happens. We don't care what specifically happens we
+                just want to keep the general form.
+                - IObstacle and how the caller never needs to know what the specifics are
 
                 Variables relevant to clients
                 were set to replicate
