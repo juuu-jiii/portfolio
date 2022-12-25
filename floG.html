@@ -72,7 +72,7 @@
                     href="https://www.youtube.com/watch?v=nEuXiJ-d2YM" target="chase-music">Fesliyan Studios Background
                     Music</a>
             </p>
-            <h2>Concept</h2>
+            <h2>Concept and Design/Development Goals</h2>
             <p>
                 <!-- <i>For The Love of Golf</i> (<i>floG</i>) is a networked multiplayer simultaneous minigolf game where
                 players race to be the first to sink their balls... but there's a chaotic twist for added insanity! In
@@ -84,8 +84,8 @@
                 <i>For The Love of Golf</i> (<i>floG</i>) is a networked multiplayer simultaneous minigolf game
                 with a chaotic twist for added insanity! Courses feature dynamic and and player-alterable layouts
                 through the use of MapMovers: hazards and movable objects that are activated using triggers
-                distributed over the course. Good aim and timing are the key to sabotaging opponents whilst staying
-                below par. Because anyone can trigger anything, no one is safe!
+                distributed over the course. Good aim and timing are the key to sabotaging opponents whilst aiming for a
+                good score. Because anyone can trigger anything, no one is safe!
                 <!-- This is achieved by the use of a feature
                 called MapMovers: hazards and movable objects that are toggled by the player entering triggers
                 laid out on the course. Players tee off while trying to sabotage each other
@@ -101,7 +101,7 @@
                 <!-- Players race to be the first to sink a hole while triggering moving obstacles or toggling hazards to
                     sabotage their opponents, and opening shortcuts to give themselves an edge over the competition.
                     
-                    Set in RIT's underground dormitory tunnel system, <i>The Tunnels</i> is a first-person psychological
+                Set in RIT's underground dormitory tunnel system, <i>The Tunnels</i> is a first-person psychological
                 horror walking simulator that has players taking the role of a student being followed by an entity
                 while trying to find their way back to their dorm room after a long day of classes. -->
 
@@ -115,6 +115,19 @@
             <p>
                 <i>floG</i> currently supports multiplayer games hosted via both Steam and IP address.
             </p>
+            <p>
+                Networking was our priority for this project; we wanted to use it as a means to get a better
+                understanding of multiplayer development concepts in general, and apply them to Unreal 5. Our design
+                goals were therefore scoped to support our development priorities. Primarily, we wanted our golf game to
+                allow players to interact directly with one another while playing.
+                Level design was thus geared towards forcing confrontations between players during battles for first.
+            </p>
+            <!-- <p>
+                However, we wanted to use this project to
+            </p>
+            You could, however, talk about how time constraints, plus team goals, influenced what the
+            team wanted to aim for by the end of the semester, and why networking was the priority
+            And you could also talk about how design choices were made to support the core goals -->
             <!-- <p>
                 (this might fall under design goals, perhaps)
                 Gameplay is focused on forcing confrontations between players during intense battles to finish in first.
@@ -178,16 +191,52 @@
                 use of available room better, narrower tunnels to give heightened sense of anxiety, guide the player a
                 little better using lighting, UI hint system to show them where the key is -->
             </ul>
-            <h2>Design Goal</h2>
+            <!-- <h2>Design Goal</h2>
             <p>
-                At the core, we wanted to create a golf game that centred around letting players interact directly with one another. Thus, we wanted level design to it was important that gameplay be designed such
+                At the core, we wanted to create a golf game that centred around letting players interact directly with
+                one another. Thus, we wanted level design to it was important that gameplay be designed such
                 that it centred around forcing confrontations between players during intense battles to finish in first.
-            </p>
+            </p> -->
             <!-- <p>
                 The synchronous nature of <i>floG</i> meant that degenerate player strategies needed to be accounted
                 for.
                 Initially, player performance was measured through the use of
             </p> -->
+            <h2>Networked Multiplayer</h2>
+            <!-- TODO: write about which was computed on server only (physics) and which was allowed to run on clients,
+            and why. Then talk about obstacles, why they run on the server, and which need to run on all (dragon) 
+            Can also talk about choice between replicate, RepNotify decisions. Which variables need to be replicated
+            and so on. The architecture basically .-->
+            <p>
+                Because it was crucial for physics and MapMovers systems to be synchronised across all networked
+                machines, we decided to handle vital calculations solely on the server through reliable RPC calls.
+                "Cosmetic" gameplay events that communicate the activation of MapMovers (like the spawning of particle
+                systems) were executed on all devices to ensure every instance of the game world had the most up-to-date
+                visual data pertinent to gameplay. (TODO: dragon example)
+
+                Variables relevant to clients
+                were set to replicate
+                Networked multiplayer systems were fully built using Unreal's Blueprints functionality. I learned about
+                actor and pawn replication on client and server machines for simple physics and animations. I
+                obtained a basic understanding of how to configure projects to support networked sessions using both
+                Steam multiplayer and IP addresses, as well as the benefits and drawbacks for each approach.
+                <!-- It involved
+                the consumption of many a YouTube video and the traversal of even more Unreal Forums posts, but I  -->
+            </p>
+            <p>
+                Much of the challenges we faced were related to the incorporation of Steam multiplayer. We had to log
+                data to the screen to fix Steam-related bugs, since we couldn't figure out how to attach debuggers to
+                the standalone processes we were running to test Steam functionality.
+                <!-- though it sometimes required knowing the way memory was laid out
+                in order to view data contained in, for example, a struct being passed around. -->
+                Testing games hosted on Steam in itself was also challenging, since it meant we always needed at least
+                two computers at any time.
+                <!-- Can mention that Unreal does allow for basic testing of multiplayer functionality, and we used
+                that to ensure that MapMovers and physics were being replicated correctly across server and clients.
+                But if it involved Steam, then standalone process. And even if we had multiple standalone processes
+                running on one machine, we still couldn't figure out how to test on a single machine, due to only
+                being able to be logged on to a single account at a time. -->
+            </p>
             <h2>MapMovers and Multiplayer Level Design</h2>
             <!-- Level design supports the target player experience throughout, by blending together linear and
                 non-linear spatial design elements. This results in multiple possible routes that players can take to
@@ -217,29 +266,6 @@
                     timing and judgment as critical factors when deciding whether to aim for a trigger or not. -->
                 <!-- TODO: might be a good idea to include some napkin sketches for before and after process shots -->
             </p>
-            <h2>Networked Multiplayer</h2>
-            <p>
-                Networked multiplayer systems were fully built using Unreal's Blueprints functionality. I learned about
-                actor and pawn replication on client and server machines for simple physics and animations. I
-                obtained a basic understanding of how to configure projects to support networked sessions using both
-                Steam multiplayer and IP addresses, as well as the benefits and drawbacks for each approach.
-                <!-- It involved
-                the consumption of many a YouTube video and the traversal of even more Unreal Forums posts, but I  -->
-            </p>
-            <p>
-                Much of the challenges we faced were related to the incorporation of Steam Multiplayer. We had to log
-                data to the screen to fix Steam-related bugs, since we couldn't figure out how to attach debuggers to
-                the standalone processes we were running to test Steam functionality.
-                <!-- though it sometimes required knowing the way memory was laid out
-                in order to view data contained in, for example, a struct being passed around. -->
-                Testing games hosted on Steam in itself was also challenging, since it meant we always needed at least
-                two computers at any time.
-                <!-- Can mention that Unreal does allow for basic testing of multiplayer functionality, and we used
-                that to ensure that MapMovers and physics were being replicated correctly across server and clients.
-                But if it involved Steam, then standalone process. And even if we had multiple standalone processes
-                running on one machine, we still couldn't figure out how to test on a single machine, due to only
-                being able to be logged on to a single account at a time. -->
-            </p>
             <h2>What I Would Improve</h2>
             <h3>Preventing Degenerate Strategies</h3>
             <p>
@@ -251,7 +277,7 @@
             </p>
             <h3>Getting a Better Grasp of AdvancedSteamSessions</h3>
             <p>
-                Given more time, I'd like to dig deeper into the use of the AdvancedSteamSessions, and get a better 
+                Given more time, I'd like to dig deeper into the use of the AdvancedSteamSessions, and get a better
                 understanding of how the plugin works. The multiplayer systems we've created to-date <em>work</em>,
                 but they don't work <em>well</em>. There are a lot of bugs that ruin the overall player experience.
             </p>
@@ -376,13 +402,13 @@
                     this section of the game. Alternatively, the graffiti on the walls in this level could be made more
                     prominent to better signal the player about the upcoming encounter with Balloon Ritchie.
                 </li><br> -->
-                <!-- <li>
+            <!-- <li>
                     Something about the UI and how it can be improved. It's difficult to see the keys and the doors and
                     figure out which is the right door and which isn't. Players also struggled to figure out what they
                     needed to do at the beginning despite the instructional text at the top left, meaning onboarding can
                     also use some improvement
                 </li><br> -->
-                <!-- <li>
+            <!-- <li>
                     Level layout could be improved by adding an increased variety of textures and environmental objects
                     (such as posters and litter) to make the tunnels look more "lived in". To make the levels more
                     claustrophic and create a more pronounced sensation of anxiety in players, pathways could be made
