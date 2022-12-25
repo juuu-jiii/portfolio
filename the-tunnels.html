@@ -72,7 +72,7 @@
                     href="https://www.youtube.com/watch?v=nEuXiJ-d2YM" target="chase-music">Fesliyan Studios Background
                     Music</a>
             </p>
-            <h2>Concept</h2>
+            <h2>Concept and Design Goals</h2>
             <p>
                 Set in RIT's underground dormitory tunnel system, <i>The Tunnels</i> is a first-person psychological
                 horror walking simulator that has players taking the role of a student being followed by an entity
@@ -90,21 +90,28 @@
                 mini puzzle rooms where a key must be found in order to unlock a door that leads them to the next
                 level. There are a total of six levels in <i>The Tunnels</i>: four puzzle rooms and two chase rooms.
             </p>
+            <p>
+                We decided early on that the "entity" chasing the player would be a balloon version of our school
+                mascot, called Balloon Ritchie. We also wanted to avoid overt use of grotesque or violent themes, as we
+                didn't think those were essential elements to drive the game's narrative. The keywords we used to
+                describe the target player experience were "paranoid", "eerie", and "unsettling". Level design in the
+                game supports these main themes and the player's emotions over time.
+            </p>
             <h2>Responsibilities</h2>
             <ul>
                 <!-- <li>
                     Constructed level geometry and placed environmental objects within levels.
                 </li> -->
                 <li>
-                    Planned and implemented audio/visual cues and elements for levels to generate an eerie atmosphere.
+                    Designed and implemented audio/visual cues and elements for levels to generate an eerie atmosphere.
                 </li>
                 <li>
                     Took part in design discussions regarding the game's narrative and pacing.
                 </li>
-                <li>
+                <!-- <li>
                     Outsourced and mixed background audio clips for levels where the player encounters the entity
                     following them.
-                </li>
+                </li> -->
                 <li>
                     Prototyped enemy AI movement behaviour using Unity's navmesh system.
                 </li>
@@ -119,20 +126,20 @@
                 use of available room better, narrower tunnels to give heightened sense of anxiety, guide the player a
                 little better using lighting, UI hint system to show them where the key is -->
             </ul>
-            <h2>Design Goals</h2>
-            <p>
-                We decided early on that the "entity" chasing the player would be a balloon version of our school
+            <!-- <h2>Design Goals</h2>
+            <p> -->
+            <!-- We decided early on that the "entity" chasing the player would be a balloon version of our school
                 mascot, called Balloon Ritchie. We also wanted to avoid overt use of grotesque or violent themes, as we
                 didn't think those were essential elements to drive the game's narrative. The keywords we used to
                 describe the target player experience were "paranoid",
                 "eerie", and "unsettling". Level design in the game supports these main themes and the player's emotions
-                over time.
-                <!-- From the outset, the team collectively agreed that the horror featured in-game would be purely
+                over time. -->
+            <!-- From the outset, the team collectively agreed that the horror featured in-game would be purely
                 psychological. The team decided on this because we wanted to challenge ourselves to deliver an
                 experience laced with fear without any overt use of grotesque, gory, or violent themes. It was also
                 based on the fact that the "entity" chasing the player is, in fact, nothing more than a balloon
                 version of our school mascot, lovingly referred to as Balloon Ritchie among the student body. -->
-            </p>
+            <!-- </p> -->
             <!-- <p>
                 In addition, the keywords used to describe the target player experience were "paranoid",
                 "eerie", and "unsettling". Level design in the game supports these main themes and the player's emotions
@@ -201,13 +208,16 @@
             </p>
             <!-- <p>
                 In chase rooms, graffiti is used on walls to signal the player about the upcoming encounter with Balloon
-                Ritchie. Ceiling lights turn red to produce an enhanced sense of danger. In conjunction with this, a  (red lights, raid siren, chase music. scope, so we had to outsource this music)
+                Ritchie. Ceiling lights turn red to produce an enhanced sense of danger. In conjunction with this, a  
+                (red lights, raid siren, chase music. scope, so we had to outsource this music)
             </p> -->
             <h2>Environmental Narrative</h2>
             <p>
                 Narrative is delivered to the player in the form of "hidden" vignettes; by exploring levels, the
                 player can discover small posters whose content, if put together, provides the game's backstory.
-                Based on time constraints, this implementation made the most sense to us scope-wise.
+                We decided to use this approach because it was the most scope-friendly option, given our time
+                constraints.
+                <!-- Based on time constraints, this implementation made the most sense to us scope-wise. -->
                 <!-- became a stretch goal that couldn't be
                 accomplished on time. -->
 
@@ -254,50 +264,48 @@
             <!-- <h3>AI Cars</h3> -->
             <h3>Level Design Improvements</h3>
             <p>
-                Keys in puzzle rooms can be difficult to find. Lighting could be leveraged to guide the player
-                subtly. A UI hint system could also be implemented to prevent players from getting stuck.
-            </p>
-            <p>
-                I'd like to use more indexical storytelling elements. This includes using decals featuring claw marks on surfaces to warn the player of impending danger.
-            </p>
-            <p>
-                I'd also like to make rooms more claustrophobic by experimenting with lowering the ceiling and making pathways narrower, in order to create a more pronounced sensation of anxiety in players.
+                Keys in puzzle rooms can be difficult to find, so lighting could be leveraged to guide the player around
+                subtly. On top of that, a UI hint system could be implemented to prevent players from getting stuck.
+                I'd also like to use more indexical storytelling elements. This includes using decals featuring claw
+                marks on walls, and limp bits of rubber on the ground, to further clue the player in on the backstory.
+                Finally, rooms can be made more claustrophobic by lowering the ceiling and narrowing pathways, in order
+                to create a more pronounced sensation of anxiety in players.
             </p>
             <h3>AI</h3>
             <p>
-                AI movement behaviours could be more refined. Because the agent always travels at a constant speed
-                    toward the player, it can be too fast or too slow at times. Varying this so it speeds up when far
-                    away from the player and slows down when nearby may help produce a more balanced and
-                    engaging experience overall.
+                AI movement behaviours could also be more refined. Because the agent always travels at a constant speed
+                toward the player, it can be too fast or too slow at times. Varying this so it speeds up when far away
+                from the player and slows down when nearby may help produce a more balanced and engaging experience
+                overall.
             </p>
-            <ul>
+            <!-- <ul>
                 <li>
-                    
-                    
+
+
                 </li>
                 <li>
-                    
-                </li>
-                <!-- <li>
+
+                </li> -->
+            <!-- <li>
                     Playtests revealed that finding keys in puzzle levels can be frustratingly difficult. More keys were
                     added to the larger puzzle rooms to remedy this, with little to no avail. Leveraging lighting
                     instead to subtly guide the player towards keys is a possible fix. A UI hint system could be used in
                     conjunction with this, to explicitly show the player where keys are placed and
                     prevent them from getting stuck in a level.
                 </li><br> -->
-                <li>
+            <!-- <li>
                     The introduction of the player to their pursuer in the first chase room is a little abrupt, as it
                     sometimes caught playtesters off-guard. As a result, pacing could use some improvement in
                     this section of the game. Alternatively, the graffiti on the walls in this level could be made more
                     prominent to better signal the player about the upcoming encounter with Balloon Ritchie.
-                </li><br>
-                <!-- <li>
+                </li><br> -->
+            <!-- <li>
                     Something about the UI and how it can be improved. It's difficult to see the keys and the doors and
                     figure out which is the right door and which isn't. Players also struggled to figure out what they
                     needed to do at the beginning despite the instructional text at the top left, meaning onboarding can
                     also use some improvement
                 </li><br> -->
-                <li>
+            <!-- <li>
                     Level layout could be improved by adding an increased variety of textures and environmental objects
                     (such as posters and litter) to make the tunnels look more "lived in". To make the levels more
                     claustrophic and create a more pronounced sensation of anxiety in players, pathways could be made
@@ -308,8 +316,8 @@
                     toward the player, it can be too fast or too slow at times. Varying this so it speeds up when far
                     away from the player and slower when nearby may help produce a more balanced (and therefore
                     engaging) experience overall.
-                </li>
-            </ul>
+                </li> -->
+            <!-- </ul> -->
             <!-- <p> -->
             <!-- napkin sketches - would probably have made the level layouts much more interesting, since what we did
                 was OH let's just create a map however we feel like it. -->
