@@ -208,12 +208,24 @@
             Can also talk about choice between replicate, RepNotify decisions. Which variables need to be replicated
             and so on. The architecture basically .-->
             <p>
-                Because it was crucial for data for systems like scoring, physics, and MapMovers to be synchronised
-                across all networked machines, we decided to handle vital calculations solely on the server through
-                reliable RPC calls, for the fairest play experience. On the other hand, because the usage of
-                MapMovers sometimes involved "cosmetic" gameplay events (like the spawning of particle systems) to
-                communicate their activation to other players, these events needed to be reliably executed on
+                Because it was crucial that data for systems like scoring, physics, and MapMovers got synchronised
+                across all networked machines, vital calculations were handled solely on the server through
+                reliable RPC calls, for the fairest possible play experience. On the other hand, triggering MapMovers   
+                sometimes involves "cosmetic" gameplay events (like the spawning of particle systems) to
+                communicate their activation to other players. These events needed to be reliably executed on
                 all devices to ensure every player had the most up-to-date gameplay visuals.
+                </p>
+                <p>
+                MapMovers with different functionality have been implemented. These include and a different blueprint was created for each type. These get activated when a player enters a MapMover's associated trigger in the game world. Despite varying implementation details, 
+                
+                Implementation details have been hidden away behind interface methods to make function calls simple To simplify the way in which functions get called to activate MapMovers, Specific implementation details were There are several kinds of MapMovers: ones that can be toggled once, some that can be toggled multiplw times, and others that
+                
+                two wolves, composition
+                individual blueprints for each type of behaviour
+                composition, interfaces
+                created cleaner, more intentional code
+                </p>
+                <!-- I also made sure to prefer marking variables to Replicate instead of using RepNotify in the interest of performance -->
                 
                 Any events that needed to be invoked when relevant replicated variables got updated were run
                 via
