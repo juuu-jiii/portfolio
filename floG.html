@@ -115,6 +115,7 @@
             <p>
                 <i>floG</i> currently supports multiplayer games hosted via both Steam and IP address.
             </p>
+            <!-- TODO: you might want to rephrase the "networking was our priority" -->
             <p>
                 Networking was our priority for this project; we wanted to use it as a means to get a better
                 understanding of multiplayer development concepts in general, and apply them to Unreal 5. Our design
@@ -210,54 +211,92 @@
             <p>
                 Because it was crucial that data for systems like scoring, physics, and MapMovers got synchronised
                 across all networked machines, vital calculations were handled solely on the server through
-                reliable RPC calls, for the fairest possible play experience. On the other hand, triggering MapMovers   
-                sometimes involves "cosmetic" gameplay events (like the spawning of particle systems) to
+                reliable RPC calls, for the fairest possible play experience. On the other hand, triggering MapMovers
+                sometimes involved "cosmetic" gameplay events (like the spawning of particle systems) to
                 communicate their activation to other players. These events needed to be reliably executed on
                 all devices to ensure every player had the most up-to-date gameplay visuals.
-                </p>
-                <p>
-                MapMovers with different functionality have been implemented. These include and a different blueprint was created for each type. These get activated when a player enters a MapMover's associated trigger in the game world. Despite varying implementation details, 
-                
-                Implementation details have been hidden away behind interface methods to make function calls simple To simplify the way in which functions get called to activate MapMovers, Specific implementation details were There are several kinds of MapMovers: ones that can be toggled once, some that can be toggled multiplw times, and others that
-                
+            </p>
+            <p>
+                A MapMover trigger can be connected to any type of MapMover in a level due to the use of interfaces
+                Remember, this isn't documentation. Summarise!
+
+                I implemented different kinds of MapMovers, each with their own functionality, such as moving obstacles
+                and triggering hazards. For each type, I created a different blueprint with its own "Activate" function.
+                Activate is called by the blueprint attached to a MapMover's associated trigger when entered by a player
+                in the game world. The trigger blueprint calls Activate on its corresponding MapMover blueprint, but the
+                MapMover blueprint itself does not need to know anything about the trigger itself. Therefore, I made
+                each MapMover blueprint implement an interface containing a declaration for Activate. This allowed a
+                MapMover trigger to be connected to any type of MapMover in a level, creating flexible, clean, and more
+                intentional code.
+
+                <!-- the specifics of each implementation of Activate do not matter to the
+                trigger blueprint, I made each MapMover blueprint implement an interface containing a declaration for
+                Activate. This way,
+
+                These varying implementations of the Activate function are hidden from the MapMover
+                trigger blueprint, as the MapMovers blueprints themselves implement an
+                This created cleaner, more intentional code, and allowed a MapMover trigger to be connected to any type
+                of MapMover in a level.
+
+                MapMover trigger blueprint MapMovers blueprints implement an interface which
+
+                Implementation details have been hidden away behind interface methods to make function calls simple To
+                simplify the way in which functions get called to activate MapMovers, Specific implementation details
+                were There are several kinds of MapMovers: ones that can be toggled once, some that can be toggled
+                multiplw times, and others that
+
                 two wolves, composition
                 individual blueprints for each type of behaviour
                 composition, interfaces
-                created cleaner, more intentional code
-                </p>
-                <!-- I also made sure to prefer marking variables to Replicate instead of using RepNotify in the interest of performance -->
-                
-                Any events that needed to be invoked when relevant replicated variables got updated were run
-                via
-                RepNotify functions
-                (TODO: dragon example)
+                created cleaner, more intentional code -->
+            </p>
+            <!-- I also made sure to prefer marking variables to Replicate instead of using RepNotify in the interest of performance -->
 
-                Summary of mapmovers systems
-                - move once (pos1 --> pos2)
-                - timed move (pos1 --> pos2; delay; pos2 --> pos1)
-                - timed toggle (toggle; delay; toggle)
-                - toggle move (pos1 --> pos2 OR pos2 --> pos1)
-                - general form: pass through a trigger and something happens. We don't care what specifically happens we
-                just want to keep the general form.
-                - IObstacle and how the caller never needs to know what the specifics are
+            <!-- Any events that needed to be invoked when relevant replicated variables got updated were run
+            via
+            RepNotify functions
+            (TODO: dragon example)
 
-                Variables relevant to clients
-                were set to replicate
-                Networked multiplayer systems were fully built using Unreal's Blueprints functionality. I learned about
-                actor and pawn replication on client and server machines for simple physics and animations. I
-                obtained a basic understanding of how to configure projects to support networked sessions using both
-                Steam multiplayer and IP addresses, as well as the benefits and drawbacks for each approach.
-                <!-- It involved
+            Summary of mapmovers systems
+            - move once (pos1 -> pos2)
+            - timed move (pos1 -> pos2; delay; pos2 -> pos1)
+            - timed toggle (toggle; delay; toggle)
+            - toggle move (pos1 -> pos2 OR pos2 -> pos1)
+            - general form: pass through a trigger and something happens. We don't care what specifically happens we
+            just want to keep the general form.
+            - IObstacle and how the caller never needs to know what the specifics are
+
+            Variables relevant to clients
+            were set to replicate
+            Networked multiplayer systems were fully built using Unreal's Blueprints functionality. I learned about
+            actor and pawn replication on client and server machines for simple physics and animations. I
+            obtained a basic understanding of how to configure projects to support networked sessions using both
+            Steam multiplayer and IP addresses, as well as the benefits and drawbacks for each approach. -->
+            <!-- It involved
                 the consumption of many a YouTube video and the traversal of even more Unreal Forums posts, but I  -->
             </p>
+            <!-- TODO: talk about joining via Steam and IP Address implementations -->
             <p>
+                Unreal CAN search for sessions. But it is limited to the local network the player is connected to.
+                By default, the only way a player can connect to a session outside their network is using an IP address
+                connection, with the help of port forwarding. For obvious security reasons, we opted to use the Steam
+                subsystem, since it does not require users to provide any information besides their steam account.
+
+                IP add
+                We elected
+                Creating and joining games via IP address limits the player to the local network they are connected to.
+
+                "Setting the project up to support IP Address hosting/joining was fairly straightforward and involved
+                the running of two separate console commands within Unreal to create and join a server. We wanted to
+                expand to Steam, as we wanted a way for players to join a networked game without having to disclose
+                their IP address"
                 Much of the challenges we faced were related to the incorporation of Steam multiplayer. We had to log
                 data to the screen to fix Steam-related bugs, since we couldn't figure out how to attach debuggers to
                 the standalone processes we were running to test Steam functionality.
                 <!-- though it sometimes required knowing the way memory was laid out
                 in order to view data contained in, for example, a struct being passed around. -->
-                Testing games hosted on Steam in itself was also challenging, since it meant we always needed at least
-                two computers at any time.
+                The process of testing games hosted on Steam in itself was also challenging, since it meant we always
+                needed at least two computers at any time.
                 <!-- Can mention that Unreal does allow for basic testing of multiplayer functionality, and we used
                 that to ensure that MapMovers and physics were being replicated correctly across server and clients.
                 But if it involved Steam, then standalone process. And even if we had multiple standalone processes
