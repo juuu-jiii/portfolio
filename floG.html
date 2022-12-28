@@ -82,9 +82,9 @@
                 one is safe! -->
 
                 <i>For The Love of Golf</i> (<i>floG</i>) is a networked multiplayer simultaneous minigolf game
-                with a chaotic twist for added insanity! Courses feature dynamic and and player-alterable layouts
+                with a chaotic twist for added insanity! Maps feature dynamic and and player-alterable layouts
                 through the use of MapMovers: hazards and movable objects that are activated using triggers
-                distributed over the course. Good aim and timing are the key to sabotaging opponents whilst aiming for a
+                distributed over the map. Good aim and timing are the key to sabotaging opponents whilst aiming for a
                 good score. Because anyone can trigger anything, no one is safe!
                 <!-- This is achieved by the use of a feature
                 called MapMovers: hazards and movable objects that are toggled by the player entering triggers
@@ -120,7 +120,7 @@
                 understanding of how to apply them to development in Unreal 5. We therefore picked design goals that
                 would let us explore our technical interests. Primarily, we wanted our golf game to
                 allow players to interact directly with one another synchronously while playing.
-                Level design was thus geared towards forcing confrontations between players during battles for first.
+                Level design was then geared towards forcing confrontations between players during battles for first.
                 <!-- Networking was our priority for this project; we wanted to use it as a means to get a better
                 understanding of multiplayer development concepts in general, and apply them to Unreal 5. -->
                 <!-- goals were therefore scoped to support our development priorities. Primarily, we wanted our golf game to
@@ -156,15 +156,15 @@
                     Investigated use of joining games via IP address
                  -->
                 <li>
+                    Designed the MapMovers system, allowing the player to leverage objects in their environment to
+                    derail opponents
+                </li>
+                <li>
                     Networked player movement and MapMovers interactions across client and server devices
                 </li>
                 <li>
                     Investigated and contributed to incorporation of both AdvancedSteamSessions plugin and IP address to
                     host/join games
-                </li>
-                <li>
-                    Designed the MapMovers system, allowing the player to leverage objects in their environment to
-                    derail opponents
                 </li>
                 <li>
                     Created maps whose layouts encourage confrontation and interaction among players
@@ -208,7 +208,7 @@
                 Initially, player performance was measured through the use of
             </p> -->
             <h2>Networked Multiplayer Gameplay</h2>
-            <!-- TODO: write about which was computed on server only (physics) and which was allowed to run on clients,
+            <!-- (DONE?) TODO: write about which was computed on server only (physics) and which was allowed to run on clients,
             and why. Then talk about obstacles, why they run on the server, and which need to run on all (dragon) 
             Can also talk about choice between replicate, RepNotify decisions. Which variables need to be replicated
             and so on. The architecture basically .-->
@@ -221,11 +221,10 @@
                 all devices to ensure every player had the most up-to-date gameplay visuals.
             </p>
             <p>
-                <!-- TODO: -->
                 I implemented several MapMovers with different functionality, such as moving obstacles and triggering
                 hazards. These get activated when a player enters their associated trigger in the game world.
-                All MapMovers implement a common interface, so a single trigger can be connected to any type of
-                MapMover in a level for maximum flexibility.
+                All MapMovers implement a common interface, so a single trigger can be used to activate any type of
+                MapMover placed in a level for maximum flexibility.
 
                 <!-- the use of interfaces
                 Remember, this isn't documentation. Summarise!
@@ -286,9 +285,9 @@
                 the consumption of many a YouTube video and the traversal of even more Unreal Forums posts, but I  -->
 
             <!-- </p> -->
-            <!-- TODO: talk about joining via Steam and IP Address implementations -->
-            <!-- TODO: get rid of the speak about joining via ip address  -->
-            <!-- TODO: write to egert about port forwarding -->
+            <!-- (DONE?) TODO: talk about joining via Steam and IP Address implementations -->
+            <!-- (DONE?) TODO: get rid of the speak about joining via ip address  -->
+            <!-- (CANCELLED) TODO: write to egert about port forwarding -->
             <!-- TODO: port forwarding in next steps -->
 
             <p>
@@ -337,7 +336,7 @@
                 running on one machine, we still couldn't figure out how to test on a single machine, due to only
                 being able to be logged on to a single account at a time. -->
             </p>
-            <h2>MapMovers and Multiplayer Level Design</h2>
+            <h2><!-- MapMovers and Multiplayer -->Level Design</h2>
             <!-- Level design supports the target player experience throughout, by blending together linear and
                 non-linear spatial design elements. This results in multiple possible routes that players can take to
                 reach the hole. It also creates mini choke points where players are put in the danger zone of a hazard
@@ -351,44 +350,93 @@
 
             <!-- Position triggers that are just out of the way so that there is risk vs reward situation going on -->
             <p>
-                This was my first time designing levels for multiplayer gameplay in general, and so it was challenging
+                This was my first time designing levels for multiplayer gameplay in general, so it was challenging
+                to design map layouts that supported our design goal of player interaction throughout. My approach
+                blended linear and non-linear spatial design elements, to create maps with multiple possible routes that
+                players can take to reach the hole. I also placed MapMovers at choke points formed by converging routes
+                to increase player tension and engagement.
+                <!-- This was my first time designing levels for multiplayer gameplay in general, and so it was challenging
                 to experiment and come up with map layouts that supported player interaction throughout. My final
                 approach involved blending together linear and non-linear spatial design elements. This resulted in maps
                 containing multiple possible routes that players can take to reach the hole. I also placed MapMovers at
-                choke points formed by converging routes to increase player tension and engagement.
+                choke points formed by converging routes to increase player tension and engagement. -->
             </p>
             <p>
-                Additionally, I tried to balance player usage of MapMovers by positioning triggers off optimal routes to
+                Player usage of MapMovers was balanced by positioning triggers off optimal routes to the hole. This was
+                done to associate a cost with activating MapMovers, since players might need to sacrifice a shot in
+                order to sabotage others.
+                <!-- Additionally, I tried to balance player usage of MapMovers by positioning triggers off optimal routes to
                 the hole. This was done in order to create a cost associated with activating MapMovers, since players
-                might need to sacrifice a shot in order to sabotage others.
+                might need to sacrifice a shot in order to sabotage others. -->
                 <!-- balance
                     outside of optimal routes to the hole. This was done to encourage players to consider both
                     timing and judgment as critical factors when deciding whether to aim for a trigger or not. -->
                 <!-- TODO: might be a good idea to include some napkin sketches for before and after process shots -->
             </p>
             <h2>What I Would Improve</h2>
-            <h3>Preventing Degenerate Strategies</h3>
+            <h3>Polishing Multiplayer Gameplay</h3>
             <p>
-                Because time isn't factored into the current implementation of our scoring system, players can simply
-                wait at the start line for their opponents to wreak havoc on each other, before slowly making their way
-                to the hole without the need to worry about MapMovers being triggered. Players could either be penalised
-                for staying still for too long. Alternatively, players could be scoring based on time alone, and not the
-                number of strokes made.
+                Implementing a lobby will make the hosting/joining system more robust, since players are currently able
+                to join an in-progress game at any time. Also, displaying a progress screen
+                when waiting for players to finish loading into a level will create a smoother user experience.
             </p>
-            <h3>Getting a Better Grasp of AdvancedSteamSessions</h3>
+            <!-- <h3>Getting a Better Grasp of AdvancedSteamSessions</h3>
             <p>
                 Given more time, I'd like to dig deeper into the use of the AdvancedSteamSessions, and get a better
                 understanding of how the plugin works. The multiplayer systems we've created to-date <em>work</em>,
                 but they don't work <em>well</em>. There are a lot of bugs that ruin the overall player experience.
+            </p> -->
+            <h3>Preventing Degenerate Strategies</h3>
+            <!-- <p>
+                Currently, players can wait at the start line for opponents to wreak havoc on each other, before
+                making their way to the hole without worrying about MapMovers being triggered on them and affecting
+                their score. Time could be factored into future scoring system iterations to avoid this. -->
+            <!-- Players could either be
+                penalised
+                for staying still for too long. Alternatively, players could be scored based on time alone, and not the
+                number of strokes made.
+
+                playtest -->
+            <!-- Because time isn't factored into the current implementation of our scoring system, players can simply
+                wait at the start line for their opponents to wreak havoc on each other, before slowly making their way
+                to the hole without the need to worry about MapMovers being triggered. Players could either be penalised
+                for staying still for too long. Alternatively, players could be scored based on time alone, and not the
+                number of strokes made.
+
+                playtest -->
+            <!-- </p> -->
+            <!-- <h3>Updating the Scoring System</h3> -->
+            <p>
+                Time could be factored into the scoring system. Currently, a player can simply wait
+                at the start line for their opponents to sabotage each other, before making their way to the hole
+                after everyone else has done so without worrying about MapMovers affecting their score.
             </p>
+            <!-- <h3>Hold more playtests and </h3> -->
             <h3>Better Signalling MapMovers to the Player</h3>
             <p>
-                It can be difficult for a player to navigate MapMovers that get triggered; environments lack indexical
+                Adding <!-- indexical --> details conveying the "danger zones" of MapMovers might make them less
+                frustrating for players to navigate, and overall help ensure maps are not harder than intended to
+                traverse.
+                <!-- TODO: dragon example -->
+                <!-- than
+                intended to traverse
+                Without indexical elements, it can be difficult to navigate MapMovers that have been triggered. -->
+
+                <!-- It's about how the player perceives the level. If they feel like they're unable to control what's 
+                    happening around them, they're going to be frustrated -->
+
+                <!-- It can be difficult for a player to navigate MapMovers that get triggered; environments lack indexical
                 elements that help convey where "danger zones" lie. Players also sometimes struggle to make the
                 connection between a trigger and the MapMover it affects, since they aren't always placed within sight
                 of each other. Overall, making improvements to the environment and the placement of triggers in
                 relation to their corresponding MapMovers will be valuable in helping players find their way around
-                courses better.
+                maps better. -->
+                <!-- It can be difficult for a player to navigate MapMovers that get triggered; environments lack indexical
+                elements that help convey where "danger zones" lie. Players also sometimes struggle to make the
+                connection between a trigger and the MapMover it affects, since they aren't always placed within sight
+                of each other. Overall, making improvements to the environment and the placement of triggers in
+                relation to their corresponding MapMovers will be valuable in helping players find their way around
+                maps better. -->
             </p>
 
             <!-- TODO: process, how the team prioritised networking because it was at the core of gameplay.
