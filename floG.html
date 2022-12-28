@@ -115,13 +115,17 @@
             <p>
                 <i>floG</i> currently supports multiplayer games hosted via both Steam and IP address.
             </p>
-            <!-- TODO: you might want to rephrase the "networking was our priority" -->
             <p>
-                Networking was our priority for this project; we wanted to use it as a means to get a better
-                understanding of multiplayer development concepts in general, and apply them to Unreal 5. Our design
-                goals were therefore scoped to support our development priorities. Primarily, we wanted our golf game to
-                allow players to interact directly with one another while playing.
+                We wanted to use this project as a way to learn about multiplayer programming concepts, and get an
+                understanding of how to apply them to development in Unreal 5. We therefore picked design goals that
+                would let us explore our technical interests. Primarily, we wanted our golf game to
+                allow players to interact directly with one another synchronously while playing.
                 Level design was thus geared towards forcing confrontations between players during battles for first.
+                <!-- Networking was our priority for this project; we wanted to use it as a means to get a better
+                understanding of multiplayer development concepts in general, and apply them to Unreal 5. -->
+                <!-- goals were therefore scoped to support our development priorities. Primarily, we wanted our golf game to
+                allow players to interact directly with one another while playing.
+                Level design was thus geared towards forcing confrontations between players during battles for first. -->
             </p>
             <!-- <p>
                 However, we wanted to use this project to
@@ -152,18 +156,18 @@
                     Investigated use of joining games via IP address
                  -->
                 <li>
-                    Designed the MapMovers system, allowing the player to leverage objects in their environment to
-                    derail opponents
-                </li>
-                <li>
-                    Created maps whose layouts encourage confrontation and interaction among players
-                </li>
-                <li>
                     Networked player movement and MapMovers interactions across client and server devices
                 </li>
                 <li>
                     Investigated and contributed to incorporation of both AdvancedSteamSessions plugin and IP address to
                     host/join games
+                </li>
+                <li>
+                    Designed the MapMovers system, allowing the player to leverage objects in their environment to
+                    derail opponents
+                </li>
+                <li>
+                    Created maps whose layouts encourage confrontation and interaction among players
                 </li>
                 <li>
                     Designed and implemented menu screen UI
@@ -209,15 +213,21 @@
             Can also talk about choice between replicate, RepNotify decisions. Which variables need to be replicated
             and so on. The architecture basically .-->
             <p>
-                Because it was crucial that data for systems like scoring, physics, and MapMovers got synchronised
-                across all networked machines, vital calculations were handled solely on the server through
+                It was crucial that data for systems like scoring, physics, and MapMovers got synchronised across all
+                networked machines. Therefore, vital calculations were handled solely on the server through
                 reliable RPC calls, for the fairest possible play experience. On the other hand, triggering MapMovers
                 sometimes involved "cosmetic" gameplay events (like the spawning of particle systems) to
                 communicate their activation to other players. These events needed to be reliably executed on
                 all devices to ensure every player had the most up-to-date gameplay visuals.
             </p>
             <p>
-                A MapMover trigger can be connected to any type of MapMover in a level due to the use of interfaces
+                <!-- TODO: -->
+                I implemented several MapMovers with different functionality, such as moving obstacles and triggering
+                hazards. These get activated when a player enters their associated trigger in the game world.
+                All MapMovers implement a common interface, so a single trigger can be connected to any type of
+                MapMover in a level for maximum flexibility.
+
+                <!-- the use of interfaces
                 Remember, this isn't documentation. Summarise!
 
                 I implemented different kinds of MapMovers, each with their own functionality, such as moving obstacles
@@ -227,7 +237,7 @@
                 MapMover blueprint itself does not need to know anything about the trigger itself. Therefore, I made
                 each MapMover blueprint implement an interface containing a declaration for Activate. This allowed a
                 MapMover trigger to be connected to any type of MapMover in a level, creating flexible, clean, and more
-                intentional code.
+                intentional code. -->
 
                 <!-- the specifics of each implementation of Activate do not matter to the
                 trigger blueprint, I made each MapMover blueprint implement an interface containing a declaration for
@@ -274,29 +284,53 @@
             Steam multiplayer and IP addresses, as well as the benefits and drawbacks for each approach. -->
             <!-- It involved
                 the consumption of many a YouTube video and the traversal of even more Unreal Forums posts, but I  -->
-            </p>
+
+            <!-- </p> -->
             <!-- TODO: talk about joining via Steam and IP Address implementations -->
+            <!-- TODO: get rid of the speak about joining via ip address  -->
+            <!-- TODO: write to egert about port forwarding -->
+            <!-- TODO: port forwarding in next steps -->
+
             <p>
+                The current implementation for hosting and joining games via IP address only works for sessions created
+                within the player's local network. We wanted players to be able to connect through the internet,
+                so we chose to leverage Steam's servers using the AdvancedSteamSessions plugin.
+                <!-- We chose to use the AdvancedSteamSessions plugin because Unreal's online subsystem does not allow for
+                players to search for sessions outside their local network.
+
+                without the need for the use of IP addresses
+                and port forwarding, which was a no-no for security concerns.
+                , and we did not want to rely on the IP address implementation for hosting/joining games because of
+                security concerns.
+                Additionally, we did not want to use IP address with port forwarding as the main method, due to security
+                concerns
+                Since Unreal's built-in networking functionality can only search for sessions local to the network the
+                player is connected to,
                 Unreal CAN search for sessions. But it is limited to the local network the player is connected to.
                 By default, the only way a player can connect to a session outside their network is using an IP address
                 connection, with the help of port forwarding. For obvious security reasons, we opted to use the Steam
-                subsystem, since it does not require users to provide any information besides their steam account.
+                subsystem, since it does not require users to provide any information besides their steam account. -->
 
-                IP add
+                <!-- IP add
                 We elected
                 Creating and joining games via IP address limits the player to the local network they are connected to.
 
                 "Setting the project up to support IP Address hosting/joining was fairly straightforward and involved
                 the running of two separate console commands within Unreal to create and join a server. We wanted to
                 expand to Steam, as we wanted a way for players to join a networked game without having to disclose
-                their IP address"
-                Much of the challenges we faced were related to the incorporation of Steam multiplayer. We had to log
-                data to the screen to fix Steam-related bugs, since we couldn't figure out how to attach debuggers to
-                the standalone processes we were running to test Steam functionality.
+                their IP address" -->
+
+                <!-- Much of the challenges we faced were related to the incorporation of Steam multiplayer. We had to log -->
+                Much of the challenges we faced were related to the incorporation of the plugin itself. For starters, we
+                were unable to figure out a way to attach a debugger to the standalone processes we were running
+                to test Steam functionality. This led to us logging data to the screen as a workaround. The logistics of
+                testing our work was also challenging; we always needed at least two computers at any time.
+                <!-- log data to the screen to fix plugin-related bugs, since we couldn't figure out how to attach debuggers
+                to the standalone processes we were running to test Steam functionality. -->
                 <!-- though it sometimes required knowing the way memory was laid out
                 in order to view data contained in, for example, a struct being passed around. -->
-                The process of testing games hosted on Steam in itself was also challenging, since it meant we always
-                needed at least two computers at any time.
+                <!-- The process of testing games hosted on Steam in itself was also challenging, since it meant we always
+                needed at least two computers at any time. -->
                 <!-- Can mention that Unreal does allow for basic testing of multiplayer functionality, and we used
                 that to ensure that MapMovers and physics were being replicated correctly across server and clients.
                 But if it involved Steam, then standalone process. And even if we had multiple standalone processes
