@@ -62,11 +62,11 @@
             <h2>Fast Facts</h2>
             <p>
                 <b>Role: </b>Sole Developer<br>
-                <b>Timeframe: </b>4 weeks<br>
+                <b>Timeframe: </b>7 weeks<br>
                 <b>Engine: </b>Unity3D<br>
                 <b>Language: </b>C#<br>
             </p>
-            <h2>Concept</h2>
+            <h2>Concept and Design Goals</h2>
             <p>
                 <i>mrbl.</i> is mashup of the action puzzle shooters Luxor, Bust-a-Move, and Breakout. I remixed aspects
                 of each title's mechanics to create a new-yet-familiar medley of an experience, where speed, precision,
@@ -81,12 +81,11 @@
                 Players will use their trusty cannon to clear a bunch of marbles bouncing around an arena by
                 launching projectiles of the same colour at them. However, if a projectile either touches a marble of
                 the wrong colour or remains unmatched for too long, it becomes "stale", and joins other marbles in
-                aimlessly bouncing around the arena. While the goal is to clear marbles, players will also need to keep
+                aimlessly bouncing around the arena. While the goal is to clear marbles, players will need to keep
                 their cannon away from them, as the marbles will destroy it upon impact! Players can also aim for
                 targets that are placed in obscure locations throughout levels to gain bonus points.
             </p>
-            <!-- TODO: design goals? -->
-            <!-- TODO: capitalise on the way you handle the colour matching. You might have to refine this -->
+            <!-- (DONE) TODO: design goals? -->
             <!-- TODO: the way you handle loading in balls for a level could also be mentioned -->
             <!-- TODO: you cal also talk about the OO design, where the singleton stuff was important -->
             <!-- <h2>Responsibilities</h2>
@@ -99,12 +98,13 @@
                 <li>your</li>
                 <li>responsibilities</li>
             </ul> -->
-            <h2>Technical Details</h2>
+            <!-- <h2>Technical Details</h2> -->
             <h2>OOP Design</h2>
             <p>
                 In the current iteration, levels are loaded in sequence as the player completes them. The loading of
                 levels, as well as other state-related data, is handled by a singleton StateManager class that persists
                 in-between scenes.
+            </p>
             <h2> Projectile vs Marble System</h2>
             <p>
                 Marbles keep track of their individual colour, as well as whether they have been cleared by a
@@ -124,7 +124,7 @@
             TODO: And you can also talk about how you determine which of a projectile and a marble to destroy upon
             collision, since you dont want to call destroy on an object that doesnt exist anymore
             </p>
-            <h2>Things I'm Particularly Proud Of</h2>
+            <!-- <h2>Things I'm Particularly Proud Of</h2>
             <ul>
                 <li>
                     Programming bouncy physics for marbles and projectiles that felt just right and weren't
@@ -136,7 +136,7 @@
                 <li>
                     Playing
                 </li>
-            </ul>
+            </ul> -->
             <h2>Getting Familiar with Unity's Quirks</h2>
             <p>
                 I used this project to get more deeply acquainted with Unity's intricacies. Because bouncy physics are
@@ -147,14 +147,8 @@
                 about the different lifecycle hooks Unity affords, and how to leverage them to ensure that classes and
                 GameObjects are populated with all the data they need each time a new scene gets loaded.
             </p>
-            <h2>Target System</h2>
-            <p>
-                I wanted to find ways to reward the player for successfully pulling off cleverly-positioned trick shots,
-                because of how the bouncy game physics lends itself to such play styles. This gave rise to the
-                target system where the player can knock down targets placed in harder-to-reach areas to earn a point
-                bonus. However, hitting targets is completely optional, and isn't required of the player to complete a
-                level.
-            </p>
+
+            <!-- TODO: capitalise on the way you handle the colour matching. Data structure of choice was dict. why? You might have to refine this -->
             <h2>Colour Matching System</h2>
             <p>
                 Because levels are complete as soon as all marbles in the arena are cleared across all waves, I found it
@@ -169,13 +163,34 @@
                 at random from the dictionary's keys. Colours are removed from the dictionary when their count reaches
                 zero to ensure that a valid selection always occurs for the next projectile's colour.
             </p>
+
+            <h2>Target System</h2>
+            <p>
+                To support the goal of making gameplay centre around precision, the player is rewarded for making trick
+                shots to hit targets in hard-to-reach areas. However, hitting targets is completely optional, and isn't
+                required of the player to complete a level.
+                <!-- making trick shots leveraging the bouncy physics.
+                I wanted to find ways to reward the player for successfully pulling off cleverly-positioned trick shots,
+                because of how the bouncy game physics lends itself to such play styles. This gave rise to the
+                target system where the player can knock down targets placed in harder-to-reach areas to earn a point
+                bonus. However, hitting targets is completely optional, and isn't required of the player to complete a
+                level. -->
+            </p>
             <h2>Preventing Players from Feeling Overwhelmed</h2>
             <p>
+                Players can fill the arena very quickly if they miss a lot due to poor judgment. This can be
+                overwhelming; it forces the player to focus on dodging marbles instead of clearing them.
+
                 It's easy for players to overcrowd the arena if they spam-launch a large number of projectiles
                 continuously or just happen to make a lot of misses due to poor aim. Either way, this causes the arena
                 to fill up with bouncing marbles very quickly, making it very challenging for the player to avoid
                 collisions. This can be overwhelming, as it forces the player to focus more on dodging marbles instead
                 of clearing them, thus going against the goal of the game.
+                <!-- It's easy for players to overcrowd the arena if they spam-launch a large number of projectiles
+                continuously or just happen to make a lot of misses due to poor aim. Either way, this causes the arena
+                to fill up with bouncing marbles very quickly, making it very challenging for the player to avoid
+                collisions. This can be overwhelming, as it forces the player to focus more on dodging marbles instead
+                of clearing them, thus going against the goal of the game. -->
             </p>
             <p>
                 In the current iteration, I tried to mitigate this issue by decreasing the speed at which marbles travel
@@ -187,6 +202,7 @@
                 In a future iteration, I may also look into adding restrictions on how often the player is allowed
                 to fire projectiles.
             </p>
+
             <h2>Next Steps</h2>
             <p>
                 Precision and finding ways to leverage the bouncy game physics has always been at the core of
