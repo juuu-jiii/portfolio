@@ -80,7 +80,7 @@
             <p>
                 Players will use their trusty cannon to clear a bunch of marbles bouncing around an arena by
                 launching projectiles of the same colour at them. However, if a projectile either touches a marble of
-                the wrong colour or remains unmatched for too long, it becomes "stale", and joins other marbles in
+                the wrong colour or remains unmatched for too long, it turns into a marble <!-- becomes "stale" -->, and joins others in
                 aimlessly bouncing around the arena. While the goal is to clear marbles, players will need to keep
                 their cannon away from them, as the marbles will destroy it upon impact! Players can also aim for
                 targets that are placed in obscure locations throughout levels to gain bonus points.
@@ -149,8 +149,18 @@
             </p>
 
             <!-- TODO: capitalise on the way you handle the colour matching. Data structure of choice was dict. why? You might have to refine this -->
-            <h2>Colour Matching System</h2>
+            <h2>Projectile Generation System <!-- Colour Matching System --></h2>
             <p>
+                The player is able to see the colour of the next projectile they will shoot in the game. This colour will always match that of a marble already in the arena. This prevents levels from dragging on unfairly if the player isn't given colours they need.<!-- selected from The player is always given projectiles whose colours match those of marbles already in the arena. --> 
+                </p>
+                <p>
+                To do this, a dictionary is used to track quantities of marbles and projectiles in the arena. The key is the colour, and the value is the count. The count gets updated each time a marble or projectile is instantiated or destroyed. When all instances of a colour have been cleared, the corresponding entry is removed from the dictionary altogether. The colour of the next projectile the player shoots is then selected at random from the dictionary. 
+                
+                <!-- A dictionary is used to track quantities of marbles and projectiles in the arena, with the key being the colour, and the value being the count. Each time a marble or projectile is instantiated, it is logged in the dictionary. When a colour's quantity == 0, it is removed from the dictionary. The colour of the next marble the player shoots is then obtained by grabbing a random colour from the dictionary. The player is therefore always given projectiles whose colours match those of marbles in the arena. This prevents levels from dragging on due to situations where the
+                player isn't given the colour they need, which can be construed as unfair.
+                
+                Each time a marble or projectile is instantiated, it is added to an underlying dictionary where keys are colours and values are the quantities of each colour. If the dictionary does not already contain an entry for a colour, one is created. When a colour's quantity == 0, it is removed from the dictionary. The colour of the next marble the player shoots is then obtained by grabbing a random colour from the dictionary. This ensures the player is 
+            
                 Because levels are complete as soon as all marbles in the arena are cleared across all waves, I found it
                 important that the player's cannon always gets loaded with a projectile whose colour matches at least
                 one existing marble in the arena. This prevents levels from dragging on due to situations where the
@@ -161,14 +171,14 @@
                 that dictionaries were the best data structure for the job. The key for the dictionary is the colour,
                 and the value is a running total of marbles/projectiles of that colour. Projectile colours are selected
                 at random from the dictionary's keys. Colours are removed from the dictionary when their count reaches
-                zero to ensure that a valid selection always occurs for the next projectile's colour.
+                zero to ensure that a valid selection always occurs for the next projectile's colour. -->
             </p>
 
             <h2>Target System</h2>
             <p>
-                To support the goal of making gameplay centre around precision, the player is rewarded for making trick
-                shots to hit targets in hard-to-reach areas. However, hitting targets is completely optional, and isn't
-                required of the player to complete a level.
+                To support the goal of making gameplay centre around precision, the player is rewarded with bonus points for making trick
+                shots and hitting targets in hard-to-reach areas. However, due to the added complexity targets bring,
+                clearing them is completely optional, and isn't required to complete a level.
                 <!-- making trick shots leveraging the bouncy physics.
                 I wanted to find ways to reward the player for successfully pulling off cleverly-positioned trick shots,
                 because of how the bouncy game physics lends itself to such play styles. This gave rise to the
@@ -178,30 +188,36 @@
             </p>
             <h2>Preventing Players from Feeling Overwhelmed</h2>
             <p>
+                All marbles slow down as the arena fills up. This was done to prevent players from feeling
+                overwhelmed if the arena gets too full. It also keep players focused on the primary goal of clearing marbles 
+                during gameplay, instead of dodging them. When the player clears enough marbles, 
+                they start speeding up again to maintain a balance of difficulty.
+                <!-- players focused on clearing marbles during gameplay instead of dodging them if the arena gets
+                too full, and prevent them from feeling overwhelmed. 
+                from feeling overwhelmed if the arena gets too full
                 Players can fill the arena very quickly if they miss a lot due to poor judgment. This can be
-                overwhelming; it forces the player to focus on dodging marbles instead of clearing them.
+                overwhelming, and forces the player to focus on dodging marbles instead of clearing them. This is
+                mitigated
 
-                It's easy for players to overcrowd the arena if they spam-launch a large number of projectiles
-                continuously or just happen to make a lot of misses due to poor aim. Either way, this causes the arena
-                to fill up with bouncing marbles very quickly, making it very challenging for the player to avoid
-                collisions. This can be overwhelming, as it forces the player to focus more on dodging marbles instead
-                of clearing them, thus going against the goal of the game.
+                In the current iteration, I tried to mitigate this issue by decreasing the speed at which marbles travel
+                around based on how many there are in total bouncing around in the arena. The larger the number of
+                marbles present, the slower they travel, until a certain lower bound is reached. As soon as the player
+                is able to clear enough marbles, they start speeding up again to maintain a balance of difficulty. -->
                 <!-- It's easy for players to overcrowd the arena if they spam-launch a large number of projectiles
                 continuously or just happen to make a lot of misses due to poor aim. Either way, this causes the arena
                 to fill up with bouncing marbles very quickly, making it very challenging for the player to avoid
                 collisions. This can be overwhelming, as it forces the player to focus more on dodging marbles instead
-                of clearing them, thus going against the goal of the game. -->
+                of clearing them, thus going against the goal of the game.
             </p>
             <p>
                 In the current iteration, I tried to mitigate this issue by decreasing the speed at which marbles travel
                 around based on how many there are in total bouncing around in the arena. The larger the number of
                 marbles present, the slower they travel, until a certain lower bound is reached. As soon as the player
                 is able to clear enough marbles, they start speeding up again to maintain a balance of difficulty.
-            </p>
-            <p>
-                In a future iteration, I may also look into adding restrictions on how often the player is allowed
-                to fire projectiles.
-            </p>
+            </p> -->
+            <!-- <p>
+                In a future iteration, I want to experiment with restricting the player's projectile fire rate to prevent them from filling up the arena by spam-firing projectiles. TODO: put into next steps
+            </p> -->
 
             <h2>Next Steps</h2>
             <p>
