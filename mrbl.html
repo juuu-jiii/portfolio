@@ -121,11 +121,12 @@
             <p>
                 Marbles keep track of their individual colour, as well as whether they have been cleared by a
                 projectile, Projectiles have these same fields, but also have additional logic
-                added to handle colour matching when colliding with another marble. 
+                added to handle colour matching when colliding with another marble. triggering events. marble vs pro and pro vs pro
+                Marking gameobj's for removal by a manager class by the end of the update loop that frame
                 It made sense, then, to make projectiles to inherit from a base marble class, and have methods added or overridden as necessary.
             </p>
 
-            <p>
+            <!-- <p>
                 you could also make
                 I also learned about how to implement certain design
                 patterns in Unity. This included creating a singleton GameManager class that could persist between
@@ -135,7 +136,7 @@
 
                 TODO: And you can also talk about how you determine which of a projectile and a marble to destroy upon
                 collision, since you dont want to call destroy on an object that doesnt exist anymore
-            </p>
+            </p> -->
             <!-- <h2>Things I'm Particularly Proud Of</h2>
             <ul>
                 <li>
@@ -149,7 +150,7 @@
                     Playing
                 </li>
             </ul> -->
-            <-- <h2>Getting Familiar with Unity's Quirks</h2>
+            <!-- <h2>Getting Familiar with Unity's Quirks</h2>
             <p>
                 I used this project to get more deeply acquainted with Unity's intricacies. Because bouncy physics are
                 a cornerstone to <i>mrbl.</i>, I had to tinker around with its built-in physics engine until the way the
