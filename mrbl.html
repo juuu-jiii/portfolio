@@ -117,13 +117,14 @@
                 levels, as well as other state-related data, is handled by a singleton StateManager class that persists
                 in between scenes.
             </p> -->
-            <h2>Projectile vs Marble System</h2>
+            <h2>OO Design: Marbles and Projectiles</h2>
             <p>
-                Marbles keep track of their individual colour, as well as whether they have been cleared by a
-                projectile, Projectiles have these same fields, but also have additional logic
-                added to handle colour matching when colliding with another marble. triggering events. marble vs pro and pro vs pro
-                Marking gameobj's for removal by a manager class by the end of the update loop that frame
-                It made sense, then, to make projectiles to inherit from a base marble class, and have methods added or overridden as necessary.
+                Marbles keep track of their individual colour, as well as whether they have been matched. Projectiles have similar fields, but also have additional logic
+                added to handle colour matching during collisions. This includes event triggers that mark matched marbles and projectiles for removal at the end of the update loop by a manager class. 
+                It made sense, then, to make projectiles inherit from a Marble class, and then have methods added or overridden as necessary within the Projectile class itself.
+                <!-- matched marbles and projectiles for removal triggering events. marble vs pro and pro vs pro
+                Marking gameobj's for removal by a manager class by the end of the update loop that frame -->
+                
             </p>
 
             <!-- <p>
