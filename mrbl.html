@@ -111,19 +111,18 @@
                 <li>responsibilities</li>
             </ul> -->
             <!-- <h2>Technical Details</h2> -->
-            <h2>OOP Design</h2>
+            <h2>OO Design</h2>
             <p>
                 In the current iteration, levels are loaded in sequence as the player completes them. The loading of
                 levels, as well as other state-related data, is handled by a singleton StateManager class that persists
-                in-between scenes.
+                in between scenes.
             </p>
-            <h2> Projectile vs Marble System</h2>
+            <h2>Projectile vs Marble System</h2>
             <p>
                 Marbles keep track of their individual colour, as well as whether they have been cleared by a
-                projectile, Projectiles also keep track of their colour, but have additional collision-related logic
-                added. Besides
-                Structurally speaking, it made sense for projectiles to inherit from a base marble class, with
-                additional collision-related logic being added.
+                projectile, Projectiles have these same fields, but also have additional logic
+                added to handle colour matching when colliding with another marble. 
+                It made sense, then, to make projectiles to inherit from a base marble class, and have methods added or overridden as necessary.
             </p>
 
             <p>
