@@ -68,23 +68,34 @@
             </p>
             <h2>Concept and Design Goals</h2>
             <p>
-                <i>mrbl.</i> is mashup of the action puzzle shooters Luxor, Bust-a-Move, and Breakout. I remixed aspects
-                of each title's mechanics to create a new-yet-familiar medley of an experience, where speed, precision,
+                <i>mrbl.</i> remixes mechanics of the action puzzle shooters Luxor, Bust-a-Move, and Breakout to create a new-yet-familiar medley of an experience. 
+                The core experience is focused on encouraging the player to take risks and rely on pinpoint timing and accuracy to make skill shots quickly and consistently.
+                
+                
+                <!-- Speed, precision,
                 and colour matching are the focus of gameplay.
+                
+                Gameplay focuses on fast-paced moments filled with
+                manoeuvring obstacles and tackling technical sections of track, whilst racing against the clock to
+                complete laps as quickly as possible. -->
 
 
                 <!-- I designed a matching system that tracks the number of balls in the arena, such that only colours that
-                exist are presented to the player. I also made the system manage ball speed based on quantity to prevent
+               exist are presented to the player. I also made the system manage ball speed based on quantity to prevent
                 crowded levels from being too overwhelming. -->
             </p>
             <p>
-                Players will use their trusty cannon to clear a bunch of marbles bouncing around an arena by
+                Players use a cannon to clear marbles bouncing around an arena by
+                launching projectiles of a matching colour at them. If a projectile touches a marble of
+                the wrong colour or remains unmatched for too long, it turns into a marble <!-- becomes "stale" --> itself. Marbles destroy the cannon upon impact, so players need to
+                keep their cannon away from them. Targets, worth bonus points if hit, are placed in obscure locations throughout levels. 
+                <!--Players will use their trusty cannon to clear a bunch of marbles bouncing around an arena by
                 launching projectiles of the same colour at them. However, if a projectile either touches a marble of
-                the wrong colour or remains unmatched for too long, it turns into a marble <!-- becomes "stale" -->, and
+                the wrong colour or remains unmatched for too long, it turns into a marble <!-- becomes "stale" --><!-- , and
                 joins others in
                 aimlessly bouncing around the arena. While the goal is to clear marbles, players will need to keep
                 their cannon away from them, as the marbles will destroy it upon impact! Players can also aim for
-                targets that are placed in obscure locations throughout levels to gain bonus points.
+                targets that are placed in obscure locations throughout levels to gain bonus points.-->
             </p>
             <!-- (DONE) TODO: design goals? -->
             <!-- TODO: the way you handle loading in balls for a level could also be mentioned -->
@@ -139,7 +150,7 @@
                     Playing
                 </li>
             </ul> -->
-            <h2>Getting Familiar with Unity's Quirks</h2>
+            <-- <h2>Getting Familiar with Unity's Quirks</h2>
             <p>
                 I used this project to get more deeply acquainted with Unity's intricacies. Because bouncy physics are
                 a cornerstone to <i>mrbl.</i>, I had to tinker around with its built-in physics engine until the way the
@@ -148,15 +159,14 @@
                 scenes during runtime, and modifying a MonoBehaviour to behave like a generic C# class. I also learned
                 about the different lifecycle hooks Unity affords, and how to leverage them to ensure that classes and
                 GameObjects are populated with all the data they need each time a new scene gets loaded.
-            </p>
+            </p> -->
 
             <!-- TODO: capitalise on the way you handle the colour matching. Data structure of choice was dict. why? You might have to refine this -->
             <h2>Projectile Generation System <!-- Colour Matching System --></h2>
             <p>
-                The player is able to see the colour of the next projectile they will shoot in the game. This colour
-                will always match that of a marble already in the arena. This prevents levels from dragging on unfairly
-                if the player isn't given colours they
-                need.<!-- selected from The player is always given projectiles whose colours match those of marbles already in the arena. -->
+                The player is able to see the colour of the next projectile they will shoot in-game. This colour is determined by RNG, but
+                will always match that of a marble already present in the arena, to prevent levels from dragging on unfairly
+                if the player isn't given colours they need.<!-- selected from The player is always given projectiles whose colours match those of marbles already in the arena. -->
             </p>
             <p>
                 To do this, the colour of the next projectile the player shoots is selected at random from a dictionary
@@ -165,8 +175,8 @@
                 instantiated or destroyed. When all instances of a colour have been cleared, the corresponding entry is
                 removed from the dictionary altogether.
 
-                a dictionary is used to track quantities of marbles and projectiles in the arena. The colour
-                <!-- of the next projectile the player shoots is selected at random from this same dictionary. The key is
+                <!-- a dictionary is used to track quantities of marbles and projectiles in the arena. The colour
+                of the next projectile the player shoots is selected at random from this same dictionary. The key is
                 the colour, and the value is the count. The count gets updated each time a marble or projectile is
                 instantiated or destroyed. When all instances of a colour have been cleared, the corresponding entry is
                 removed from the dictionary altogether. -->
@@ -237,7 +247,13 @@
             </p> -->
 
             <h2>Next Steps</h2>
+            <h3>
+                Encouraging Trick Shots
+            </h3>
             <p>
+                At its core, <i>mrbl.</i> is about precision and making trick shots. Besides targets, however, the player has little reason to play aggressively. To incentivise players to take more risks, longer-range shots could be rewarded with more points.
+            </p>
+            <!-- <p>
                 Precision and finding ways to leverage the bouncy game physics has always been at the core of
                 <i>mrbl.</i>
                 As such, I want to encourage players to take more risks with the physics system. As it stands,
@@ -246,14 +262,16 @@
                 longer-distance shots are acknowledged and rewarded appropriately. An alternative is to account for the
                 number of bounces a projectile makes before matching with a marble, and factoring that into the player's
                 score.
-            </p>
+            </p> -->
+            <h3>Designing for Accessibility</h3>
             <p>
-                Because much of <i>mrbl.</i>'s gameplay mechanics revolve around the use of colour, it is very important
-                that I design for accessibility at some point. One way to do this would be to use symbols to denote each
-                colour in the game. Another option would be to provide preset, or even fully-customisable, colour
-                palettes such that folks of different backgrounds can be accommodated accordingly.
+                <i>mrbl.</i>'s mechanics revolve around the use of colour, so accessible design is important.
+                Symbols could be used to denote colours in-game. Alternatively, the colour scheme could be made player-configurable.
             </p>
-            <p>powerups</p>
+            <h3>Pickups</h3> 
+            <p>
+                Power-ups that fall from the top of the screen can add variety to the game. Power-downs could also be dropped occasionally to keep gameplay interesting, by giving the player something else to avoid.
+            </p>
 
             <!-- <h2>
                 Design Goals
