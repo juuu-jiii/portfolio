@@ -39,8 +39,15 @@
         </div>
     </div>
     <div id="wrapper">
-        <p><a href="blank-slate.html">&lt; Back to Home</a></p>
-        <div class="slick-carousel">
+        <!-- <div class="button-target"> -->
+            <!-- <p><a href="blank-slate.html">&#8672; Back to Home</a></p> -->
+            <a href="" class="button-target">&#8672; Back to Home</a>
+        <!-- </div> -->
+
+        <p class="epilepsy-warning">
+            <b>CONTENT WARNING: This video may trigger seizures for people with photosensitive epilepsy.</b>
+        </p>
+        <!-- <div class="slick-carousel">
             <div class="slick-item">
                 <div class="img">
                     <img class="content-card-img" src="media/project1-1.png">
@@ -56,9 +63,17 @@
                     <img class="content-card-img" src="media/project1-3.png">
                 </div>
             </div>
-        </div>
+        </div> -->
+        <video controls>
+            <source src="media/the-tunnels/the-tunnels-gameplay.mp4" type="video/mp4">
+            This browser does not support video.
+        </video>
         <div class="content">
-            <h1>The Tunnels</h1>
+            <div id="title">
+                <h1>The Tunnels</h1>
+                <a href="" class="button-target">Play the Game!</a>
+                <!-- <button class="project-button">Play Game</button> -->
+            </div>
             <h2>Fast Facts</h2>
             <p>
                 <b>Team Size: </b>4<br>
@@ -94,8 +109,8 @@
                 We decided early on that the "entity" chasing the player would be a balloon version of our school
                 mascot, called Balloon Ritchie. We also wanted to avoid overt use of grotesque or violent themes, as we
                 didn't think those were essential elements to drive the game's narrative. The keywords we used to
-                describe the target player experience were "paranoid", "eerie", and "unsettling". Level design in the
-                game supports these main themes and the player's emotions over time.
+                describe the target player experience were "paranoid", "eerie", and "unsettling".
+                <!-- Level design in the game supports these main themes and the player's emotions over time. -->
             </p>
             <h2>Responsibilities</h2>
             <ul>
@@ -179,7 +194,25 @@
             <p>
                 I used lighting as a primary source of tension. The number of flickering and fused ceiling lights
                 increases as the player traverses the rooms to create the impression that things are taking a turn for
-                the worse. However, in the fourth puzzle room, all ceiling lights work fine, and background music used
+                the worse.
+            </p>
+            <figure>
+                <img class="project-img" src="media/the-tunnels/puzzle-room-lighting-1.gif"
+                    alt="Flickering lights in puzzle rooms">
+                <!-- <figcaption>Chase room lighting</figcaption> -->
+            </figure>
+            <figure>
+                <img class="project-img" src="media/the-tunnels/puzzle-room-lighting-2.gif"
+                    alt="Flickering lights in puzzle rooms">
+                <figcaption>Flickering lights in the first few puzzle rooms</figcaption>
+            </figure>
+            <figure>
+                <img class="project-img" src="media/the-tunnels/puzzle-room-lighting-1.png"
+                    alt="Fused lights in puzzle rooms">
+                <figcaption>Fused lights in puzzle rooms</figcaption>
+            </figure>
+            <p>
+                However, in the fourth puzzle room, all ceiling lights work fine, and background music used
                 in the first three puzzle rooms is absent. This contrast serves as the "calm before the storm", hinting
                 at the fact that something awaits the player in the next room. This next room is where the player must
                 encounter Balloon Ritchie one last time before they can escape and beat the game.
@@ -192,6 +225,11 @@
                 concern that things are increasingly taking a turn for the worse. I also used darkness
                 within the third puzzle room, in which there are areas where ceiling lights are fused. -->
             </p>
+            <figure>
+                <img class="project-img" src="media/the-tunnels/puzzle-room-lighting-3.gif"
+                    alt="Lighting in final puzzle room">
+                <figcaption>Lighting in final puzzle room &mdash; things look normal... or are they?</figcaption>
+            </figure>
             <!-- <p>
                 I used contrast in the fourth puzzle room to bring tension build-up to a head. Here, all ceiling lights
                 work perfectly fine, with none flickering. Furthermore, background music that was used in the first
@@ -202,16 +240,21 @@
             </p> -->
             <p>
                 In chase rooms, lighting and background music are significantly different to communicate impending
-                danger to the player. Ceiling lights turn red to create an ominous atmosphere. Background music
-                features a higher BPM, dissonant chords, and a high-pitched raid siren intro to fuel a perception of
-                urgency.
+                danger to the player. Visually, there is also graffiti on the walls containing ominous messages. Ceiling
+                lights turn red to create an ominous atmosphere. Background music features a higher BPM, dissonant
+                chords, and a high-pitched raid siren to fuel a perception of urgency.
             </p>
+            <figure>
+                <img class="project-img" src="media/the-tunnels/chase-room-lighting.gif" alt="Chase room lighting">
+                <figcaption>Chase room lighting</figcaption>
+            </figure>
             <!-- <p>
                 In chase rooms, graffiti is used on walls to signal the player about the upcoming encounter with Balloon
                 Ritchie. Ceiling lights turn red to produce an enhanced sense of danger. In conjunction with this, a  
                 (red lights, raid siren, chase music. scope, so we had to outsource this music)
             </p> -->
             <h2>Environmental Narrative</h2>
+            <!-- <img class="project-img" src="media/the-tunnels/vignette-2.png" alt="&quot;Hidden&quot; Vignettes"> -->
             <p>
                 Narrative is delivered to the player in the form of "hidden" vignettes; by exploring levels, the
                 player can discover small posters whose content, if put together, provides the game's backstory.
@@ -219,50 +262,29 @@
                 constraints.
                 <!-- Based on time constraints, this implementation made the most sense to us scope-wise. -->
                 <!-- became a stretch goal that couldn't be
-                accomplished on time. -->
+                    accomplished on time. -->
 
                 <!-- TODO: process, how it was a small team, and how you had to take on multiple roles -->
 
                 <!-- Part of early team discussions revolved around the game's narrative design, and how that would be
-                delivered to the player. One stretch goal included using alternate textures on the walls and pipes
-                featuring claw marks to warn the player of impending danger. Another involved the placement of limp bits
-                of rubber throughout later puzzle levels to imply that their stalker is, in fact, made of balloons.
-                Because of scope concerns and time constraints, however, I included the storyline as "hidden" vignettes
-                in-game. More specifically, by exploring the levels, the player will discover small posters whose
-                content, if put together, serves to give them context and clue them in on the backstory. -->
+                        delivered to the player. One stretch goal included using alternate textures on the walls and pipes
+                        featuring claw marks to warn the player of impending danger. Another involved the placement of limp bits
+                        of rubber throughout later puzzle levels to imply that their stalker is, in fact, made of balloons.
+                        Because of scope concerns and time constraints, however, I included the storyline as "hidden" vignettes
+                        in-game. More specifically, by exploring the levels, the player will discover small posters whose
+                        content, if put together, serves to give them context and clue them in on the backstory. -->
             </p>
+            <figure>
+                <img class="project-img" src="media/the-tunnels/vignette-1.png" alt="&quot;Hidden&quot; Vignettes">
+                <figcaption>"Hidden" Vignettes</figcaption>
+            </figure>
             <!-- <h2>Audiovisual Cues</h2>
             <p>
                 Using a bunch of triggers
             </p> -->
-            <!-- <h2>Snappy Controls</h2>
-            <p>
-                At the heart of <i>TapRacing</i> is its snappy and responsive control system. If tracks are to be
-                constructed such that their geometry features sets of consecutive corners and tight turns, then players
-                need to be equipped with the means to navigate such perils. It was thus important that vehicles in the
-                game be able to turn at the push of a button, because of the intended fast-paced, reflex-reliant player
-                experience. To this end, I had to make sure that the physics were tweaked such that the handling model
-                performed as expected.
-            </p>
-            <h2>Checkpoint System</h2>
-            <p>
-                The handling model is set up to treat head-on collisions with barriers as crashes, after which
-                the player gets reset on the track following a one-second delay. In order to prevent player
-                frustration, a checkpoint system was added to identify the best location on the track to reset player
-                vehicles. Currently, the player is reset a small distance from the corner where the impact occurred.
-                This was done to give them enough time to react and clear the corner as soon as they step on the
-                accelerator.
-            </p>
-            <p>
-                The checkpoint system also serves as a way to mitigate cheating behaviours. Because all checkpoints in
-                a track must be cleared in order before the player is considered to have completed a lap, this means
-                that attempts to cut corners and find "shortcuts" around tracks are discouraged. Through playtesting
-                and understanding where cheating is more likely to occur, it will become clearer as to which areas
-                should feature more checkpoints or, in more extreme cases, have their geometry reworked.
-            </p> -->
             <h2>What I Would Improve</h2>
             <!-- <h3>AI Cars</h3> -->
-            <h3>Level Design Improvements</h3>
+            <h3>Level Design</h3>
             <p>
                 Keys in puzzle rooms can be difficult to find, so lighting could be leveraged to guide the player around
                 subtly. On top of that, a UI hint system could be implemented to prevent players from getting stuck.
@@ -277,6 +299,20 @@
                 toward the player, it can be too fast or too slow at times. Varying this so it speeds up when far away
                 from the player and slows down when nearby may help produce a more balanced and engaging experience
                 overall.
+            </p>
+            <h2>Play the Game!</h2>
+            <h3>Controls</h3>
+            <ul>
+                <li>WASD: movement</li>
+                <li>Space: jump</li>
+                <li>Mouse: look around</li>
+                <li>Left mouse button: interact with items/pick items up</li>
+                <li>Hold LEFT SHIFT while walking to sprint</li>
+            </ul>
+            <br>
+            <a href="" class="button-target">Link to Build</a>
+            <p class="epilepsy-warning">
+                <b>CONTENT WARNING: This video may trigger seizures for people with photosensitive epilepsy.</b>
             </p>
             <!-- <ul>
                 <li>
@@ -433,22 +469,22 @@
     </footer>
 
     <!-- Slick -->
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <!-- <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script> -->
     <!-- Slick function -->
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         // $('.fade').slick();
-        $(document).ready(function () {
-            $('.slick-carousel').slick({
+        // $(document).ready(function () {
+            // $('.slick-carousel').slick({
                 // dots: true,
-                infinite: true,
-                speed: 500,
-                fade: true,
-                cssEase: 'linear',
+                // infinite: true,
+                // speed: 500,
+                // fade: true,
+                // cssEase: 'linear',
                 // zIndex: 9999,
                 // nextArrow: 'next-arrow',
-                nextArrow: '<span class="slick-prev slick-arrow prev-arrow" aria-label="Next" type="button" style=""><i class="fas fa-angle-double-left"></i></span>',
-                prevArrow: '<span class="slick-prev slick-arrow next-arrow" aria-label="Previous" type="button" style=""><i class="fas fa-angle-double-right"></i></span>',
+                // nextArrow: '<span class="slick-prev slick-arrow prev-arrow" aria-label="Next" type="button" style=""><i class="fas fa-angle-double-left"></i></span>',
+                // prevArrow: '<span class="slick-prev slick-arrow next-arrow" aria-label="Previous" type="button" style=""><i class="fas fa-angle-double-right"></i></span>',
                 // variableWidth: true,
                 // adaptableHeight: true
                 // prevArrow: '<span class="prev-arrow"><i class="fas fa-angle-double-left"></i></span>'
@@ -475,9 +511,9 @@
                 //         }
                 //     }
                 // ]
-            });
-        });
-    </script>
+        //     });
+        // });
+    </script> -->
 </body>
 
 </html>

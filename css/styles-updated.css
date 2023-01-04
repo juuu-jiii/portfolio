@@ -19,7 +19,8 @@ header p,
 .content h2,
 .content h3,
 .content p,
-.content li {
+.content li,
+figcaption {
     color: #293F65;
 }
 
@@ -67,6 +68,31 @@ main {
     height: 100%;
 }
 
+figure {
+    margin-top: 0em;
+    margin-bottom: 0em;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+figcaption {
+    margin-top: 0.1em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.project-img {
+    /* max-width: 49.75%; */
+    max-width: 100%;
+    height: 100%;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto 1280 / 720;
+}
+
 .caption {
     /* (C1) DIMENSIONS */
     box-sizing: border-box;
@@ -107,12 +133,29 @@ main {
     transition-duration: 0.2s;
 }
 
-.caption button:hover {
+.button-target {
+    background-color: #6e8ec4;
+    color: white !important;
+    text-decoration: none;
+    border: none;
+    font-size: 1rem;
+    padding: 0.6rem 0.85rem;
+    margin: 20px 0px;
+    /* size: 10em 5em; */
+    border-radius: 5px;
+    transition-duration: 0.2s;
+}
+
+.caption button:hover, .button-target:hover {
     background-color: #7f99c5;
 }
 
-.caption button:active {
+.caption button:active, .button-target:active {
     background-color: #41649c;
+}
+
+.epilepsy-warning {
+    color:rgb(141, 2, 2) !important;
 }
 
 footer {
@@ -137,7 +180,8 @@ footer small {
 }
 
 /* Remove the underline. */
-a, footer a {
+a,
+footer a {
     text-decoration: none;
 }
 
@@ -336,6 +380,11 @@ a:active {
     display: inline-block;
 }
 
+#title {
+    display: flex;
+    justify-content: space-between;
+}
+
 /* TODO: media queries for slick carousel */
 
 @media screen and (min-width: 350px) {
@@ -347,7 +396,9 @@ a:active {
         height: auto;
     }
 
-    .navbar a, .dropdown-button, .dropdown-content a {
+    .navbar a,
+    .dropdown-button,
+    .dropdown-content a {
         font-size: 0.7rem;
     }
 
@@ -362,7 +413,7 @@ a:active {
     .caption h1 {
         font-size: 1rem;
     }
-    
+
     .caption p {
         font-size: 0.8rem;
     }
@@ -380,7 +431,7 @@ a:active {
     .caption h1 {
         font-size: 1.3rem;
     }
-    
+
     .caption p {
         font-size: 0.9rem;
     }
@@ -395,7 +446,9 @@ a:active {
         height: auto;
     }
 
-    .navbar a, .dropdown-button, .dropdown-content a {
+    .navbar a,
+    .dropdown-button,
+    .dropdown-content a {
         font-size: medium;
     }
 
@@ -406,7 +459,7 @@ a:active {
     .caption h1 {
         font-size: xx-large;
     }
-    
+
     .caption p {
         font-size: medium;
     }
