@@ -113,14 +113,14 @@
                     to the creation of an unsettling atmosphere riddled with dread. -->
             </p>
             <p>
-                <i>floG</i> currently supports multiplayer games hosted via both Steam and IP address.
+                <i>floG</i> currently supports online matchmaking via Steam and IP address.
             </p>
             <p>
                 We wanted to use this project as a way to learn about multiplayer programming concepts, and get an
                 understanding of how to apply them to development in Unreal 5. We therefore picked design goals that
                 would let us explore our technical interests. Primarily, we wanted our golf game to
                 allow players to interact directly with one another synchronously while playing.
-                Level design was then geared towards forcing confrontations between players during battles for first.
+                Level design was thus geared towards forcing confrontations between players during battles for first.
                 <!-- Networking was our priority for this project; we wanted to use it as a means to get a better
                 understanding of multiplayer development concepts in general, and apply them to Unreal 5. -->
                 <!-- goals were therefore scoped to support our development priorities. Primarily, we wanted our golf game to
@@ -220,11 +220,17 @@
                 communicate their activation to other players. These events needed to be reliably executed on
                 all devices to ensure every player had the most up-to-date gameplay visuals.
             </p>
+            
+            <!-- TODO: gif of physics being replicated. caption: physics are handled ons the server then synchronised across all networked machines
+            gif of mapmovers MOVING and VFX caption: mapmovers require synchronisation of both location and particle systems across all networked machines -->
+            
             <p>
                 I implemented several MapMovers with different functionality, such as moving obstacles and triggering
                 hazards. These get activated when a player enters their associated trigger in the game world.
                 All MapMovers implement a common interface, so a single trigger can be used to activate any type of
-                MapMover placed in a level for maximum flexibility.
+                MapMover placed in a level for added flexibility.
+                
+                <!-- TODO: gif of all types of MapMovers. caption: description of what each mapmover does -->
 
                 <!-- the use of interfaces
                 Remember, this isn't documentation. Summarise!
@@ -293,7 +299,12 @@
             <p>
                 The current implementation for hosting and joining games via IP address only works for sessions created
                 within the player's local network. We wanted players to be able to connect through the internet,
-                so we chose to leverage Steam's servers using the AdvancedSteamSessions plugin.
+                so we chose to leverage Steam for matchmaking using the AdvancedSteamSessions plugin.
+                 
+                
+                <!-- TODO: image of UI to host and join games. caption: the menu screen where players can choose to host or join games
+                image of sessionbrowser widget with sessions hosted (take from zoom?). caption: the session browser leverages Steam to search for games the player can join. -->
+                
                 <!-- We chose to use the AdvancedSteamSessions plugin because Unreal's online subsystem does not allow for
                 players to search for sessions outside their local network.
 
@@ -351,7 +362,7 @@
             <!-- Position triggers that are just out of the way so that there is risk vs reward situation going on -->
             <p>
                 This was my first time designing levels for multiplayer gameplay in general, so it was challenging
-                to design map layouts that supported our design goal of player interaction throughout. My approach
+                to create map layouts that supported our design goal of player interaction throughout. My approach
                 blended linear and non-linear spatial design elements, to create maps with multiple possible routes that
                 players can take to reach the hole. I also placed MapMovers at choke points formed by converging routes
                 to increase player tension and engagement.
@@ -365,6 +376,9 @@
                 Player usage of MapMovers was balanced by positioning triggers off optimal routes to the hole. This was
                 done to associate a cost with activating MapMovers, since players might need to sacrifice a shot in
                 order to sabotage others.
+                
+                <!-- TODO: image of napkin sketch to actual level? or just napkin sketch? or annotated top view of level? you might want to do napkin sketch to actual -- then highlight areas on the napkin sketch that correlate to things mentioned in this section. caption: summary of what is being shown in napkin sketch -->
+                
                 <!-- Additionally, I tried to balance player usage of MapMovers by positioning triggers off optimal routes to
                 the hole. This was done in order to create a cost associated with activating MapMovers, since players
                 might need to sacrifice a shot in order to sabotage others. -->

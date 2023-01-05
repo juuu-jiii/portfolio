@@ -185,6 +185,8 @@
                 the colour, and the value is the count. The count gets updated each time a marble or projectile is
                 instantiated or destroyed. When all instances of a colour have been cleared, the corresponding entry is
                 removed from the dictionary altogether.
+                
+                <!-- TODO: gif showing the next colour feature, just zoom into cannon shooting. caption: the player can see the colour of the next projectile OR the colour of the next projectile is picked based on marbles in the arena -->
 
                 <!-- a dictionary is used to track quantities of marbles and projectiles in the arena. The colour
                 of the next projectile the player shoots is selected at random from this same dictionary. The key is
@@ -214,8 +216,11 @@
             <p>
                 To support the goal of making gameplay centre around precision, the player is rewarded with bonus points
                 for making trick
-                shots and hitting targets in hard-to-reach areas. However, due to the added complexity targets bring,
+                shots and hitting targets in harder-to-reach areas. However, due to the added complexity targets bring,
                 clearing them is completely optional, and isn't required to complete a level.
+                
+                <!-- TODO: gif showing target feature, aiming for target in level 3. caption: the player can aim at targets in harder-to-reach location for bonus points -->
+                
                 <!-- making trick shots leveraging the bouncy physics.
                 I wanted to find ways to reward the player for successfully pulling off cleverly-positioned trick shots,
                 because of how the bouncy game physics lends itself to such play styles. This gave rise to the
@@ -230,6 +235,10 @@
                 marbles
                 during gameplay, instead of dodging them. When the player clears enough marbles,
                 they start speeding up again to maintain a balance of difficulty.
+                
+                <!-- TODO: gif showing marble slowdown feature. caption: marbles slow down as the arena fills up -->
+                <!-- TODO: gif showing marble speedup feature. caption: marbles speed up as the arena empties to maintain a balance of difficulty -->
+                
                 <!-- players focused on clearing marbles during gameplay instead of dodging them if the arena gets
                 too full, and prevent them from feeling overwhelmed. 
                 from feeling overwhelmed if the arena gets too full
