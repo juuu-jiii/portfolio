@@ -39,7 +39,15 @@
         </div>
     </div>
     <div id="wrapper">
-        <p><a href="blank-slate.html">&lt; Back to Home</a></p>
+        <a href="" class="button-target">&#8672; Back to Home</a>
+        <p>
+            <!-- <b>CONTENT WARNING: This video may trigger seizures for people with photosensitive epilepsy.</b> -->
+        </p>
+        <video controls>
+            <source src="media/tapracing/tapracing-gameplay-cropped.mp4" type="video/mp4">
+            This browser does not support video.
+        </video>
+        <!-- <p><a href="blank-slate.html">&lt; Back to Home</a></p>
         <div class="slick-carousel">
             <div class="slick-item">
                 <div class="img">
@@ -56,9 +64,12 @@
                     <img class="content-card-img" src="media/project1-3.png">
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="content">
-            <h1>TapRacing</h1>
+            <div id="title">
+                <h1>TapRacing</h1>
+                <a href="" class="button-target">Play the Game!</a>
+            </div>
             <h2>Fast Facts</h2>
             <p>
                 <b>Role: </b>Sole Developer<br>
@@ -70,19 +81,20 @@
             </p>
             <h2>Concept and Design Goals</h2>
             <p>
-                <i>TapRacing</i> is an isometric three-dimensional racing game centred around minimal controls, simple
-                physics, keen judgment, and sharp reflexes. Gameplay focuses on fast-paced moments filled with
-                manoeuvring obstacles and tackling technical sections of track, whilst racing against the clock to
-                complete laps as quickly as possible.
+                <i>TapRacing</i> is an isometric reinvention of the traditional, 3D, steering-based racer. Vehicles can
+                turn 90 degrees instantaneously in either direction and strafe sideways. Gameplay focuses on fast-paced
+                moments filled with manoeuvring obstacles and tackling technical sections of track, whilst racing
+                against the clock to complete laps as quickly as possible. Additionally, the camera that
+                follows the player vehicle around the track is locked to the same orientation throughout, so being
+                able to differentiate right from left is important at all times!
+                <!-- minimal controls, simple
+                physics, keen judgment, and sharp reflexes. -->
             </p>
             <p>
-                Vehicles can only steer 90 degrees instantaneously in either direction, and strafe sideways. The camera
-                follows the player vehicle around the track, but is locked to the same orientation throughout, so being
-                able to differentiate right from left throughout races is important! Whilst on the track, players will
-                also need to avoid collisions. Grinding against a barrier will slow their vehicle down, while driving
-                straight into a wall will result in a crash and the player being reset, costing them valuable time.
+                When on the track, players will also need to avoid collisions. Grinding against a barrier will slow
+                their vehicle down, while driving straight into a wall will result in a crash and the player being
+                reset. Both of these cost players valuable time, so keen judgment and sharp reflexes are key.
             </p>
-            <!-- TODO: design goals??? -->
             <!-- TODO: grinding and why it's important for anti-cheat given driving line logic. SIMPLIFY! -->
             <!-- <h2>Responsibilities</h2>
             <ul>
@@ -124,15 +136,14 @@
                 Gameplay is fast-paced, so it was important that controls were designed to be simple and
                 snappy, resulting in the simple handling model and "instantaneous" control system. Players can thus take
                 corners quickly as needed, making their success in-game reflex-reliant. To this end, instead of applying
-                steering forces, vehicles travel in the direction they are facing and are rotated instantaneously
-                at the push of a button.
-                
-                <!-- TODO: gif handling model. caption: vehicles turn and strafe instantaneously, for fast-paced racing -->
-                
+                steering forces, vehicles travel in the direction they are facing and are rotated at the push of a
+                button.
+
+
                 <!-- to the current system where players can steer instantaneously 90 degrees in either direction, to ensure
                 they can take corners quickly as needed, with the only thing limiting their ability to do so being their
                 reflexes.
-
+                
                 At the heart of <i>TapRacing</i> is its snappy and responsive control system. If tracks are to be
                 constructed such that their geometry features sets of consecutive corners and tight turns, then players
                 need to be equipped with the means to navigate such perils. It was thus important that vehicles in the
@@ -140,6 +151,15 @@
                 experience. To this end, instead of applying steering forces, vehicles simply travel in the direction
                 they are facing and are rotated instantaneously as required. -->
             </p>
+            <figure>
+                <img class="project-img" src="media/tapracing/turning.gif" alt="Turning">
+                <!-- <figcaption>Vehicles turn and strafe instantaneously, for fast-paced racing.</figcaption> -->
+            </figure>
+            <figure>
+                <img class="project-img" src="media/tapracing/strafing.gif" alt="Strafing">
+                <figcaption>Vehicles turn and strafe instantaneously, for fast-paced racing.</figcaption>
+            </figure>
+            <!-- TODO: gif handling model. caption: vehicles turn and strafe instantaneously, for fast-paced racing -->
             <!-- <h2>Player FSM</h2>
             <p>
                 Because of the game's simple physics, it made sense to describe player movement using a simple FSM with
@@ -154,9 +174,7 @@
                 cheating behaviours like corner cutting. Players also get reset to the location of the last checkpoint
                 visited if they crash their vehicle. Crashes usually take place when cornering, and so additional
                 checkpoints have been placed right before each turn.
-                
-                <!-- TODO: image of checkpoints laid out on sample track. caption: checkpoints laid out on a track. The player completes a lap after passing through them in order. -->
-                <!-- TODO: gif of crash reset. caption: players are reset to the last checkpoint cleared if they crash their vehicle. -->
+
 
                 <!-- The checkpoint system also helps determine where to reset
                 the player if they crash their vehicle. Players get reset to the location of the last checkpoint Players
@@ -178,6 +196,17 @@
                 This was done to give them enough time to react and clear the corner as soon as they step on the
                 accelerator. -->
             </p>
+            <figure>
+                <img class="project-img" src="media/tapracing/checkpoints.png" alt="Checkpoints">
+                <figcaption>Checkpoints (yellow rectangles) on the track. The player completes a lap after passing
+                    through them in order.</figcaption>
+            </figure>
+            <figure>
+                <img class="project-img" src="media/tapracing/crash-reset.gif" alt="Crash reset system">
+                <figcaption>Players are reset to the last checkpoint cleared if they crash their vehicle.</figcaption>
+            </figure>
+            <!-- TODO: image of checkpoints laid out on sample track. caption: checkpoints laid out on a track. The player completes a lap after passing through them in order. -->
+            <!-- TODO: gif of crash reset. caption: players are reset to the last checkpoint cleared if they crash their vehicle. -->
             <!-- <p>
                 The checkpoint system also serves as a way to mitigate cheating behaviours. Because all checkpoints in
                 a track must be cleared in order before the player is considered to have completed a lap, this means
@@ -224,6 +253,12 @@
                 this approach ignores more complex behaviours expected of a driver, such as identifying when to overtake
                 a vehicle directly ahead, and taking an optimal driving line.
             </p> -->
+            <h3>More Game Modes</h3>
+            <p>
+                Additional game modes beyond the currently available time attack mode will provide more ways to play.
+                One such example is a "survival" mode, where vehicles speed up after each complete lap, and players must
+                last as long as possible without crashing.
+            </p>
             <h3>An Updated Handling Model</h3>
             <p>
                 I'd like to adjust physics such that vehicles slow down when cornering and strafing. This will add a
@@ -243,6 +278,9 @@
                 . The amount by which speed is impacted could then be referenced via the use of a "handling"
                 stat. As with the addition of any other stat, this will require fine-tuning, balancing, and playtesting. -->
             </p>
+            <h2>Play the Game!</h2>
+            <!-- <br> -->
+            <a href="" class="button-target">Link to Build</a>
             <!-- <p>
                 It might also be interesting to play around with different handling models to see what adds more
                 dimension to the game. Modifying behaviour such that vehicles slow down slightly when steering

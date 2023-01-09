@@ -120,7 +120,8 @@
                 understanding of how to apply them to development in Unreal 5. We therefore picked design goals that
                 would let us explore our technical interests. Primarily, we wanted our golf game to
                 allow players to interact directly with one another synchronously while playing.
-                Level design was thus geared towards forcing confrontations between players during battles for first.
+                Level design was thus geared towards forcing confrontations between players during battles for first
+                place.
                 <!-- Networking was our priority for this project; we wanted to use it as a means to get a better
                 understanding of multiplayer development concepts in general, and apply them to Unreal 5. -->
                 <!-- goals were therefore scoped to support our development priorities. Primarily, we wanted our golf game to
@@ -220,16 +221,27 @@
                 communicate their activation to other players. These events needed to be reliably executed on
                 all devices to ensure every player had the most up-to-date gameplay visuals.
             </p>
-            
+
             <!-- TODO: gif of physics being replicated. caption: physics are handled ons the server then synchronised across all networked machines
             gif of mapmovers MOVING and VFX caption: mapmovers require synchronisation of both location and particle systems across all networked machines -->
-            
+            <figure>
+                <img class="project-img" src="media/flog/physics-replication.gif" alt="Physics replication">
+                <figcaption>Physics are handled on the server then synchronised across all networked machines.
+                </figcaption>
+            </figure>
+            <figure>
+                <img class="project-img" src="media/flog/mapmover-replication.gif" alt="MapMover replication">
+                <figcaption>MapMovers require synchronisation of both location data and particle systems across all
+                    networked machines. <br> The MapMover here is triggered by the player on the lower right corner.
+                </figcaption>
+            </figure>
+
             <p>
                 I implemented several MapMovers with different functionality, such as moving obstacles and triggering
                 hazards. These get activated when a player enters their associated trigger in the game world.
                 All MapMovers implement a common interface, so a single trigger can be used to activate any type of
                 MapMover placed in a level for added flexibility.
-                
+
                 <!-- TODO: gif of all types of MapMovers. caption: description of what each mapmover does -->
 
                 <!-- the use of interfaces
@@ -300,12 +312,28 @@
                 The current implementation for hosting and joining games via IP address only works for sessions created
                 within the player's local network. We wanted players to be able to connect through the internet,
                 so we chose to leverage Steam for matchmaking using the AdvancedSteamSessions plugin.
-                 
-                
-                <!-- TODO: image of UI to host and join games. caption: the menu screen where players can choose to host or join games
+            </p>
+
+            <figure>
+                <img class="project-img" src="media/flog/multiplayer-menu.png" alt="Multiplayer menu">
+                <figcaption>
+                    The menu screen where players can choose to host or join games. <br>
+                    The IP address of the host must be known in order to use the "Join IP" feature.
+                </figcaption>
+            </figure>
+            <figure>
+                <img class="project-img" src="media/flog/session-browser.png"
+                    alt="Joining a game: the multiplayer session browser">
+                <figcaption>
+                    Clicking on "Find Sessions" in the menu above brings up the session browser, which leverages
+                    Steam to search for games the player can join.
+                </figcaption>
+            </figure>
+
+            <!-- TODO: image of UI to host and join games. caption: the menu screen where players can choose to host or join games
                 image of sessionbrowser widget with sessions hosted (take from zoom?). caption: the session browser leverages Steam to search for games the player can join. -->
-                
-                <!-- We chose to use the AdvancedSteamSessions plugin because Unreal's online subsystem does not allow for
+
+            <!-- We chose to use the AdvancedSteamSessions plugin because Unreal's online subsystem does not allow for
                 players to search for sessions outside their local network.
 
                 without the need for the use of IP addresses
@@ -321,7 +349,7 @@
                 connection, with the help of port forwarding. For obvious security reasons, we opted to use the Steam
                 subsystem, since it does not require users to provide any information besides their steam account. -->
 
-                <!-- IP add
+            <!-- IP add
                 We elected
                 Creating and joining games via IP address limits the player to the local network they are connected to.
 
@@ -330,6 +358,7 @@
                 expand to Steam, as we wanted a way for players to join a networked game without having to disclose
                 their IP address" -->
 
+            <p>
                 <!-- Much of the challenges we faced were related to the incorporation of Steam multiplayer. We had to log -->
                 Much of the challenges we faced were related to the incorporation of the plugin itself. For starters, we
                 were unable to figure out a way to attach a debugger to the standalone processes we were running
@@ -376,9 +405,9 @@
                 Player usage of MapMovers was balanced by positioning triggers off optimal routes to the hole. This was
                 done to associate a cost with activating MapMovers, since players might need to sacrifice a shot in
                 order to sabotage others.
-                
+
                 <!-- TODO: image of napkin sketch to actual level? or just napkin sketch? or annotated top view of level? you might want to do napkin sketch to actual -- then highlight areas on the napkin sketch that correlate to things mentioned in this section. caption: summary of what is being shown in napkin sketch -->
-                
+
                 <!-- Additionally, I tried to balance player usage of MapMovers by positioning triggers off optimal routes to
                 the hole. This was done in order to create a cost associated with activating MapMovers, since players
                 might need to sacrifice a shot in order to sabotage others. -->
@@ -431,26 +460,38 @@
                 Adding <!-- indexical --> details conveying the "danger zones" of MapMovers might make them less
                 frustrating for players to navigate, and overall help ensure maps are not harder than intended to
                 traverse.
-                <!-- TODO: gif of dragon breathing fire. caption: in the case of this fire-breathing dragon, the ground could have decals of scorch marks added to denote the boundaries of the danger zone -->
-                <!-- than
+
+            <figure>
+                <img class="project-img" src="media/flog/dragon.png" alt="Fire-breathing dragon">
+                <figcaption>
+                    For this fire-breathing dragon MapMover, scorch mark decals could be added to the ground to
+                    denote the boundaries of the danger zone.
+                </figcaption>
+            </figure>
+            <!-- TODO: gif of dragon breathing fire. caption: in the case of this fire-breathing dragon, the ground could have decals of scorch marks added to denote the boundaries of the danger zone -->
+            <!-- than
                 intended to traverse
                 Without indexical elements, it can be difficult to navigate MapMovers that have been triggered. -->
 
-                <!-- It's about how the player perceives the level. If they feel like they're unable to control what's 
+            <!-- It's about how the player perceives the level. If they feel like they're unable to control what's 
                     happening around them, they're going to be frustrated -->
 
-                <!-- It can be difficult for a player to navigate MapMovers that get triggered; environments lack indexical
+            <!-- It can be difficult for a player to navigate MapMovers that get triggered; environments lack indexical
                 elements that help convey where "danger zones" lie. Players also sometimes struggle to make the
                 connection between a trigger and the MapMover it affects, since they aren't always placed within sight
                 of each other. Overall, making improvements to the environment and the placement of triggers in
                 relation to their corresponding MapMovers will be valuable in helping players find their way around
                 maps better. -->
-                <!-- It can be difficult for a player to navigate MapMovers that get triggered; environments lack indexical
+            <!-- It can be difficult for a player to navigate MapMovers that get triggered; environments lack indexical
                 elements that help convey where "danger zones" lie. Players also sometimes struggle to make the
                 connection between a trigger and the MapMover it affects, since they aren't always placed within sight
                 of each other. Overall, making improvements to the environment and the placement of triggers in
                 relation to their corresponding MapMovers will be valuable in helping players find their way around
                 maps better. -->
+            </p>
+            <p>
+                Furthermore, triggers aren't always placed within sight of the MapMovers they affect. Resolving this
+                might help players make better informed decisions on which triggers they want to aim for during a game.
             </p>
 
             <!-- TODO: process, how the team prioritised networking because it was at the core of gameplay.

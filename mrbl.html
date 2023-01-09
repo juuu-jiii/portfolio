@@ -39,7 +39,15 @@
         </div>
     </div>
     <div id="wrapper">
-        <p><a href="blank-slate.html">&lt; Back to Home</a></p>
+        <a href="" class="button-target">&#8672; Back to Home</a>
+        <p>
+            <!-- <b>CONTENT WARNING: This video may trigger seizures for people with photosensitive epilepsy.</b> -->
+        </p>
+        <video controls>
+            <source src="media/mrbl/mrbl-gameplay-cropped.mp4" type="video/mp4">
+            This browser does not support video.
+        </video>
+        <!-- <p><a href="blank-slate.html">&lt; Back to Home</a></p>
         <div class="slick-carousel">
             <div class="slick-item">
                 <div class="img">
@@ -56,9 +64,12 @@
                     <img class="content-card-img" src="media/project1-3.png">
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="content">
-            <h1>mrbl.</h1>
+            <div id="title">
+                <h1>mrbl.</h1>
+                <a href="" class="button-target">Play the Game!</a>
+            </div>
             <h2>Fast Facts</h2>
             <p>
                 <b>Role: </b>Sole Developer<br>
@@ -71,7 +82,7 @@
                 <i>mrbl.</i> remixes mechanics of the action puzzle shooters Luxor, Bust-a-Move, and Breakout to create
                 a new-yet-familiar medley of an experience.
                 The core experience is focused on encouraging the player to take risks and rely on pinpoint timing and
-                accuracy to make skill shots quickly and consistently.
+                accuracy to make trick shots quickly and consistently.
 
 
                 <!-- Speed, precision,
@@ -211,6 +222,10 @@
                 at random from the dictionary's keys. Colours are removed from the dictionary when their count reaches
                 zero to ensure that a valid selection always occurs for the next projectile's colour. -->
             </p>
+            <figure>
+                <img class="project-img" src="media/mrbl/projectile-generation-system.gif" alt="Projectile generation system in action">
+                <figcaption>The colour of the next projectile is picked based on marbles in the arena.</figcaption>
+            </figure>
 
             <h2>Target System</h2>
             <p>
@@ -228,6 +243,10 @@
                 bonus. However, hitting targets is completely optional, and isn't required of the player to complete a
                 level. -->
             </p>
+            <figure>
+                <img class="project-img" src="media/mrbl/target-system.gif" alt="Aiming at a target">
+                <figcaption>The player can aim at targets placed in harder-to-reach locations for bonus points.</figcaption>
+            </figure>
             <h2>Preventing Players from Feeling Overwhelmed</h2>
             <p>
                 All marbles slow down as the arena fills up. This was done to prevent players from feeling
@@ -235,7 +254,15 @@
                 marbles
                 during gameplay, instead of dodging them. When the player clears enough marbles,
                 they start speeding up again to maintain a balance of difficulty.
-                
+            </p>
+            <figure>
+                <img class="project-img" src="media/mrbl/overwhelmed-1.gif" alt="Marbles slowing down">
+                <figcaption>Marbles slow down as the arena fills up.</figcaption>
+            </figure>
+            <figure>
+                <img class="project-img" src="media/mrbl/overwhelmed-2.gif" alt="Marbles speeding up">
+                <figcaption>Marbles speed up as the arena empties to maintain a balance of difficulty.</figcaption>
+            </figure>
                 <!-- TODO: gif showing marble slowdown feature. caption: marbles slow down as the arena fills up -->
                 <!-- TODO: gif showing marble speedup feature. caption: marbles speed up as the arena empties to maintain a balance of difficulty -->
                 
@@ -296,6 +323,12 @@
                 Power-ups that fall from the top of the screen can add variety to the game. Power-downs could also be
                 dropped occasionally to keep gameplay interesting, by giving the player something else to avoid.
             </p>
+            <h2>Play the Game!</h2>
+            <!-- <br> -->
+            <a href="" class="button-target">Link to Build</a>
+            <!-- <p class="content-warning">
+                <b>CONTENT WARNING: This video may trigger seizures for people with photosensitive epilepsy.</b>
+            </p> -->
 
             <!-- <h2>
                 Design Goals
