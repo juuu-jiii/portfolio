@@ -72,6 +72,7 @@
             </div>
             <h2>Fast Facts</h2>
             <p>
+                <b>Keywords: </b> <br>
                 <b>Role: </b>Sole Developer<br>
                 <b>Timeframe: </b>7 weeks<br>
                 <b>Engine: </b>Unity3D<br>
@@ -140,7 +141,7 @@
                 marbles and projectiles for removal at the end of the update loop by a manager class.
                 It made sense, then, to make projectiles inherit from a Marble class, and then have methods added or
                 overridden as necessary within the Projectile class itself. -->
-                <!-- matched marbles and projectiles for removal triggering events. marble vs pro and pro vs pro
+            <!-- matched marbles and projectiles for removal triggering events. marble vs pro and pro vs pro
                 Marking gameobj's for removal by a manager class by the end of the update loop that frame -->
 
             <!-- </p> -->
@@ -196,7 +197,7 @@
                 the colour, and the value is the count. The count gets updated each time a marble or projectile is
                 instantiated or destroyed. When all instances of a colour have been cleared, the corresponding entry is
                 removed from the dictionary altogether.
-                
+
                 <!-- TODO: gif showing the next colour feature, just zoom into cannon shooting. caption: the player can see the colour of the next projectile OR the colour of the next projectile is picked based on marbles in the arena -->
 
                 <!-- a dictionary is used to track quantities of marbles and projectiles in the arena. The colour
@@ -223,19 +224,20 @@
                 zero to ensure that a valid selection always occurs for the next projectile's colour. -->
             </p>
             <figure>
-                <img class="project-img" src="media/mrbl/projectile-generation-system.gif" alt="Projectile generation system in action">
+                <img class="project-img" src="media/mrbl/projectile-generation-system.gif"
+                    alt="Projectile generation system in action">
                 <figcaption>The colour of the next projectile is picked based on marbles in the arena.</figcaption>
             </figure>
 
             <h2>Target System</h2>
             <p>
-                To support the goal of making gameplay centre around precision, the player is rewarded with bonus points
-                for making trick
-                shots and hitting targets in harder-to-reach areas. However, due to the added complexity targets bring,
-                clearing them is completely optional, and isn't required to complete a level.
-                
+                To further centre gameplay around precision, the player is rewarded with bonus points
+                for making trick shots and hitting optional targets in harder-to-reach areas.
+                <!-- However, due to the added complexity targets bring,
+                clearing them is completely optional, and isn't required to complete a level. -->
+
                 <!-- TODO: gif showing target feature, aiming for target in level 3. caption: the player can aim at targets in harder-to-reach location for bonus points -->
-                
+
                 <!-- making trick shots leveraging the bouncy physics.
                 I wanted to find ways to reward the player for successfully pulling off cleverly-positioned trick shots,
                 because of how the bouncy game physics lends itself to such play styles. This gave rise to the
@@ -245,13 +247,14 @@
             </p>
             <figure>
                 <img class="project-img" src="media/mrbl/target-system.gif" alt="Aiming at a target">
-                <figcaption>The player can aim at targets placed in harder-to-reach locations for bonus points.</figcaption>
+                <figcaption>
+                    The player can aim at optional targets for bonus points.
+                </figcaption>
             </figure>
             <h2>Preventing Players from Feeling Overwhelmed</h2>
             <p>
-                All marbles slow down as the arena fills up. This was done to prevent players from feeling
-                overwhelmed if the arena gets too full. It also keep players focused on the primary goal of clearing
-                marbles
+                Marbles slow down as the arena fills up. This prevents players from feeling
+                overwhelmed, and keeps them focused on the primary goal of clearing marbles
                 during gameplay, instead of dodging them. When the player clears enough marbles,
                 they start speeding up again to maintain a balance of difficulty.
             </p>
@@ -263,10 +266,10 @@
                 <img class="project-img" src="media/mrbl/overwhelmed-2.gif" alt="Marbles speeding up">
                 <figcaption>Marbles speed up as the arena empties to maintain a balance of difficulty.</figcaption>
             </figure>
-                <!-- TODO: gif showing marble slowdown feature. caption: marbles slow down as the arena fills up -->
-                <!-- TODO: gif showing marble speedup feature. caption: marbles speed up as the arena empties to maintain a balance of difficulty -->
-                
-                <!-- players focused on clearing marbles during gameplay instead of dodging them if the arena gets
+            <!-- TODO: gif showing marble slowdown feature. caption: marbles slow down as the arena fills up -->
+            <!-- TODO: gif showing marble speedup feature. caption: marbles speed up as the arena empties to maintain a balance of difficulty -->
+
+            <!-- players focused on clearing marbles during gameplay instead of dodging them if the arena gets
                 too full, and prevent them from feeling overwhelmed. 
                 from feeling overwhelmed if the arena gets too full
                 Players can fill the arena very quickly if they miss a lot due to poor judgment. This can be
@@ -277,7 +280,7 @@
                 around based on how many there are in total bouncing around in the arena. The larger the number of
                 marbles present, the slower they travel, until a certain lower bound is reached. As soon as the player
                 is able to clear enough marbles, they start speeding up again to maintain a balance of difficulty. -->
-                <!-- It's easy for players to overcrowd the arena if they spam-launch a large number of projectiles
+            <!-- It's easy for players to overcrowd the arena if they spam-launch a large number of projectiles
                 continuously or just happen to make a lot of misses due to poor aim. Either way, this causes the arena
                 to fill up with bouncing marbles very quickly, making it very challenging for the player to avoid
                 collisions. This can be overwhelming, as it forces the player to focus more on dodging marbles instead
@@ -289,7 +292,7 @@
                 marbles present, the slower they travel, until a certain lower bound is reached. As soon as the player
                 is able to clear enough marbles, they start speeding up again to maintain a balance of difficulty.
             </p> -->
-                <!-- <p>
+            <!-- <p>
                 In a future iteration, I want to experiment with restricting the player's projectile fire rate to prevent them from filling up the arena by spam-firing projectiles. TODO: put into next steps
             </p> -->
 
@@ -298,8 +301,8 @@
                 Encouraging Trick Shots
             </h3>
             <p>
-                At its core, <i>mrbl.</i> is about precision and making trick shots. Besides targets, however, the
-                player has little reason to play aggressively. To incentivise players to take more risks, longer-range
+                <i>mrbl.</i> is about precision and making trick shots. Besides targets, however, the
+                player has little reason to play aggressively. To incentivise this, longer-range
                 shots could be rewarded with more points.
             </p>
             <!-- <p>
@@ -379,23 +382,23 @@
         </div> -->
         <div class="footer-div">
             <p>
+                <a href="media/szunkiddchoi_resume.pdf" target="resume"><i class="fas fa-file"></i>
+                    Resume</a>&emsp;&emsp;•&emsp;
                 <a href="https://github.com/juuu-jiii" target="github"><i class="fab fa-github"></i>
                     GitHub</a>&emsp;&emsp;•&emsp;
                 <a href="https://www.linkedin.com/in/szunkidd/" target="linkedin"><i class="fab fa-linkedin"></i>
                     LinkedIn</a>&emsp;&emsp;•&emsp;
-                <a href="mailto:sc4020@rit.edu"><i class="fas fa-at"></i> Email</a>&emsp;&emsp;•&emsp;
-                <a href="media/szunkiddchoi_resume.pdf" target="resume"><i class="fas fa-file"></i>
-                    Resume</a>&emsp;<br>
+                <a href="mailto:sc4020@rit.edu"><i class="fas fa-at"></i> Email</a><br>
                 <small>&copy; Szun Kidd Choi 2021. All lefts reversed.</small>
             </p>
         </div>
     </footer>
 
     <!-- Slick -->
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <!-- <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script> -->
     <!-- Slick function -->
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         // $('.fade').slick();
         $(document).ready(function () {
             $('.slick-carousel').slick({
@@ -436,7 +439,7 @@
                 // ]
             });
         });
-    </script>
+    </script> -->
 </body>
 
 </html>

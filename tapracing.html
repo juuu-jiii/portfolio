@@ -72,6 +72,7 @@
             </div>
             <h2>Fast Facts</h2>
             <p>
+                <b>Keywords: </b> <br>
                 <b>Role: </b>Sole Developer<br>
                 <b>Timeframe: </b>7 weeks<br>
                 <b>Engine: </b>Unreal 4<br>
@@ -81,18 +82,18 @@
             </p>
             <h2>Concept and Design Goals</h2>
             <p>
-                <i>TapRacing</i> is an isometric reinvention of the traditional, 3D, steering-based racer. Vehicles can
-                turn 90 degrees instantaneously in either direction and strafe sideways. Gameplay focuses on fast-paced
-                moments filled with manoeuvring obstacles and tackling technical sections of track, whilst racing
-                against the clock to complete laps as quickly as possible. Additionally, the camera that
-                follows the player vehicle around the track is locked to the same orientation throughout, so being
-                able to differentiate right from left is important at all times!
+                <i>TapRacing</i> is an isometric reinvention of the traditional, 3D, steering-based racer. Vehicles
+                turn 90 degrees instantaneously in either direction and strafe sideways. The camera following the player
+                vehicle is locked to the same orientation throughout, so being able to differentiate right from left is
+                important at all times! Gameplay focuses on fast-paced moments filled with manoeuvring obstacles and
+                tackling technical sections of track, whilst racing against the clock to complete laps as quickly as
+                possible.
                 <!-- minimal controls, simple
                 physics, keen judgment, and sharp reflexes. -->
             </p>
             <p>
                 When on the track, players will also need to avoid collisions. Grinding against a barrier will slow
-                their vehicle down, while driving straight into a wall will result in a crash and the player being
+                vehicles down, while driving straight into a wall will result in a crash and the vehicle being
                 reset. Both of these cost players valuable time, so keen judgment and sharp reflexes are key.
             </p>
             <!-- TODO: grinding and why it's important for anti-cheat given driving line logic. SIMPLIFY! -->
@@ -108,9 +109,8 @@
             </ul> -->
             <h2>Running the Gamut</h2>
             <p>
-                I wanted to use this project to challenge myself to learn as much about the different tools I had at my
-                disposal from within the engine. As a result, everything in this project (except the car model) was
-                implemented from scratch, using inbuilt engine tools.
+                I wanted to expose myself to the different tools at my disposal within Unreal. Everything in this
+                project (except the car model) was implemented from scratch, using tools within the editor.
                 <!-- Everything in this project was built from scratch within the Unreal Editor, save for the car model due
                 to time constraints. I wanted to use this project to challenge myself to learn as much about the
                 different tools I had at my disposal from within the engine. -->
@@ -133,11 +133,15 @@
             </p>
             <h2>Snappy Controls and Handling Model</h2>
             <p>
-                Gameplay is fast-paced, so it was important that controls were designed to be simple and
+                Fast-paced gameplay is a core design pillar of the game, so this gave rise to the simple, snappy, and
+                "instantaneous" handling model. Instead of applying steering forces, vehicles travel in the direction
+                they are facing and are rotated or moved laterally at the push of a button. Players can thus take
+                corners quickly as needed, making success reflex-reliant.
+                <!-- Gameplay is fast-paced, so it was important that controls were designed to be simple and
                 snappy, resulting in the simple handling model and "instantaneous" control system. Players can thus take
                 corners quickly as needed, making their success in-game reflex-reliant. To this end, instead of applying
                 steering forces, vehicles travel in the direction they are facing and are rotated at the push of a
-                button.
+                button. -->
 
 
                 <!-- to the current system where players can steer instantaneously 90 degrees in either direction, to ensure
@@ -167,13 +171,26 @@
             </p> -->
             <h2>Checkpoint System</h2>
             <p>
-                Checkpoints have been implemented as a series of triggers spread out along the track. A
+                Checkpoints are a series of triggers along the track. A CheckpointManager blueprint references each of
+                these in an array. It ensures players traverse the track properly and visit each checkpoint in the
+                specified order.
+                <!-- Once all checkpoints are visited in sequence, the lap is complete.  -->
+                This discourages cheating behaviours like corner cutting.
+            </p>
+            <p>
+                Players get reset to the location of the last checkpoint visited if they crash their vehicle.
+                Checkpoints were primarily placed right before corners, since crashes typically take place when
+                cornering.
+                <!-- Crashes usually take place when cornering, and so additional
+                checkpoints have been placed right before each turn. -->
+
+                <!-- Checkpoints have been implemented as a series of triggers spread out along the track. A
                 CheckpointManager blueprint holds references to each of these in an array. It ensures the player
                 traverses the track properly by checking that they visit each checkpoint in the specified order.
                 When all checkpoints have been visited by the player in sequence, a lap is complete. This discourages
                 cheating behaviours like corner cutting. Players also get reset to the location of the last checkpoint
                 visited if they crash their vehicle. Crashes usually take place when cornering, and so additional
-                checkpoints have been placed right before each turn.
+                checkpoints have been placed right before each turn. -->
 
 
                 <!-- The checkpoint system also helps determine where to reset
@@ -217,6 +234,13 @@
             <h2>Next Steps</h2>
             <h3>AI Cars</h3>
             <p>
+                Giving players something to race against besides the clock will add a new dimension to gameplay.
+                Placing "feelers" on the front and sides of AI vehicles will give agents spatial awareness, and allow
+                them to anticipate upcoming corners.
+                <!-- At the very least, AI agents must be able to anticipate the direction of, and distance toward, upcoming
+                corners. "Feelers" from the front and sides of vehicles
+            </p>
+            <p>
                 At the very least, AI agents must be able to anticipate the direction of, and distance toward, upcoming
                 corners. A quick solution would be to integrate this information into the checkpoint system itself, with
                 the timing at which agents steer into corners being varied at random to produce more natural behaviour.
@@ -224,7 +248,8 @@
             <p>
                 A more robust approach would be to leverage raycasting, using "feelers" from the front and sides of
                 vehicles to give agents spatial awareness. This can produce more complex behaviours expected of a
-                driver, such as determining optimal racing lines or identifying when to perform overtaking manoeuvres.
+                driver, such as determining optimal racing lines or identifying when to perform overtaking manoeuvres. -->
+                <!-- </p> -->
                 <!-- expected of a driver. -->
 
                 <!-- To remedy this, a heuristic could be added to each agent that impacts
@@ -232,8 +257,7 @@
                 behaviour, such as making mistakes and crashing or taking suboptimal lines through turns. Nevertheless,
                 this approach ignores more complex behaviours expected of a driver, such as identifying when to overtake
                 a vehicle directly ahead, and taking an optimal driving line. -->
-            </p>
-            <!-- <p>
+                <!-- <p>
                 It would be cool to have AI vehicles that the player can race against in a single player race mode. At
                 the very least, AI agents must be able to "see" ahead, anticipate approaching corners, and establish
                 the direction in which they must steer. Because of the way the handling model is set up to only allow 90
@@ -261,10 +285,12 @@
             </p>
             <h3>An Updated Handling Model</h3>
             <p>
-                I'd like to adjust physics such that vehicles slow down when cornering and strafing. This will add a
+                Making vehicles slow down slightly when cornering and strafing will add a layer of complexity to
+                gameplay, as defending positions will then cost players time.
+                <!-- I'd like to adjust physics such that vehicles slow down when cornering and strafing. This will add a
                 layer of complexity to gameplay, as defending positions will then cost players time. The amount by which
                 speed is impacted could then be referenced via the use of a "handling" stat. As with the addition of any
-                other stat, this will require fine-tuning, balancing, and playtesting.
+                other stat, this will require fine-tuning, balancing, and playtesting. -->
                 <!-- layer of complexity to overtaking manoeuvres, as players will need to be careful about how much they
                 can afford to strafe to defend their position
 
@@ -345,23 +371,23 @@
         </div> -->
         <div class="footer-div">
             <p>
+                <a href="media/szunkiddchoi_resume.pdf" target="resume"><i class="fas fa-file"></i>
+                    Resume</a>&emsp;&emsp;•&emsp;
                 <a href="https://github.com/juuu-jiii" target="github"><i class="fab fa-github"></i>
                     GitHub</a>&emsp;&emsp;•&emsp;
                 <a href="https://www.linkedin.com/in/szunkidd/" target="linkedin"><i class="fab fa-linkedin"></i>
                     LinkedIn</a>&emsp;&emsp;•&emsp;
-                <a href="mailto:sc4020@rit.edu"><i class="fas fa-at"></i> Email</a>&emsp;&emsp;•&emsp;
-                <a href="media/szunkiddchoi_resume.pdf" target="resume"><i class="fas fa-file"></i>
-                    Resume</a>&emsp;<br>
+                <a href="mailto:sc4020@rit.edu"><i class="fas fa-at"></i> Email</a><br>
                 <small>&copy; Szun Kidd Choi 2021. All lefts reversed.</small>
             </p>
         </div>
     </footer>
 
     <!-- Slick -->
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <!-- <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script> -->
     <!-- Slick function -->
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         // $('.fade').slick();
         $(document).ready(function () {
             $('.slick-carousel').slick({
@@ -402,7 +428,7 @@
                 // ]
             });
         });
-    </script>
+    </script> -->
 </body>
 
 </html>

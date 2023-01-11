@@ -39,7 +39,15 @@
         </div>
     </div>
     <div id="wrapper">
-        <p><a href="blank-slate.html">&lt; Back to Home</a></p>
+        <a href="" class="button-target">&#8672; Back to Home</a>
+        <p>
+            <!-- <b>CONTENT WARNING: This video may trigger seizures for people with photosensitive epilepsy.</b> -->
+        </p>
+        <video controls>
+            <source src="media/flog/flog-gameplay.mp4" type="video/mp4">
+            This browser does not support video.
+        </video>
+        <!-- <p><a href="blank-slate.html">&lt; Back to Home</a></p>
         <div class="slick-carousel">
             <div class="slick-item">
                 <div class="img">
@@ -56,11 +64,17 @@
                     <img class="content-card-img" src="media/project1-3.png">
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="content">
-            <h1>For The Love of Golf</h1>
+            <!-- <h1>For The Love of Golf</h1> -->
+            <div id="title">
+                <h1>For The Love of Golf</h1>
+                <a href="" class="button-target">Play the Game!</a>
+                <!-- <button class="project-button">Play Game</button> -->
+            </div>
             <h2>Fast Facts</h2>
             <p>
+                <b>Keywords: </b> <br>
                 <b>Team Size: </b>4<br>
                 <b>Roles: </b>Game Designer, Level Designer, and Networking Programmer<br>
                 <b>Timeframe: </b>13 weeks<br>
@@ -83,7 +97,7 @@
 
                 <i>For The Love of Golf</i> (<i>floG</i>) is a networked multiplayer simultaneous minigolf game
                 with a chaotic twist for added insanity! Maps feature dynamic and and player-alterable layouts
-                through the use of MapMovers: hazards and movable objects that are activated using triggers
+                through the use of MapMovers: various kinds of hazards and movable objects activated using triggers
                 distributed over the map. Good aim and timing are the key to sabotaging opponents whilst aiming for a
                 good score. Because anyone can trigger anything, no one is safe!
                 <!-- This is achieved by the use of a feature
@@ -113,15 +127,14 @@
                     to the creation of an unsettling atmosphere riddled with dread. -->
             </p>
             <p>
-                <i>floG</i> currently supports online matchmaking via Steam and IP address.
+                <i>floG</i> currently supports online matchmaking for games of up to 4 players via Steam and IP address.
             </p>
             <p>
-                We wanted to use this project as a way to learn about multiplayer programming concepts, and get an
-                understanding of how to apply them to development in Unreal 5. We therefore picked design goals that
-                would let us explore our technical interests. Primarily, we wanted our golf game to
-                allow players to interact directly with one another synchronously while playing.
-                Level design was thus geared towards forcing confrontations between players during battles for first
-                place.
+                We used this project to learn about multiplayer programming concepts,
+                applying them to development in Unreal 5. We picked design goals that
+                let us explore our technical interests. Primarily, we wanted to
+                let players interact directly with one another synchronously while playing.
+                Level design was thus geared towards forcing player confrontation during battles for first place.
                 <!-- Networking was our priority for this project; we wanted to use it as a means to get a better
                 understanding of multiplayer development concepts in general, and apply them to Unreal 5. -->
                 <!-- goals were therefore scoped to support our development priorities. Primarily, we wanted our golf game to
@@ -171,7 +184,7 @@
                     Created maps whose layouts encourage confrontation and interaction among players
                 </li>
                 <li>
-                    Designed and implemented menu screen UI
+                    Designed and implemented menu screen layout and UI
                 </li>
                 <!-- <li>
                     Took part in design discussions regarding the game's narrative and pacing.
@@ -208,43 +221,96 @@
                 for.
                 Initially, player performance was measured through the use of
             </p> -->
+
+            <h2><!-- MapMovers and Multiplayer -->Multiplayer Level Design</h2>
+            <!-- Level design supports the target player experience throughout, by blending together linear and
+                non-linear spatial design elements. This results in multiple possible routes that players can take to
+                reach the hole. It also creates mini choke points where players are put in the danger zone of a hazard
+                or moving obstacle. Additionally, triggers to toggle and move said hazards and obstacles were placed off
+                optimal routes to the hole, so that both timing and judgment become critical factors in players'
+                decisions on whether to aim for a trigger or not. -->
+
+            <!-- Gameplay is focused on forcing confrontations between players during intense battles to finish in first.
+                Linear spatial design is therefore blended with non-linear elements, to create multiple possible routes
+                that players can take to reach the hole. -->
+
+            <!-- Position triggers that are just out of the way so that there is risk vs reward situation going on -->
+            <p>
+                I'd never designed multiplayer maps prior to this project, so it was challenging to create layouts that
+                supported our design goal of direct player interaction. My approach was to make maps that gave players
+                different routes to reach the hole by combining linear and non-linear spatial design elements. I also
+                placed MapMovers at choke points to increase player tension and engagement.
+                <!-- combine linear and non-linear spatial design
+                to
+                This was my first time designing levels for multiplayer gameplay in general, so it was challenging
+                to create map layouts that supported our design goal of player interaction throughout. My approach
+                blended linear and non-linear spatial design elements, to create maps with multiple possible routes that
+                players can take to reach the hole. I also placed MapMovers at choke points formed by converging routes
+                to increase player tension and engagement. -->
+                <!-- This was my first time designing levels for multiplayer gameplay in general, and so it was challenging
+                to experiment and come up with map layouts that supported player interaction throughout. My final
+                approach involved blending together linear and non-linear spatial design elements. This resulted in maps
+                containing multiple possible routes that players can take to reach the hole. I also placed MapMovers at
+                choke points formed by converging routes to increase player tension and engagement. -->
+            </p>
+            <p>
+                Furthermore, I positioned MapMover triggers off optimal routes to the hole. This was
+                done to balance MapMover usage by associating a cost with activating them, since players
+                might need to sacrifice a shot in order to sabotage others.
+
+                <!-- TODO: image of napkin sketch to actual level? or just napkin sketch? or annotated top view of level? you might want to do napkin sketch to actual -- then highlight areas on the napkin sketch that correlate to things mentioned in this section. caption: summary of what is being shown in napkin sketch -->
+                <!-- OR just pick a top-down image of the dragon level, hiding unnecessary geometry and explaining the stuff that's been left in -->
+                <!-- Can also do a very bare-bones napkin sketch and submit that, though that might not be "professional" since you will have to spend time explaining what is what -->
+
+                <!-- Additionally, I tried to balance player usage of MapMovers by positioning triggers off optimal routes to
+                the hole. This was done in order to create a cost associated with activating MapMovers, since players
+                might need to sacrifice a shot in order to sabotage others. -->
+                <!-- balance
+                    outside of optimal routes to the hole. This was done to encourage players to consider both
+                    timing and judgment as critical factors when deciding whether to aim for a trigger or not. -->
+                <!-- TODO: might be a good idea to include some napkin sketches for before and after process shots -->
+            </p>
+            <figure>
+                <img class="project-img" src="media/flog/multiple-routes-1.png" alt="Multiple routes">
+                <figcaption>Multiple routes (shown in red) can be taken to reach the hole.
+                </figcaption>
+            </figure>
+            <figure>
+                <img class="project-img" src="media/flog/multiple-routes-2.png"
+                    alt="Multiple routes and choke point MapMovers">
+                <figcaption>
+                    Fire-breathing dragon MapMovers placed at choke points formed by converging routes.
+                </figcaption>
+            </figure>
+
             <h2>Networked Multiplayer Gameplay</h2>
             <!-- (DONE?) TODO: write about which was computed on server only (physics) and which was allowed to run on clients,
             and why. Then talk about obstacles, why they run on the server, and which need to run on all (dragon) 
             Can also talk about choice between replicate, RepNotify decisions. Which variables need to be replicated
             and so on. The architecture basically .-->
             <p>
-                It was crucial that data for systems like scoring, physics, and MapMovers got synchronised across all
+                Vital calculations for systems like physics, MapMovers, and scoring are handled solely on the server
+                through reliable RPC calls for the fairest possible play experience. However, some MapMovers use
+                particle systems to communicate their activation. These "cosmetic" gameplay events are
+                executed on all devices to keep their world states up-to-date.
+                <!-- It was crucial to synchronise data for systems like scoring, physics, and MapMovers across all
                 networked machines. Therefore, vital calculations were handled solely on the server through
-                reliable RPC calls, for the fairest possible play experience. On the other hand, triggering MapMovers
+                reliable RPC calls, for the fairest possible play experience.
+                On the other hand, triggering MapMovers
                 sometimes involved "cosmetic" gameplay events (like the spawning of particle systems) to
                 communicate their activation to other players. These events needed to be reliably executed on
-                all devices to ensure every player had the most up-to-date gameplay visuals.
+                all devices to ensure every player had the most up-to-date gameplay visuals. -->
             </p>
 
-            <!-- TODO: gif of physics being replicated. caption: physics are handled ons the server then synchronised across all networked machines
-            gif of mapmovers MOVING and VFX caption: mapmovers require synchronisation of both location and particle systems across all networked machines -->
-            <figure>
-                <img class="project-img" src="media/flog/physics-replication.gif" alt="Physics replication">
-                <figcaption>Physics are handled on the server then synchronised across all networked machines.
-                </figcaption>
-            </figure>
-            <figure>
-                <img class="project-img" src="media/flog/mapmover-replication.gif" alt="MapMover replication">
-                <figcaption>MapMovers require synchronisation of both location data and particle systems across all
-                    networked machines. <br> The MapMover here is triggered by the player on the lower right corner.
-                </figcaption>
-            </figure>
-
-            <p>
+            <!-- <p>
                 I implemented several MapMovers with different functionality, such as moving obstacles and triggering
                 hazards. These get activated when a player enters their associated trigger in the game world.
                 All MapMovers implement a common interface, so a single trigger can be used to activate any type of
-                MapMover placed in a level for added flexibility.
+                MapMover placed in a level for added flexibility. -->
 
-                <!-- TODO: gif of all types of MapMovers. caption: description of what each mapmover does -->
+            <!-- TODO: gif of all types of MapMovers. caption: description of what each mapmover does -->
 
-                <!-- the use of interfaces
+            <!-- the use of interfaces
                 Remember, this isn't documentation. Summarise!
 
                 I implemented different kinds of MapMovers, each with their own functionality, such as moving obstacles
@@ -256,7 +322,7 @@
                 MapMover trigger to be connected to any type of MapMover in a level, creating flexible, clean, and more
                 intentional code. -->
 
-                <!-- the specifics of each implementation of Activate do not matter to the
+            <!-- the specifics of each implementation of Activate do not matter to the
                 trigger blueprint, I made each MapMover blueprint implement an interface containing a declaration for
                 Activate. This way,
 
@@ -264,41 +330,41 @@
                 trigger blueprint, as the MapMovers blueprints themselves implement an
                 This created cleaner, more intentional code, and allowed a MapMover trigger to be connected to any type
                 of MapMover in a level.
-
+                
                 MapMover trigger blueprint MapMovers blueprints implement an interface which
-
+                
                 Implementation details have been hidden away behind interface methods to make function calls simple To
                 simplify the way in which functions get called to activate MapMovers, Specific implementation details
                 were There are several kinds of MapMovers: ones that can be toggled once, some that can be toggled
                 multiplw times, and others that
-
+                
                 two wolves, composition
                 individual blueprints for each type of behaviour
                 composition, interfaces
                 created cleaner, more intentional code -->
-            </p>
+            <!-- </p> -->
             <!-- I also made sure to prefer marking variables to Replicate instead of using RepNotify in the interest of performance -->
 
             <!-- Any events that needed to be invoked when relevant replicated variables got updated were run
-            via
-            RepNotify functions
-            (TODO: dragon example)
-
-            Summary of mapmovers systems
-            - move once (pos1 -> pos2)
-            - timed move (pos1 -> pos2; delay; pos2 -> pos1)
-            - timed toggle (toggle; delay; toggle)
-            - toggle move (pos1 -> pos2 OR pos2 -> pos1)
-            - general form: pass through a trigger and something happens. We don't care what specifically happens we
-            just want to keep the general form.
-            - IObstacle and how the caller never needs to know what the specifics are
-
-            Variables relevant to clients
-            were set to replicate
-            Networked multiplayer systems were fully built using Unreal's Blueprints functionality. I learned about
-            actor and pawn replication on client and server machines for simple physics and animations. I
-            obtained a basic understanding of how to configure projects to support networked sessions using both
-            Steam multiplayer and IP addresses, as well as the benefits and drawbacks for each approach. -->
+                via
+                RepNotify functions
+                (TODO: dragon example)
+                
+                Summary of mapmovers systems
+                - move once (pos1 -> pos2)
+                - timed move (pos1 -> pos2; delay; pos2 -> pos1)
+                - timed toggle (toggle; delay; toggle)
+                - toggle move (pos1 -> pos2 OR pos2 -> pos1)
+                - general form: pass through a trigger and something happens. We don't care what specifically happens we
+                just want to keep the general form.
+                - IObstacle and how the caller never needs to know what the specifics are
+                
+                Variables relevant to clients
+                were set to replicate
+                Networked multiplayer systems were fully built using Unreal's Blueprints functionality. I learned about
+                actor and pawn replication on client and server machines for simple physics and animations. I
+                obtained a basic understanding of how to configure projects to support networked sessions using both
+                Steam multiplayer and IP addresses, as well as the benefits and drawbacks for each approach. -->
             <!-- It involved
                 the consumption of many a YouTube video and the traversal of even more Unreal Forums posts, but I  -->
 
@@ -309,26 +375,11 @@
             <!-- TODO: port forwarding in next steps -->
 
             <p>
-                The current implementation for hosting and joining games via IP address only works for sessions created
-                within the player's local network. We wanted players to be able to connect through the internet,
-                so we chose to leverage Steam for matchmaking using the AdvancedSteamSessions plugin.
+                Currently, joining games via IP address only works for sessions created
+                within the player's local network. To let players connect through the internet,
+                we leveraged Steam for matchmaking using the AdvancedSteamSessions plugin.
             </p>
 
-            <figure>
-                <img class="project-img" src="media/flog/multiplayer-menu.png" alt="Multiplayer menu">
-                <figcaption>
-                    The menu screen where players can choose to host or join games. <br>
-                    The IP address of the host must be known in order to use the "Join IP" feature.
-                </figcaption>
-            </figure>
-            <figure>
-                <img class="project-img" src="media/flog/session-browser.png"
-                    alt="Joining a game: the multiplayer session browser">
-                <figcaption>
-                    Clicking on "Find Sessions" in the menu above brings up the session browser, which leverages
-                    Steam to search for games the player can join.
-                </figcaption>
-            </figure>
 
             <!-- TODO: image of UI to host and join games. caption: the menu screen where players can choose to host or join games
                 image of sessionbrowser widget with sessions hosted (take from zoom?). caption: the session browser leverages Steam to search for games the player can join. -->
@@ -360,68 +411,59 @@
 
             <p>
                 <!-- Much of the challenges we faced were related to the incorporation of Steam multiplayer. We had to log -->
-                Much of the challenges we faced were related to the incorporation of the plugin itself. For starters, we
-                were unable to figure out a way to attach a debugger to the standalone processes we were running
-                to test Steam functionality. This led to us logging data to the screen as a workaround. The logistics of
-                testing our work was also challenging; we always needed at least two computers at any time.
+                Many challenges we faced had to do with incorporating Steam matchmaking itself. We couldn't
+                find a way to attach a debugger to the standalone game instances we were running
+                to test Steam functionality, so we logged data to the screen to see the data being passed around.
+                The logistics of testing our work were also challenging; we always needed at least two computers at any
+                time.
                 <!-- log data to the screen to fix plugin-related bugs, since we couldn't figure out how to attach debuggers
                 to the standalone processes we were running to test Steam functionality. -->
                 <!-- though it sometimes required knowing the way memory was laid out
-                in order to view data contained in, for example, a struct being passed around. -->
+                    in order to view data contained in, for example, a struct being passed around. -->
                 <!-- The process of testing games hosted on Steam in itself was also challenging, since it meant we always
-                needed at least two computers at any time. -->
+                        needed at least two computers at any time. -->
                 <!-- Can mention that Unreal does allow for basic testing of multiplayer functionality, and we used
                 that to ensure that MapMovers and physics were being replicated correctly across server and clients.
                 But if it involved Steam, then standalone process. And even if we had multiple standalone processes
                 running on one machine, we still couldn't figure out how to test on a single machine, due to only
                 being able to be logged on to a single account at a time. -->
             </p>
-            <h2><!-- MapMovers and Multiplayer -->Level Design</h2>
-            <!-- Level design supports the target player experience throughout, by blending together linear and
-                non-linear spatial design elements. This results in multiple possible routes that players can take to
-                reach the hole. It also creates mini choke points where players are put in the danger zone of a hazard
-                or moving obstacle. Additionally, triggers to toggle and move said hazards and obstacles were placed off
-                optimal routes to the hole, so that both timing and judgment become critical factors in players'
-                decisions on whether to aim for a trigger or not. -->
 
-            <!-- Gameplay is focused on forcing confrontations between players during intense battles to finish in first.
-                Linear spatial design is therefore blended with non-linear elements, to create multiple possible routes
-                that players can take to reach the hole. -->
+            <!-- TODO: gif of physics being replicated. caption: physics are handled ons the server then synchronised across all networked machines
+            gif of mapmovers MOVING and VFX caption: mapmovers require synchronisation of both location and particle systems across all networked machines -->
+            <figure>
+                <img class="project-img" src="media/flog/physics-replication.gif" alt="Physics replication">
+                <figcaption>Physics are handled on the server then synchronised across all networked machines.
+                </figcaption>
+            </figure>
+            <figure>
+                <img class="project-img" src="media/flog/mapmover-replication.gif" alt="MapMover replication">
+                <figcaption>MapMovers require synchronisation of location data and particle systems across all
+                    networked machines. <br> The MapMover here is triggered by the player on the lower right corner.
+                </figcaption>
+            </figure>
 
-            <!-- Position triggers that are just out of the way so that there is risk vs reward situation going on -->
-            <p>
-                This was my first time designing levels for multiplayer gameplay in general, so it was challenging
-                to create map layouts that supported our design goal of player interaction throughout. My approach
-                blended linear and non-linear spatial design elements, to create maps with multiple possible routes that
-                players can take to reach the hole. I also placed MapMovers at choke points formed by converging routes
-                to increase player tension and engagement.
-                <!-- This was my first time designing levels for multiplayer gameplay in general, and so it was challenging
-                to experiment and come up with map layouts that supported player interaction throughout. My final
-                approach involved blending together linear and non-linear spatial design elements. This resulted in maps
-                containing multiple possible routes that players can take to reach the hole. I also placed MapMovers at
-                choke points formed by converging routes to increase player tension and engagement. -->
-            </p>
-            <p>
-                Player usage of MapMovers was balanced by positioning triggers off optimal routes to the hole. This was
-                done to associate a cost with activating MapMovers, since players might need to sacrifice a shot in
-                order to sabotage others.
+            <!-- <figure>
+                <img class="project-img" src="media/flog/multiplayer-menu.png" alt="Multiplayer menu">
+                <figcaption>
+                    The menu screen where players can choose to host or join games. <br>
+                    The IP address of the host must be known in order to use the "Join IP" feature.
+                </figcaption>
+            </figure> -->
+            <figure>
+                <img class="project-img" src="media/flog/session-browser.png"
+                    alt="Joining a game: the multiplayer session browser">
+                <figcaption>
+                    The session browser feature leverages Steam for matchmaking.
+                </figcaption>
+            </figure>
 
-                <!-- TODO: image of napkin sketch to actual level? or just napkin sketch? or annotated top view of level? you might want to do napkin sketch to actual -- then highlight areas on the napkin sketch that correlate to things mentioned in this section. caption: summary of what is being shown in napkin sketch -->
-
-                <!-- Additionally, I tried to balance player usage of MapMovers by positioning triggers off optimal routes to
-                the hole. This was done in order to create a cost associated with activating MapMovers, since players
-                might need to sacrifice a shot in order to sabotage others. -->
-                <!-- balance
-                    outside of optimal routes to the hole. This was done to encourage players to consider both
-                    timing and judgment as critical factors when deciding whether to aim for a trigger or not. -->
-                <!-- TODO: might be a good idea to include some napkin sketches for before and after process shots -->
-            </p>
             <h2>What I Would Improve</h2>
             <h3>Polishing Multiplayer Gameplay</h3>
             <p>
-                Implementing a lobby will make the hosting/joining system more robust, since players are currently able
-                to join an in-progress game at any time. Also, displaying a progress screen
-                when waiting for players to finish loading into a level will create a smoother user experience.
+                Implementing a lobby will make the hosting/joining system more robust, since players can currently
+                join an in-progress game at any time. Also, displaying a loading screen
+                when waiting for players to finish joining levels will create a smoother user experience.
             </p>
             <!-- <h3>Getting a Better Grasp of AdvancedSteamSessions</h3>
             <p>
@@ -460,6 +502,7 @@
                 Adding <!-- indexical --> details conveying the "danger zones" of MapMovers might make them less
                 frustrating for players to navigate, and overall help ensure maps are not harder than intended to
                 traverse.
+            </p>
 
             <figure>
                 <img class="project-img" src="media/flog/dragon.png" alt="Fire-breathing dragon">
@@ -468,6 +511,22 @@
                     denote the boundaries of the danger zone.
                 </figcaption>
             </figure>
+
+            <h2>Play the Game!</h2>
+            <!-- <h3>Controls</h3>
+            <ul>
+                <li>WASD: movement</li>
+                <li>Space: jump</li>
+                <li>Mouse: look around</li>
+                <li>Left mouse button: interact with items/pick items up</li>
+                <li>Hold LEFT SHIFT while walking to sprint</li>
+            </ul>
+            <br> -->
+            <a href="" class="button-target">Link to Build</a>
+            <!-- <p class="content-warning">
+                <b>CONTENT WARNING: This game may trigger seizures for people with photosensitive epilepsy.</b>
+            </p> -->
+
             <!-- TODO: gif of dragon breathing fire. caption: in the case of this fire-breathing dragon, the ground could have decals of scorch marks added to denote the boundaries of the danger zone -->
             <!-- than
                 intended to traverse
@@ -488,11 +547,10 @@
                 of each other. Overall, making improvements to the environment and the placement of triggers in
                 relation to their corresponding MapMovers will be valuable in helping players find their way around
                 maps better. -->
-            </p>
-            <p>
+            <!-- <p>
                 Furthermore, triggers aren't always placed within sight of the MapMovers they affect. Resolving this
                 might help players make better informed decisions on which triggers they want to aim for during a game.
-            </p>
+            </p> -->
 
             <!-- TODO: process, how the team prioritised networking because it was at the core of gameplay.
                 Divvy up work to make sure everyone was learning something
@@ -726,23 +784,23 @@
         </div> -->
         <div class="footer-div">
             <p>
+                <a href="media/szunkiddchoi_resume.pdf" target="resume"><i class="fas fa-file"></i>
+                    Resume</a>&emsp;&emsp;•&emsp;
                 <a href="https://github.com/juuu-jiii" target="github"><i class="fab fa-github"></i>
                     GitHub</a>&emsp;&emsp;•&emsp;
                 <a href="https://www.linkedin.com/in/szunkidd/" target="linkedin"><i class="fab fa-linkedin"></i>
                     LinkedIn</a>&emsp;&emsp;•&emsp;
-                <a href="mailto:sc4020@rit.edu"><i class="fas fa-at"></i> Email</a>&emsp;&emsp;•&emsp;
-                <a href="media/szunkiddchoi_resume.pdf" target="resume"><i class="fas fa-file"></i>
-                    Resume</a>&emsp;<br>
+                <a href="mailto:sc4020@rit.edu"><i class="fas fa-at"></i> Email</a><br>
                 <small>&copy; Szun Kidd Choi 2021. All lefts reversed.</small>
             </p>
         </div>
     </footer>
 
     <!-- Slick -->
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <!-- <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script> -->
     <!-- Slick function -->
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         // $('.fade').slick();
         $(document).ready(function () {
             $('.slick-carousel').slick({
@@ -782,7 +840,7 @@
                 //     }
                 // ]
             });
-        });
+        }); -->
     </script>
 </body>
 
