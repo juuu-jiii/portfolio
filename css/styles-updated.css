@@ -146,6 +146,14 @@ video {
     transition-duration: 0.2s;
 }
 
+.button-target-top {
+    padding: 0.6rem 0.85rem;
+    margin: 9px 0px;
+    display: inline-block;
+    /* top: 1000px;
+    position:; */
+}
+
 .caption button:hover, .button-target:hover {
     background-color: #7f99c5;
 }
@@ -160,7 +168,7 @@ video {
 }
 
 footer {
-    background-color: black;
+    background-color: #252422;
     display: flex;
     /* justify-content: center; */
 }
@@ -213,7 +221,7 @@ a:active {
     width: 100vw;
     /* padding: 0 10px; */
     position: fixed;
-    height: 35px;
+    height: 50px;
     display: flex;
     justify-content: center;
     top: 0px;
@@ -329,15 +337,15 @@ a:active {
     opacity: 1;
 }
 
-.navbar,
+/* .navbar,
 .dropdown-button,
 .dropdown-content,
-.navbar a {
+.navbar a { */
     /* font-size: smaller; */
     /* padding: 5px 5px 5px 5px; */
     /* padding-left: 5px;
     padding-right: 5px; */
-}
+/* } */
 
 .dropdown-content a {
     padding-left: 17px;
@@ -401,6 +409,8 @@ a:active {
     .dropdown-button,
     .dropdown-content a {
         font-size: 0.7rem;
+        text-align: left;
+        /* line-height: 0.1rem; */
     }
 
     /* .dropdown-content {
@@ -408,7 +418,7 @@ a:active {
     } */
 
     .navbar {
-        padding-top: 5px;
+        padding-top: 4px;
     }
 
     .caption h1 {
@@ -450,7 +460,7 @@ a:active {
     .navbar a,
     .dropdown-button,
     .dropdown-content a {
-        font-size: medium;
+        font-size: 0.85rem;
     }
 
     .navbar {
@@ -467,6 +477,12 @@ a:active {
 }
 
 @media screen and (min-width: 650px) {
+    .navbar a,
+    .dropdown-button,
+    .dropdown-content a {
+        font-size: 1rem;
+    }
+
     .content-card-img {
         /* position: relative; */
         display: block;
