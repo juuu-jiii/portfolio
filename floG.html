@@ -86,7 +86,7 @@
             <p>
                 <!-- <b>Keywords: </b> <br> -->
                 <b>Team Size: </b>4<br>
-                <b>Roles: </b>Game Designer, Level Designer, and Networking Programmer<br>
+                <b>Roles: </b>Game Designer, Level Designer, and Multiplayer Developer<br>
                 <b>Timeframe: </b>13 weeks<br>
                 <b>Engine: </b>Unreal 5<br>
                 <b>Language: </b>Blueprints<br>
@@ -140,10 +140,11 @@
                     to the creation of an unsettling atmosphere riddled with dread. -->
             </p>
             <p>
-                <i>floG</i> currently supports online matchmaking for games of up to 4 players via Steam and IP address.
+                <i>floG</i> currently supports online matchmaking for games of up to 4 players via both Steam and IP
+                address.
             </p>
             <p>
-                We used this project to learn about multiplayer programming concepts,
+                We used this project to learn about networking and multiplayer programming concepts,
                 applying them to development in Unreal 5. We picked design goals that
                 let us explore our technical interests. Primarily, we wanted to
                 let players interact directly with one another synchronously while playing.
@@ -197,7 +198,7 @@
                     Networked player movement and MapMovers interactions across client and server machines.
                 </li>
                 <li>
-                    Designed and implemented menu screen layout and UI.
+                    Designed and implemented menu screen UI and layout.
                 </li>
                 <!-- <li>
                     Took part in design discussions regarding the game's narrative and pacing.
@@ -267,8 +268,8 @@
                 choke points formed by converging routes to increase player tension and engagement. -->
             </p>
             <p>
-                Furthermore, I positioned MapMover triggers off optimal routes to the hole. This was
-                done to balance MapMover usage by associating a cost with activating them, since players
+                Furthermore, I positioned triggers for MapMovers off optimal routes to the hole. This was
+                done to balance usage of MapMovers by associating a cost with activating them, since players
                 might need to sacrifice a shot in order to sabotage others.
 
                 <!-- TODO: image of napkin sketch to actual level? or just napkin sketch? or annotated top view of level? you might want to do napkin sketch to actual -- then highlight areas on the napkin sketch that correlate to things mentioned in this section. caption: summary of what is being shown in napkin sketch -->
@@ -424,11 +425,15 @@
 
             <p>
                 <!-- Much of the challenges we faced were related to the incorporation of Steam multiplayer. We had to log -->
-                Many challenges we faced had to do with incorporating Steam matchmaking itself. We couldn't
-                find a way to attach a debugger to the standalone game instances we were running
-                to test Steam functionality, so we logged data to the screen to see the data being passed around.
-                The logistics of testing our work were also challenging; we always needed at least two computers at any
-                time.
+                It was challenging to test Steam matchmaking in the standalone game instances we were running, as we
+                were unable to attach a debugger to them. Instead, we logged data to the screen to view data being
+                passed around. The logistics of testing our work in general also presented a challenge; we always needed
+                to use at least two computers at any time.
+                <!-- A challenge we faced with incorporating Steam matchmaking was being unable to attach
+                a debugger to the standalone game instances we were running to test Steam functionality, so we logged
+                data to the screen to view data being passed around. The logistics of testing our work were also
+                challenging; we always needed at least two computers at any
+                time. -->
                 <!-- log data to the screen to fix plugin-related bugs, since we couldn't figure out how to attach debuggers
                 to the standalone processes we were running to test Steam functionality. -->
                 <!-- though it sometimes required knowing the way memory was laid out
@@ -446,7 +451,7 @@
             gif of mapmovers MOVING and VFX caption: mapmovers require synchronisation of both location and particle systems across all networked machines -->
             <figure>
                 <img class="project-img" src="media/flog/physics-replication.gif" alt="Physics replication">
-                <figcaption>Physics are handled on the server then synchronised across all networked machines.
+                <figcaption>Physics are handled on the server, then synchronised across all networked machines.
                 </figcaption>
             </figure>
             <figure>
@@ -474,7 +479,7 @@
             <h2>What I Would Improve</h2>
             <h3>Polishing Multiplayer Gameplay</h3>
             <p>
-                Implementing a lobby will make the hosting/joining system more robust, since players can currently
+                Implementing a lobby will make the matchmaking system more robust, since players can currently
                 join an in-progress game at any time. Also, displaying a loading screen
                 when waiting for players to finish joining levels will create a smoother user experience.
             </p>
