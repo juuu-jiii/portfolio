@@ -55,8 +55,9 @@ main {
     /* display: inline-block; */
 
     /* Make images resize proportionally */
-    max-width: 495px;
-    height: auto;
+    /* max-width: 495px; */
+    max-height: 636px;
+    width: auto;
 
     margin: 0 5px;
     margin-bottom: 10px;
@@ -73,12 +74,6 @@ figcaption {
     margin-top: 0.1em;
     margin-bottom: 1em;
     text-align: center;
-}
-
-.project-img {
-    /* max-width: 49.75%; */
-    max-width: 100%;
-    height: 100%;
 }
 
 video {
@@ -542,6 +537,13 @@ a:active {
     border-radius: 15px;
     max-width: 100%;
     height: 100%;
+}
+
+.project-img {
+    /* max-width: 49.75%; */
+    max-width: 100%;
+    /* height: 100%; */
+    object-fit: contain;
 }
 
 /* .content-card-img {
