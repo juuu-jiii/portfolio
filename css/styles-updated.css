@@ -55,9 +55,10 @@ main {
     /* display: inline-block; */
 
     /* Make images resize proportionally */
-    /* max-width: 495px; */
-    max-height: 636px;
-    width: auto;
+    max-width: 495px;
+    height: auto;
+
+    aspect-ratio: auto 13 / 11;
 
     margin: 0 5px;
     margin-bottom: 10px;
