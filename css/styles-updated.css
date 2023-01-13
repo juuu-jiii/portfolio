@@ -62,12 +62,6 @@ main {
     margin-bottom: 10px;
 }
 
-.card-wrapper img {
-    border-radius: 15px;
-    max-width: 100%;
-    height: 100%;
-}
-
 figure {
     margin-top: 0em;
     margin-bottom: 0em;
@@ -98,10 +92,12 @@ video {
     box-sizing: border-box;
     width: 100%;
     height: 100%;
+    /* height: 95.5%; */
 
     /* (C2) POSITION */
     position: absolute;
-    top: 10px;
+    top: 0px;
+    /* top: 20px; */
     left: 0;
     text-align: center;
     padding: 0 15px;
@@ -400,9 +396,10 @@ a:active {
     .content-card-img {
         /* position: relative; */
         display: block;
-        margin: 10px auto;
+        /* margin: 10px auto; */
         max-width: 300px;
-        height: auto;
+        object-fit: contain;
+        /* height: auto; */
     }
 
     .navbar a,
@@ -426,7 +423,7 @@ a:active {
     }
 
     .caption p {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
     }
 }
 
@@ -434,9 +431,10 @@ a:active {
     .content-card-img {
         /* position: relative; */
         display: block;
-        margin: 10px auto;
+        /* margin: 10px auto; */
         max-width: 400px;
-        height: auto;
+        object-fit: contain;
+        /* height: auto; */
     }
 
     .caption h1 {
@@ -452,9 +450,10 @@ a:active {
     .content-card-img {
         /* position: relative; */
         display: block;
-        margin: 10px auto;
+        /* margin: 10px auto; */
         max-width: 500px;
-        height: auto;
+        object-fit: contain;
+        /* height: auto; */
     }
 
     .navbar a,
@@ -486,9 +485,10 @@ a:active {
     .content-card-img {
         /* position: relative; */
         display: block;
-        margin: 10px auto;
+        /* margin: 10px auto; */
         max-width: 600px;
-        height: auto;
+        object-fit: contain;
+        /* height: auto; */
     }
 }
 
@@ -496,9 +496,10 @@ a:active {
     .content-card-img {
         /* position: relative; */
         display: block;
-        margin: 10px auto;
+        /* margin: 10px auto; */
         max-width: 700px;
-        height: auto;
+        object-fit: contain;
+        /* height: auto; */
     }
 }
 
@@ -506,9 +507,10 @@ a:active {
     .content-card-img {
         /* position: relative; */
         display: block;
-        margin: 10px auto;
+        /* margin: 10px auto; */
         max-width: 800px;
-        height: auto;
+        object-fit: contain;
+        /* height: auto; */
     }
 }
 
@@ -516,19 +518,28 @@ a:active {
     .content-card-img {
         /* position: relative; */
         display: block;
-        margin: 10px auto;
+        /* margin: 10px auto; */
         max-width: 900px;
-        height: auto;
+        object-fit: contain;
+        /* height: auto; */
     }
 }
 
 @media screen and (min-width: 1050px) {
     .content-card-img {
         display: block;
-        margin: 10px auto;
+        /* margin: 10px auto; */
         max-width: 1010px;
-        height: auto;
+        object-fit: contain;
+        /* aspect-ratio: auto 1280 / 720; */
+        /* height: auto; */
     }
+}
+
+.card-wrapper img {
+    border-radius: 15px;
+    max-width: 100%;
+    height: 100%;
 }
 
 /* .content-card-img {
