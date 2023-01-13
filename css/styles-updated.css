@@ -84,6 +84,7 @@ video {
     aspect-ratio: auto 1280 / 720;
 }
 
+/* https://code-boxx.com/text-over-image-hover-html-css/ */
 /* .fullcap */
 .caption {
     /* (C1) DIMENSIONS */
@@ -148,6 +149,8 @@ video {
 .button-target-top {
     padding: 0.6rem 0.85rem;
     margin: 9px 0px;
+
+    /* Because apparently adding this makes it suddenly obey instructions. */
     display: inline-block;
     /* top: 1000px;
     position:; */
@@ -393,14 +396,12 @@ a:active {
     justify-content: space-between;
 }
 
-/* TODO: media queries for slick carousel */
-
 @media screen and (min-width: 350px) {
     .content-card-img {
         /* position: relative; */
         display: block;
         /* margin: 10px auto; */
-        max-width: 300px;
+        max-width: 495px;
         object-fit: contain;
         /* height: auto; */
     }
@@ -549,8 +550,11 @@ a:active {
 
 .project-img {
     /* max-width: 49.75%; */
-    max-width: 100%;
     /* height: 100%; */
+
+    max-width: 100%;
+
+    /* Make the image respect aspect ratio when resizing. */
     object-fit: contain;
 }
 
