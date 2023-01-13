@@ -58,7 +58,7 @@ main {
     max-width: 495px;
     height: auto;
 
-    aspect-ratio: auto 13 / 11;
+    aspect-ratio: 13 / 11;
 
     margin: 0 5px;
     margin-bottom: 10px;
