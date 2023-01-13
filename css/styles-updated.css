@@ -112,6 +112,8 @@ video {
     transition: opacity 0.3s;
 
     border-radius: 15px;
+
+    object-fit: contain;
 }
 
 .card-wrapper:hover .caption {
