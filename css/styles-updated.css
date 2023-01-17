@@ -156,6 +156,11 @@ video {
     position:; */
 }
 
+.button-target-group {
+    margin: 20px 0px 20px 10px;
+    padding: 0.6rem 0.7rem;
+}
+
 .caption button:hover, .button-target:hover {
     background-color: #7f99c5;
 }
@@ -556,6 +561,11 @@ a:active {
 
     /* Make the image respect aspect ratio when resizing. */
     object-fit: contain;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
 }
 
 /* .content-card-img {
