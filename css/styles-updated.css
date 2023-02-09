@@ -569,7 +569,7 @@ a:active {
 }
 
 .project-img-halved {
-    max-width: 49.75%;
+    max-width: 49%;
 
     /* Make the image respect aspect ratio when resizing. */
     object-fit: contain;
