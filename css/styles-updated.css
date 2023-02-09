@@ -20,6 +20,7 @@ header p,
 .content h3,
 .content p,
 .content li,
+.note,
 figcaption {
     color: #293F65;
 }
@@ -167,6 +168,10 @@ video {
 
 .caption button:active, .button-target:active {
     background-color: #41649c;
+}
+
+.note {
+    font-size: 1.5rem;
 }
 
 .content-warning {
@@ -558,6 +563,13 @@ a:active {
     /* height: 100%; */
 
     max-width: 100%;
+
+    /* Make the image respect aspect ratio when resizing. */
+    object-fit: contain;
+}
+
+.project-img-halved {
+    max-width: 49.75%;
 
     /* Make the image respect aspect ratio when resizing. */
     object-fit: contain;
