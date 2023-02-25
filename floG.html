@@ -6,46 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Szun Kidd Choi's Portfolio • floG</title>
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
         integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
         crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styles-updated.css">
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
-        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- jQuery to help with refactoring common page elements. -->
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div id="navigation">
         <div id="navigation-container">
-            <nav class="navbar">
-                <!-- Jump to the top if name is clicked. -->
-                <a href="#">Szun Kidd Choi • Game Designer & Programmer</a>
-            </nav>
-            <!-- First dropdown: projects -->
-            <div class="dropdown">
-                <button class="dropdown-button">projects</button>
-                <div class="dropdown-content">
-                    <a href="floG.html">floG</a>
-                    <a href="the-tunnels.html">The Tunnels</a>
-                    <a href="tapracing.html">TapRacing</a>
-                    <a href="mrbl.html">mrbl.</a>
-                </div>
-            </div>
-            <!-- Second dropdown: links to connect -->
-            <div class="dropdown">
-                <button class="dropdown-button">resume & socials</button>
-                <div class="dropdown-content">
-                    <a href="media/szunkiddchoi_resume.pdf" target="resume"><i class="fas fa-file"></i> Resume</a>
-                    <a href="https://github.com/juuu-jiii" target="github"><i class="fab fa-github"></i> GitHub</a>
-                    <a href="https://www.linkedin.com/in/szunkidd/" target="linkedin"><i class="fab fa-linkedin"></i>
-                        LinkedIn</a>
-                    <a href="mailto:sc4020@rit.edu"><i class="fas fa-at"></i> Email</a>
-                </div>
-            </div>
+            <script>
+                $("#navigation-container").load("master-utils/navbar.html");
+            </script>
         </div>
     </div>
     <div id="wrapper">
@@ -810,76 +790,11 @@
 
         </div>
     </div>
-    <footer>
-        <!-- Contact info and resume -->
-        <!-- <div id="contact-info">
-            <h3>Socials:</h3>
-            <p><a href="">LinkedIn</a><br><a href="">GitHub</a><br><a href="">Email</a></p>
-        </div>
-        <div id="resume">
-            <h3><a href="">Resume</a></h3>
-        </div> -->
-        <div class="footer-div">
-            <p>
-                <a href="media/szunkiddchoi_resume.pdf" target="resume"><i class="fas fa-file"></i>
-                    Resume</a>&emsp;&emsp;•&emsp;
-                <a href="https://github.com/juuu-jiii" target="github"><i class="fab fa-github"></i>
-                    GitHub</a>&emsp;&emsp;•&emsp;
-                <a href="https://www.linkedin.com/in/szunkidd/" target="linkedin"><i class="fab fa-linkedin"></i>
-                    LinkedIn</a>&emsp;&emsp;•&emsp;
-                <a href="mailto:sc4020@rit.edu"><i class="fas fa-at"></i> Email</a><br>
-                <small>&copy; Szun Kidd Choi 2023.</small>
-                <!-- <small>&copy; Szun Kidd Choi 2021. All lefts reversed.</small> -->
-            </p>
-        </div>
-    </footer>
-
-    <!-- Slick -->
-    <!-- <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script> -->
-    <!-- Slick function -->
-    <!-- <script type="text/javascript">
-        // $('.fade').slick();
-        $(document).ready(function () {
-            $('.slick-carousel').slick({
-                // dots: true,
-                infinite: true,
-                speed: 500,
-                fade: true,
-                cssEase: 'linear',
-                // zIndex: 9999,
-                // nextArrow: 'next-arrow',
-                nextArrow: '<span class="slick-prev slick-arrow prev-arrow" aria-label="Next" type="button" style=""><i class="fas fa-angle-double-left"></i></span>',
-                prevArrow: '<span class="slick-prev slick-arrow next-arrow" aria-label="Previous" type="button" style=""><i class="fas fa-angle-double-right"></i></span>',
-                // variableWidth: true,
-                // adaptableHeight: true
-                // prevArrow: '<span class="prev-arrow"><i class="fas fa-angle-double-left"></i></span>'
-                // arrows: true,
-                // centerMode: true,
-                // centerPadding: '50px',
-                // initialSlide: 0,
-                // autoplay: true,
-                // autoplaySpeed: 6500,
-                // draggable: true,
-                // focusOnSelect: true,
-                // infinite: true,
-                // pauseOnHover: true,
-                // variableWidth: true,
-                // adaptiveHeight: true,
-                // slidesToShow: 3,
-                // slidesToScroll: 1,
-                // responsive: [
-                //     {
-                //         breakpoint: 410,
-                //         settings: {
-                //             centerPadding: '10px',
-                //             slidesToShow: 3
-                //         }
-                //     }
-                // ]
-            });
-        }); -->
-    </script>
+    <div id="footer-container">
+        <script>
+            $("#footer-container").load("master-utils/footer.html");
+        </script>
+    </div>
 </body>
 
 </html>

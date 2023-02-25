@@ -4,147 +4,206 @@ GREY 403d39
 BLACK 252422
 BLUE 294066 */
 
-/*********************** test ***************************/
-
-/* The grid: Three equal columns that floats next to each other */
-.column {
-    float: left;
-    width: 25%;
-    padding: 50px;
-    text-align: center;
-    font-size: 25px;
-    cursor: pointer;
-    color: white;
-  }
-  
-  .containerTab {
-    padding: 20px;
-    color: white;
-  }
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  /* Closable button inside the image */
-  .closebtn {
-    float: right;
-    color: white;
-    font-size: 35px;
-    cursor: pointer;
-  }
-
-/*********************** test ***************************/
+/* 
+    current palette
+    text: 293F65
+    background: fffcf2
+    button: 6e8ec4
+    button-hover: 7f99c5
+    button-active: 41649c
+    a-focus: 294066
+    navbar-bg: 252422
+    dropdown-hover: 403D39
+*/
 
 * {
-    /* Debugging */
-    border: 1px solid transparent;
-    box-sizing: border-box;
-    /* font-family: 'Open Sans', sans-serif; */
     font-family: 'Helvetica', sans-serif;
 }
 
 html {
-    /* Set base font size for rem sizing. */
-    font-size: 16px;
-
-    /* Smooth scrolling! Yay for added satisfaction! */
     scroll-behavior: smooth;
 }
 
-html, body {
-    margin: 0;
-}
-
-header, main, footer, main div img, main div p {
-    padding: .5rem;
-}
-
-/* Standardise image dimensions. */
-.project-img {
-    width: 550px;
-    height: 400px;
-    margin: 0 10px;
-}
-
-/* For responsive design, these rules apply for all sizes. (Mobile-friendly) */
-#wrapper {
-    display: grid;
-    height: fit-content;
-    /*height: 300vh;*/ /* 300% of viewport height */
-    width: 100vw;
-    grid-template-rows: 0fr 10fr 0fr;
-    grid-template-areas: "bio"
-                         "projects"
-                         "contact";
-
-    /* Resize along with screen until width of 1200px is reached. */
-    max-width: 1200px;
-
-    /* Centre the layout. */
-    margin: 0 auto;
-
-    margin-top: 50px;
-
-}
-
-#wrapper footer {
-    margin: 0 0;
-}
-
-/* Adjust font properties as necessary. */
-h1 {
-    font-size: 2.5em;
-    font-weight: 900;
-}
-
-h2 {
-    font-weight: 900;
-    font-size: 1.4em;
-    line-height: 1px;
-}
-
-h1, h2, h3 {
+header h1,
+header h2,
+header p,
+.content h1,
+.content h2,
+.content h3,
+.content p,
+.content li,
+.note,
+figcaption {
     color: #293F65;
 }
 
-header h3 {
+/* h3 {
     font-size: 0.85em;
-    margin: 40px 20px 0 0;
-}
+} */
 
 body {
+    margin: 0px;
     width: 100%;
     background-color: #fffcf2;
 }
 
-/* Dynamically resize image based on window width. */
-.project-img {
-    max-width: 100%;
-    max-height: 100%;
-
-    /* Centre project images. */
+#wrapper {
     display: block;
+    max-width: 1010px;
+
+    /* Centre the layout. */
     margin: 0 auto;
+    padding: 60px 10px;
 }
 
-/* Provide appropriate padding so elements line up with each other. */
-div.project h2, div.project p {
-    padding: 0px 20px;
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-#about, header h3{
-    padding: 0 12px;
+/* .fullwrap */
+.card-wrapper {
+    position: relative;
+    /* float: left; */
+    /* display: inline-block; */
+
+    /* Make images resize proportionally */
+    max-width: 495px;
+    height: auto;
+
+    /* aspect-ratio: 13 / 11; */
+
+    margin: 0 5px;
+    margin-bottom: 10px;
+}
+
+figure {
+    margin-top: 0em;
+    margin-bottom: 0em;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+figcaption {
+    margin-top: 0.1em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto 1280 / 720;
+}
+
+/* https://code-boxx.com/text-over-image-hover-html-css/ */
+/* .fullcap */
+.caption {
+    /* (C1) DIMENSIONS */
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    /* max-height: 636px; */
+    /* height: 95.5%; */
+
+    /* (C2) POSITION */
+    position: absolute;
+    top: 0px;
+    /* top: 20px; */
+    left: 0;
+    text-align: center;
+    padding: 0 15px;
+
+    /* (C3) COLORS */
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+
+    /* (D) SHOW/HIDE */
+    visibility: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+
+    border-radius: 15px;
+
+    /* aspect-ratio: 13 / 11;
+    object-fit: contain; */
+}
+
+/* .fullwrap:hover .fullcap */
+.card-wrapper:hover .caption {
+    visibility: visible;
+    opacity: 1;
+}
+
+.caption button {
+    background-color: #6e8ec4;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    padding: 0.5rem 0.85rem;
+    border-radius: 5px;
+    transition-duration: 0.2s;
+}
+
+.button-target {
+    background-color: #6e8ec4;
+    color: white !important;
+    text-decoration: none;
+    border: none;
+    font-size: 1rem;
+    padding: 0.6rem 0.85rem;
+    margin: 20px 0px;
+    /* size: 10em 5em; */
+    border-radius: 5px;
+    transition-duration: 0.2s;
+}
+
+.button-target-top {
+    padding: 0.6rem 0.85rem;
+    margin: 9px 0px;
+
+    /* Because apparently adding this makes it suddenly obey instructions. */
+    display: inline-block;
+    /* top: 1000px;
+    position:; */
+}
+
+.button-target-group {
+    margin: 20px 0px 20px 4px;
+    padding: 0.6rem 0.6rem;
+}
+
+.caption button:hover, .button-target:hover {
+    background-color: #7f99c5;
+}
+
+.caption button:active, .button-target:active {
+    background-color: #41649c;
+}
+
+.note {
+    font-size: 1.5rem;
+}
+
+.content-warning {
+    color:rgb(141, 2, 2) !important;
+    font-size: 1.5rem;
 }
 
 footer {
-    background-color: black;
+    background-color: #252422;
+    display: flex;
+    /* justify-content: center; */
+}
+
+.footer-div {
+    /* width: 1000px; */
+    padding: 0 10px;
 }
 
 footer p {
+    color: #6e8ec4;
     font-size: smaller;
     font-weight: bold;
 }
@@ -154,8 +213,13 @@ footer small {
 }
 
 /* Remove the underline. */
+a,
 footer a {
     text-decoration: none;
+}
+
+a {
+    font-weight: bold;
 }
 
 /* Make the links match the overall colour scheme. */
@@ -177,21 +241,40 @@ a:active {
 
 /* ============================= NAVBAR ============================= */
 /* Fix navigation bar to the top of the screen. */
-#navigation, .navbar {
+#navigation {
+    width: 100vw;
+    /* padding: 0 10px; */
     position: fixed;
-    height: 35px;
+    height: 50px;
     display: flex;
+    justify-content: center;
     top: 0px;
     background-color: #252422;
+    /* color: #6e8ec4; */
+    z-index: 1;
+}
+
+#navigation-container {
+    width: 100vw;
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+.navbar,
+.navbar span {
     color: #6e8ec4;
+}
+
+.navbar {
+    padding: 0 10px;
 }
 
 /* Centre-align the navbar by leveraging flexbox. */
 #navigation {
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     position: fixed;
-    width: 100vw;
+
 }
 
 /* Make sure pipes used for layout spacing are the same size as actual navbar
@@ -206,15 +289,15 @@ a:active {
     color: #6e8ec4;
     text-align: center;
     font-weight: bolder;
-    padding: 8.5px 16px;
+    font-size: medium;
+    /* padding: 8.5px 0; */
 
     /* Get rid of the underline. */
     text-decoration: none;
 }
 
-.navbar #resume-link {
-    /* Remove bold formatting. */
-    font-weight: normal;
+.navbar {
+    padding-top: 7.5px;
 }
 
 /* Dropdown button */
@@ -226,7 +309,7 @@ a:active {
     border: none;
     outline: none;
     font-size: inherit;
-    color: inherit;
+    color: #6e8ec4;
     background-color: inherit;
 }
 
@@ -249,6 +332,7 @@ a:active {
     transition: visibility 0s, opacity 0.1s ease-in;
 
     position: absolute;
+    /* right: 20px; */
     background-color: #6e8ec4;
     min-width: 100px;
 }
@@ -267,7 +351,7 @@ a:active {
     transition: background-color 0.1s ease-in;
     background-color: #403D39;
     transition: color 0.1s ease-in;
-    color:#FFFCF2;
+    color: #FFFCF2;
 }
 
 /* Show the dropdown menu on hover */
@@ -277,484 +361,240 @@ a:active {
     opacity: 1;
 }
 
-.navbar, .dropdown-button, .dropdown-content, .navbar a {
-    font-size: smaller;
+/* .navbar,
+.dropdown-button,
+.dropdown-content,
+.navbar a { */
+    /* font-size: smaller; */
     /* padding: 5px 5px 5px 5px; */
     /* padding-left: 5px;
     padding-right: 5px; */
-}
+/* } */
 
 .dropdown-content a {
     padding-left: 17px;
     padding-bottom: 10px;
 }
 
-#navigation p {
-    font-size: medium;
-    padding-top: 1px;
+/* .img img {
+    max-width: 1010px;
+    height: auto;
+} */
+
+.slick-carousel {
+    margin-bottom: 65px;
 }
 
-/* Resize navbar to be more desktop-friendly. */
-@media screen and (min-width: 600px) {
-    #wrapper {
-        grid-template-rows: 0fr 10fr 0fr;
+.slick-carousel .prev-arrow {
+    position: absolute;
+    bottom: -50px;
+    left: 30%;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    background: #293F65;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    display: inline-block;
+}
+
+.slick-carousel .next-arrow {
+    position: absolute;
+    bottom: -50px;
+    right: 30%;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    background: #293F65;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    display: inline-block;
+}
+
+#title {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (min-width: 350px) {
+    .content-card-img {
+        /* position: relative; */
+        display: block;
+        /* margin: 10px auto; */
+        max-width: 495px;
+        object-fit: contain;
+        /* height: auto; */
     }
 
-    .navbar, .dropdown-button, .dropdown-content, .navbar a {
-        font-size: large;
-    }
-    
-    .dropdown-button {
-        padding-top: 12px;
-    }
-
-    .navbar a {
-        padding: 12px 16px;
-    }
-
-    .dropdown-content {
-        min-width: 150px;
-    }
-
-    #navigation p {
-        font-size: xx-large;
-        margin-top: -3.5px;
-    }
-
+    .navbar a,
+    .dropdown-button,
     .dropdown-content a {
-        padding: 15px 15px 15px 15px;
-        /* padding-left: 15px;
-        padding-bottom: 30px; */
+        font-size: 0.7rem;
+        text-align: left;
+        /* line-height: 0.1rem; */
     }
 
-    #navigation, .navbar {
-        position: fixed;
-        height: 50px;
-        display: flex;
-        top: 0px;
-        background-color: #252422;
-        color: #6e8ec4;
+    /* .dropdown-content {
+        right: 10px;
+    } */
+
+    .navbar {
+        padding-top: 4px;
     }
 
-    footer p {
-        font-size: large;
-        font-weight: bold;
+    .caption h1 {
+        font-size: 1rem;
+    }
+
+    .caption p {
+        font-size: 0.75rem;
     }
 }
 
-/* If the window gets large enough (computers, tablets, etc.) show the following
- layouts instead. (I'm so sorry this is such a long section - I really couldn't
- figure out how to condense it) */
-@media screen and (min-width: 770px) {
-    #wrapper {
-        /*height: 200vh; /* 200% of viewport height */
-        grid-template-rows: 250px 1fr 100px;
+@media screen and (min-width: 450px) {
+    .content-card-img {
+        /* position: relative; */
+        display: block;
+        /* margin: 10px auto; */
+        max-width: 400px;
+        object-fit: contain;
+        /* height: auto; */
     }
 
-    /* Layout the header area using a second grid. */
-    header {
-        grid-area: bio;
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        grid-template-areas: "pic-name-tagline about";
-    }
-    
-    /* Style and position elements within the header element. */
-    header img, header h1, header h2{
-        display: flex;
-        flex-flow: nowrap;
-        grid-area: pic-name-tagline;
-        padding: .5rem;
-    }
-    
-    h1 {
-        font-size: 2.0em;
-    }
-    
-    h2 {
-        font-size: 1.2em;
+    .caption h1 {
+        font-size: 1.3rem;
     }
 
-    header h3 {
-        font-size: 0.75em;
-        grid-area: about;
-        margin: 20px 20px 0 0;
-    }
-    
-    #about {
-        display: flex;
-        flex-flow: nowrap;
-        padding: 0 13px;
-    }
-    
-    /* Layout the main section using third grid. */
-    main {
-        grid-area: projects;
-        display: grid;
-        /* grid-template-columns: 1fr 1fr; */
-        grid-template-rows: repeat(4, 1fr);
-        grid-template-areas: "projects-1"
-                             "projects-2"
-                             "projects-3"
-                             "projects-4";
-                             /* Add more as needed. */
-                             /* Edit the repeat function as well. */
-    }
-    
-    footer {
-        /* grid-area: contact;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: "socials resume"; */
-        padding: 0 28px;
-    }
-    
-    #contact-info {
-        grid-area: socials;
-    }
-    
-    #resume {
-        grid-area: resume;
-        text-align: right;
-    }
-    
-    .project {
-        padding: 40px 0px;
-    }
-
-    /* ================ BEGIN SECTION FOR PROJECT ENTRIES ================ */
-    /* =========== COPY UNTIL MARKED LINE TO ADD MORE PROJECTS =========== */
-    /* Move the projects into their respective locations within the grid. */
-    #proj-1 {
-        grid-area: projects-1;
-
-        /* Further subdivide to place thumbnails. */
-        display: grid;
-        grid-template-rows: 53% 5% 37% 5%;
-        grid-template-areas: "project-1-gallery"
-                             "project-1-title"
-                             "project-1-description";
-    }
-
-    /* Move titles and links into their appropriate locations. */
-    #project-1-title {
-        grid-area: project-1-title;
-    }
-
-    #project-1-link {
-        grid-area: project-1-link;
-    }
-
-    /* Split galleries up into further grids. */
-    #project-1-gallery {
-        grid-area: project-1-gallery;
-        
-        display: grid;
-        grid-template-rows: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: "proj-1-1 proj-1-2"
-                             "proj-1-3 proj-1-4";
-    }
-
-    /* Move thumbnails into their correct positions. */
-    #proj-1-1 {
-        grid-area: proj-1-1;
-    }
-    
-    #proj-1-2 {
-        grid-area: proj-1-2;
-    }
-
-    #proj-1-3 {
-        grid-area: proj-1-3;
-    }
-
-    #proj-1-4 {
-        grid-area: proj-1-4;
-    }
-
-    /* Split descriptions up into two columns - 
-    one for summary and the other for tools used. */
-    #project-1-description {
-        grid-area: project-1-description;
-        
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: "project-1-summary project-1-tools";
-    }
-
-    #project-1-summary {
-        grid-area: project-1-summary;
-    }
-
-    #project-1-tools {
-        grid-area: project-1-tools;
-    }
-    /* ================= END SECTION FOR PROJECT ENTRIES ================= */
-    /* ============== COPY UNTIL THIS LINE TO ADD A PROJECT ============== */
-
-    /* ============================ Project 2 ============================ */
-    #proj-2 {
-        grid-area: projects-2;
-
-        /* Further subdivide to place thumbnails. */
-        display: grid;
-        grid-template-rows: 53% 5% 37% 5%;
-        grid-template-areas: "project-2-gallery"
-                             "project-2-title"
-                             "project-2-description"
-                             "project-2-link";
-    }
-
-    #project-2-title {
-        grid-area: project-2-title;
-    }
-
-    #project-2-link {
-        grid-area: project-2-link;
-    }
-
-    #project-2-gallery {
-        grid-area: project-2-gallery;
-
-        display: grid;
-        grid-template-rows: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: "proj-2-1 proj-2-2"
-                             "proj-2-3 proj-2-4";
-    }
-
-    #project-2-description {
-        grid-area: project-2-description;
-        
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: "project-2-summary project-2-tools";
-    }
-
-    #proj-2-1 {
-        grid-area: proj-2-1;
-    }
-    
-    #proj-2-2 {
-        grid-area: proj-2-2;
-    }
-
-    #proj-2-3 {
-        grid-area: proj-2-3;
-    }
-
-    #proj-2-4 {
-        grid-area: proj-2-4;
-    }
-    
-    /* ============================ Project 3 ============================ */
-    #proj-3 {
-        grid-area: projects-3;
-
-        /* Further subdivide to place thumbnails. */
-        display: grid;
-        grid-template-rows: 53% 5% 37% 5%;
-        grid-template-areas: "project-3-gallery"
-                             "project-3-title"
-                             "project-3-description"
-                             "project-3-link";
-    }
-    
-    #project-3-title {
-        grid-area: project-3-title;
-    }
-
-    #project-3-link {
-        grid-area: project-3-link;
-    }
-
-    #project-3-gallery {
-        grid-area: project-3-gallery;
-
-        display: grid;
-        grid-template-rows: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: "proj-3-1 proj-3-2"
-                             "proj-3-3 proj-3-4";
-    }
-
-    #project-3-description {
-        grid-area: project-3-description;
-        
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: "project-3-summary project-3-tools";
-    }
-
-    #proj-3-1 {
-        grid-area: proj-3-1;
-    }
-    
-    #proj-3-2 {
-        grid-area: proj-3-2;
-    }
-
-    #proj-3-3 {
-        grid-area: proj-3-3;
-    }
-
-    #proj-3-4 {
-        grid-area: proj-3-4;
-    }
-
-    /* ============================ Project 4 ============================ */
-    #proj-4 {
-        grid-area: projects-4;
-
-        /* Further subdivide to place thumbnails. */
-        display: grid;
-        grid-template-rows: 53% 5% 37% 5%;
-        grid-template-areas: "project-4-gallery"
-                             "project-4-title"
-                             "project-4-description"
-                             "project-4-link";
-    }
-
-    #project-4-title {
-        grid-area: project-4-title;
-    }
-
-    #project-4-link {
-        grid-area: project-4-link;
-    }
-
-    #project-4-gallery {
-        grid-area: project-4-gallery;
-
-        display: grid;
-        grid-template-rows: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: "proj-4-1 proj-4-2"
-                             "proj-4-3 proj-4-4";
-    }
-    
-    #project-4-description {
-        grid-area: project-4-description;
-        
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: "project-4-summary project-4-tools";
-    }
-
-    #proj-4-1 {
-        grid-area: proj-4-1;
-    }
-    
-    #proj-4-2 {
-        grid-area: proj-4-2;
-    }
-
-    #proj-4-3 {
-        grid-area: proj-4-3;
-    }
-
-    #proj-4-4 {
-        grid-area: proj-4-4;
-    }
-
-    /* Pad tops of all project links. */
-    .project-link {
-        padding-top: 20px;
+    .caption p {
+        font-size: 0.9rem;
     }
 }
 
-/* These further media queries prevent the text from becoming too squished
-    against edges. */
-@media screen and (min-width: 830px) {
-    h1 {
-        font-size: 2.0em;
-    }
-    
-    h2 {
-        font-size: 1.2em;
-    }
-
-    #proj-1 {
-        grid-template-rows: 58% 5% 32% 5%;
+@media screen and (min-width: 550px) {
+    .content-card-img {
+        /* position: relative; */
+        display: block;
+        /* margin: 10px auto; */
+        max-width: 500px;
+        object-fit: contain;
+        /* height: auto; */
     }
 
-    #proj-2 {
-        grid-template-rows: 58% 5% 32% 5%;
+    .navbar a,
+    .dropdown-button,
+    .dropdown-content a {
+        font-size: 0.85rem;
     }
 
-    #proj-3 {
-        grid-template-rows: 58% 5% 32% 5%;
+    .navbar {
+        padding-top: 7.5px;
     }
 
-    #proj-4 {
-        grid-template-rows: 58% 5% 32% 5%;
+    .caption h1 {
+        font-size: xx-large;
+    }
+
+    .caption p {
+        font-size: medium;
     }
 }
 
-@media screen and (min-width: 900px) {
-    h1 {
-        font-size: 2.5em;
-    }
-    
-    h2 {
-        font-size: 1.4em;
-    }
-    
-    header h3 {
-        font-size: 0.85em;
-        margin: 20px 20px 0 0;
+@media screen and (min-width: 650px) {
+    .navbar a,
+    .dropdown-button,
+    .dropdown-content a {
+        font-size: 1rem;
     }
 
-    #proj-1 {
-        grid-template-rows: 62% 5% 28% 5%;
-    }
-
-    #proj-2 {
-        grid-template-rows: 62% 5% 28% 5%;
-    }
-
-    #proj-3 {
-        grid-template-rows: 62% 5% 28% 5%;
-    }
-
-    #proj-4 {
-        grid-template-rows: 62% 5% 28% 5%;
+    .content-card-img {
+        /* position: relative; */
+        display: block;
+        /* margin: 10px auto; */
+        max-width: 600px;
+        object-fit: contain;
+        /* height: auto; */
     }
 }
 
-@media screen and (min-width: 1000px) {
-    #proj-1 {
-        grid-template-rows: 68% 5% 25% 5%;
-    }
-
-    #proj-2 {
-        grid-template-rows: 68% 5% 25% 5%;
-    }
-
-    #proj-3 {
-        grid-template-rows: 68% 5% 25% 5%;
-    }
-
-    #proj-4 {
-        grid-template-rows: 68% 5% 25% 5%;
+@media screen and (min-width: 750px) {
+    .content-card-img {
+        /* position: relative; */
+        display: block;
+        /* margin: 10px auto; */
+        max-width: 700px;
+        object-fit: contain;
+        /* height: auto; */
     }
 }
 
-@media screen and (min-width: 1150px) {
-    #proj-1 {
-        grid-template-rows: 70% 5% 20% 5%;
-    }
-
-    #proj-2 {
-        grid-template-rows: 70% 5% 20% 5%;
-    }
-
-    #proj-3 {
-        grid-template-rows: 70% 5% 20% 5%;
-    }
-
-    #proj-4 {
-        grid-template-rows: 70% 5% 20% 5%;
+@media screen and (min-width: 850px) {
+    .content-card-img {
+        /* position: relative; */
+        display: block;
+        /* margin: 10px auto; */
+        max-width: 800px;
+        object-fit: contain;
+        /* height: auto; */
     }
 }
+
+@media screen and (min-width: 950px) {
+    .content-card-img {
+        /* position: relative; */
+        display: block;
+        /* margin: 10px auto; */
+        max-width: 900px;
+        object-fit: contain;
+        /* height: auto; */
+    }
+}
+
+@media screen and (min-width: 1050px) {
+    .content-card-img {
+        display: block;
+        /* margin: 10px auto; */
+        max-width: 1010px;
+        object-fit: contain;
+        /* aspect-ratio: auto 1280 / 720; */
+        /* height: auto; */
+    }
+}
+
+/* .fullwrap img */
+.card-wrapper img {
+    border-radius: 15px;
+    width: 100%;
+    /* max-width: 100%;
+    height: 100%; */
+}
+
+.project-img {
+    /* max-width: 49.75%; */
+    /* height: 100%; */
+
+    max-width: 100%;
+
+    /* Make the image respect aspect ratio when resizing. */
+    object-fit: contain;
+}
+
+.project-img-halved {
+    max-width: 49%;
+
+    /* Make the image respect aspect ratio when resizing. */
+    object-fit: contain;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* .content-card-img {
+    display: block;
+    margin: 10px auto;
+    max-width: 1010px;
+    height: auto;
+} */
