@@ -13,7 +13,10 @@
         crossorigin="anonymous">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- JS -->
+    <script src="src/main.js"></script>
 
     <!-- jQuery to help with refactoring common page elements. -->
     <script src="https://code.jquery.com/jquery-3.6.3.js"
@@ -37,31 +40,16 @@
             <source src="media/flog/flog-gameplay.mp4" type="video/mp4">
             This browser does not support video.
         </video>
-        <!-- <p><a href="blank-slate.html">&lt; Back to Home</a></p>
-        <div class="slick-carousel">
-            <div class="slick-item">
-                <div class="img">
-                    <img class="content-card-img" src="media/project1-1.png">
-                </div>
-            </div>
-            <div class="slick-item">
-                <div class="img">
-                    <img class="content-card-img" src="media/project1-2.png">
-                </div>
-            </div>
-            <div class="slick-item">
-                <div class="img">
-                    <img class="content-card-img" src="media/project1-3.png">
-                </div>
-            </div>
-        </div> -->
         <div class="content">
-            <!-- <h1>For The Love of Golf</h1> -->
             <div id="title">
                 <h1>floG</h1>
                 <a href="#play-the-game" class="button-target">Play Game</a>
-                <!-- <button class="project-button">Play Game</button> -->
             </div>
+            <p>
+                <i>floG</i> (short for <i>For The Love of Golf</i>) is a networked multiplayer simultaneous minigolf
+                game where players can derail opponents using interactive obstacles and hazards that are moved or
+                activated using triggers distributed over the map.
+            </p>
             <h2>Fast Facts</h2>
             <p>
                 <!-- <b>Keywords: </b> <br> -->
@@ -70,107 +58,18 @@
                 <b>Timeframe: </b>13 weeks<br>
                 <b>Engine: </b>Unreal 5<br>
                 <b>Language: </b>Blueprints Visual Scripting<br>
-                <!-- TODO: assets list -->
-                <!-- TODO: write in first-person perspective more! -->
-                <!-- <b>Assets: full list available here</b>Chase Background Music - <a
-                    href="https://www.youtube.com/watch?v=nEuXiJ-d2YM" target="chase-music">Fesliyan Studios Background
-                    Music</a> -->
             </p>
-            <h2>Concept and Design/Development Goals</h2>
-            <p>
-                <!-- <i>For The Love of Golf</i> (<i>floG</i>) is a networked multiplayer simultaneous minigolf game where
-                players race to be the first to sink their balls... but there's a chaotic twist for added insanity! In
-                <i>floG</i>, the course is the weapon; players can toggle MapMovers, which hazards and move obstacles to slow down their
-                opponents by aimimg for triggers on the map. In the same way, they can also opt to open temporary
-                shortcuts to give themselves an edge over the competition. Because anyone can trigger anything, no
-                one is safe! -->
-
-                <i>floG</i> (short for <i>For The Love of Golf</i>) is a networked multiplayer simultaneous minigolf
-                game with a chaotic twist for added insanity! Players can derail their opponents and give themselves an
-                edge using MapMovers, which are movable objects and dynamic hazards that players can activate using
-                triggers distributed over the map. Good aim and timing are the key to sabotaging opponents whilst aiming
-                for a good score. Because anyone can trigger anything, no one is safe!
-                <!-- Maps feature dynamic and and player-alterable layouts
-                through the use of MapMovers: various kinds of hazards and movable objects activated using triggers
-                distributed over the map.  -->
-                <!-- This is achieved by the use of a feature
-                called MapMovers: hazards and movable objects that are toggled by the player entering triggers
-                laid out on the course. Players tee off while trying to sabotage each other
-
-                Players tee off against each other while
-                players race to be the first to sink their balls... but there's a chaotic twist for added insanity! In
-                <i>floG</i>, the course is the weapon; players can toggle MapMovers, which hazards and move obstacles to
-                slow down their
-                opponents by aimimg for triggers on the map. In the same way, they can also opt to open temporary
-                shortcuts to give themselves an edge over the competition. Because anyone can trigger anything, no
-                one is safe! -->
-
-                <!-- Players race to be the first to sink a hole while triggering moving obstacles or toggling hazards to
-                    sabotage their opponents, and opening shortcuts to give themselves an edge over the competition.
-                    
-                Set in RIT's underground dormitory tunnel system, <i>The Tunnels</i> is a first-person psychological
-                horror walking simulator that has players taking the role of a student being followed by an entity
-                while trying to find their way back to their dorm room after a long day of classes. -->
-
-                <!-- The walk seems longer than usual, however, and it's
-                    eerily quiet. Did you go down the right path?
-                    Why are the lights flickering? Are you being followed? <br><br>
-                    I worked on level, sound, and environment design to ensure
-                    triggers and audio/visual cues were placed strategically to contribute
-                    to the creation of an unsettling atmosphere riddled with dread. -->
-            </p>
-            <p>
-                <i>floG</i> currently supports online matchmaking for games of up to 4 players via both Steam and IP
-                address.
-            </p>
-            <p>
-                We used this project to learn about networking and multiplayer programming concepts,
-                applying them to development in Unreal 5. We picked design goals that
-                let us explore our technical interests. Primarily, we wanted to
-                let players interact directly with one another synchronously while playing.
-                Level design was thus geared towards forcing player confrontation during battles for first place.
-                <!-- Networking was our priority for this project; we wanted to use it as a means to get a better
-                understanding of multiplayer development concepts in general, and apply them to Unreal 5. -->
-                <!-- goals were therefore scoped to support our development priorities. Primarily, we wanted our golf game to
-                allow players to interact directly with one another while playing.
-                Level design was thus geared towards forcing confrontations between players during battles for first. -->
-            </p>
-            <!-- <p>
-                However, we wanted to use this project to
-            </p>
-            You could, however, talk about how time constraints, plus team goals, influenced what the
-            team wanted to aim for by the end of the semester, and why networking was the priority
-            And you could also talk about how design choices were made to support the core goals -->
-            <!-- <p>
-                (this might fall under design goals, perhaps)
-                Gameplay is focused on forcing confrontations between players during intense battles to finish in first.
-                Linear spatial design is therefore blended with non-linear elements, to create multiple possible routes
-                that players can take to reach the hole. -->
-            <!-- spatial design hones in on creating multiple -->
-
-
-            <!-- Between levels where the player is running from their pursuer (chase rooms), they are also tasked with
-                mini puzzle rooms where a key must be found in order to unlock a door that leads them to the next
-                level. There are a total of six levels in <i>The Tunnels</i>: four puzzle rooms and two chase rooms. -->
-            <!-- </p> -->
-            <h2>Responsibilities</h2>
-            <ul>
-                <!-- 
-                    Derailing (includes moving obstacles)
-                    Level design, multiplayer maps
-                    Menu screen UI
-                    Networking, replication of movement across client and server
-                    Investigated use of advanced Steam sessions plugin for project
-                    Investigated use of joining games via IP address
-                 -->
-                <li>
+            <br>
+            <!-- <h2>Responsibilities</h2> -->
+            <!-- <ul> -->
+            <!-- <li>
                     Designed the MapMovers system, allowing the player to move objects and toggle hazards in their
                     environment to give themselves an edge and derail opponents.
-                </li>
-                <li>
+                </li> -->
+            <!-- <li>
                     Created maps whose layouts encourage confrontation and interaction among players.
-                </li>
-                <li>
+                </li> -->
+            <!-- <li>
                     Investigated and contributed to incorporation of both AdvancedSteamSessions plugin and IP address
                     for matchmaking.
                 </li>
@@ -179,348 +78,149 @@
                 </li>
                 <li>
                     Designed and implemented menu screen UI and layout.
-                </li>
-                <!-- <li>
-                    Took part in design discussions regarding the game's narrative and pacing.
-                </li>
-                <li>
-                    Planned and implemented audio/visual cues and elements for levels to generate an eerie atmosphere.
-                </li>
-                <li>
-                    Outsourced and mixed background audio clips for levels where the player encounters the entity
-                    following them.
-                </li>
-                <li>
-                    Prototyped enemy AI movement behaviour using Unity's navmesh system.
-                </li>
-                <li>
-                    Programmed player interaction and movement systems.
-                </li>
-                <li>
-                    Created and maintained core documentation.
                 </li> -->
-                <!-- environmental narrative (vignettes), pacing, modular level design
-                what you would change? make the process modular to speed up the process of generating new rooms AND make
-                use of available room better, narrower tunnels to give heightened sense of anxiety, guide the player a
-                little better using lighting, UI hint system to show them where the key is -->
-            </ul>
-            <!-- <h2>Design Goal</h2>
-            <p>
-                At the core, we wanted to create a golf game that centred around letting players interact directly with
-                one another. Thus, we wanted level design to it was important that gameplay be designed such
-                that it centred around forcing confrontations between players during intense battles to finish in first.
-            </p> -->
-            <!-- <p>
-                The synchronous nature of <i>floG</i> meant that degenerate player strategies needed to be accounted
-                for.
-                Initially, player performance was measured through the use of
-            </p> -->
-
-            <h2><!-- MapMovers and Multiplayer -->Multiplayer Level Design</h2>
-            <!-- Level design supports the target player experience throughout, by blending together linear and
-                non-linear spatial design elements. This results in multiple possible routes that players can take to
-                reach the hole. It also creates mini choke points where players are put in the danger zone of a hazard
-                or moving obstacle. Additionally, triggers to toggle and move said hazards and obstacles were placed off
-                optimal routes to the hole, so that both timing and judgment become critical factors in players'
-                decisions on whether to aim for a trigger or not. -->
-
-            <!-- Gameplay is focused on forcing confrontations between players during intense battles to finish in first.
-                Linear spatial design is therefore blended with non-linear elements, to create multiple possible routes
-                that players can take to reach the hole. -->
-
-            <!-- Position triggers that are just out of the way so that there is risk vs reward situation going on -->
-            <p>
-                It was challenging to create multiplayer map layouts that
-                supported our design goal of direct player interaction. My approach was to make maps that gave players
-                different routes to reach the hole by combining linear and non-linear spatial design elements. I also
-                placed MapMovers at choke points to increase player tension and engagement.
-                <!-- combine linear and non-linear spatial design
-                to
-                This was my first time designing levels for multiplayer gameplay in general, so it was challenging
-                to create map layouts that supported our design goal of player interaction throughout. My approach
-                blended linear and non-linear spatial design elements, to create maps with multiple possible routes that
-                players can take to reach the hole. I also placed MapMovers at choke points formed by converging routes
-                to increase player tension and engagement. -->
-                <!-- This was my first time designing levels for multiplayer gameplay in general, and so it was challenging
-                to experiment and come up with map layouts that supported player interaction throughout. My final
-                approach involved blending together linear and non-linear spatial design elements. This resulted in maps
-                containing multiple possible routes that players can take to reach the hole. I also placed MapMovers at
-                choke points formed by converging routes to increase player tension and engagement. -->
-            </p>
-            <p>
-                Furthermore, I positioned triggers for MapMovers off optimal routes to the hole. This was
-                done to balance usage of MapMovers by associating a cost with activating them, since players
-                might need to sacrifice a shot in order to sabotage others.
-
-                <!-- TODO: image of napkin sketch to actual level? or just napkin sketch? or annotated top view of level? you might want to do napkin sketch to actual -- then highlight areas on the napkin sketch that correlate to things mentioned in this section. caption: summary of what is being shown in napkin sketch -->
-                <!-- OR just pick a top-down image of the dragon level, hiding unnecessary geometry and explaining the stuff that's been left in -->
-                <!-- Can also do a very bare-bones napkin sketch and submit that, though that might not be "professional" since you will have to spend time explaining what is what -->
-
-                <!-- Additionally, I tried to balance player usage of MapMovers by positioning triggers off optimal routes to
-                the hole. This was done in order to create a cost associated with activating MapMovers, since players
-                might need to sacrifice a shot in order to sabotage others. -->
-                <!-- balance
-                    outside of optimal routes to the hole. This was done to encourage players to consider both
-                    timing and judgment as critical factors when deciding whether to aim for a trigger or not. -->
-                <!-- TODO: might be a good idea to include some napkin sketches for before and after process shots -->
-            </p>
-            <figure>
-                <img class="project-img" src="media/flog/multiple-routes-1.png" alt="Multiple routes">
-                <figcaption>Multiple routes (shown in red) can be taken to reach the hole.
-                </figcaption>
-            </figure>
-            <figure>
-                <img class="project-img" src="media/flog/multiple-routes-2.png"
-                    alt="Multiple routes and choke point MapMovers">
-                <figcaption>
-                    Fire-breathing dragon MapMovers placed at choke points formed by converging routes.
-                </figcaption>
-            </figure>
-
-            <h2>Networked Multiplayer Gameplay</h2>
-            <!-- (DONE?) TODO: write about which was computed on server only (physics) and which was allowed to run on clients,
-            and why. Then talk about obstacles, why they run on the server, and which need to run on all (dragon) 
-            Can also talk about choice between replicate, RepNotify decisions. Which variables need to be replicated
-            and so on. The architecture basically .-->
-            <p>
-                Vital calculations for systems like physics, MapMovers, and scoring are handled solely on the server
-                through reliable RPC calls for the fairest possible play experience. However, some MapMovers use
-                particle systems to communicate their activation. These "cosmetic" gameplay events are
-                executed on all devices to keep their world states up-to-date.
-                <!-- It was crucial to synchronise data for systems like scoring, physics, and MapMovers across all
-                networked machines. Therefore, vital calculations were handled solely on the server through
-                reliable RPC calls, for the fairest possible play experience.
-                On the other hand, triggering MapMovers
-                sometimes involved "cosmetic" gameplay events (like the spawning of particle systems) to
-                communicate their activation to other players. These events needed to be reliably executed on
-                all devices to ensure every player had the most up-to-date gameplay visuals. -->
-            </p>
-
-            <!-- <p>
-                I implemented several MapMovers with different functionality, such as moving obstacles and triggering
-                hazards. These get activated when a player enters their associated trigger in the game world.
-                All MapMovers implement a common interface, so a single trigger can be used to activate any type of
-                MapMover placed in a level for added flexibility. -->
-
-            <!-- TODO: gif of all types of MapMovers. caption: description of what each mapmover does -->
-
-            <!-- the use of interfaces
-                Remember, this isn't documentation. Summarise!
-
-                I implemented different kinds of MapMovers, each with their own functionality, such as moving obstacles
-                and triggering hazards. For each type, I created a different blueprint with its own "Activate" function.
-                Activate is called by the blueprint attached to a MapMover's associated trigger when entered by a player
-                in the game world. The trigger blueprint calls Activate on its corresponding MapMover blueprint, but the
-                MapMover blueprint itself does not need to know anything about the trigger itself. Therefore, I made
-                each MapMover blueprint implement an interface containing a declaration for Activate. This allowed a
-                MapMover trigger to be connected to any type of MapMover in a level, creating flexible, clean, and more
-                intentional code. -->
-
-            <!-- the specifics of each implementation of Activate do not matter to the
-                trigger blueprint, I made each MapMover blueprint implement an interface containing a declaration for
-                Activate. This way,
-
-                These varying implementations of the Activate function are hidden from the MapMover
-                trigger blueprint, as the MapMovers blueprints themselves implement an
-                This created cleaner, more intentional code, and allowed a MapMover trigger to be connected to any type
-                of MapMover in a level.
-                
-                MapMover trigger blueprint MapMovers blueprints implement an interface which
-                
-                Implementation details have been hidden away behind interface methods to make function calls simple To
-                simplify the way in which functions get called to activate MapMovers, Specific implementation details
-                were There are several kinds of MapMovers: ones that can be toggled once, some that can be toggled
-                multiplw times, and others that
-                
-                two wolves, composition
-                individual blueprints for each type of behaviour
-                composition, interfaces
-                created cleaner, more intentional code -->
-            <!-- </p> -->
-            <!-- I also made sure to prefer marking variables to Replicate instead of using RepNotify in the interest of performance -->
-
-            <!-- Any events that needed to be invoked when relevant replicated variables got updated were run
-                via
-                RepNotify functions
-                (TODO: dragon example)
-                
-                Summary of mapmovers systems
-                - move once (pos1 -> pos2)
-                - timed move (pos1 -> pos2; delay; pos2 -> pos1)
-                - timed toggle (toggle; delay; toggle)
-                - toggle move (pos1 -> pos2 OR pos2 -> pos1)
-                - general form: pass through a trigger and something happens. We don't care what specifically happens we
-                just want to keep the general form.
-                - IObstacle and how the caller never needs to know what the specifics are
-                
-                Variables relevant to clients
-                were set to replicate
-                Networked multiplayer systems were fully built using Unreal's Blueprints functionality. I learned about
-                actor and pawn replication on client and server machines for simple physics and animations. I
-                obtained a basic understanding of how to configure projects to support networked sessions using both
-                Steam multiplayer and IP addresses, as well as the benefits and drawbacks for each approach. -->
-            <!-- It involved
-                the consumption of many a YouTube video and the traversal of even more Unreal Forums posts, but I  -->
-
-            <!-- </p> -->
-            <!-- (DONE?) TODO: talk about joining via Steam and IP Address implementations -->
-            <!-- (DONE?) TODO: get rid of the speak about joining via ip address  -->
-            <!-- (CANCELLED) TODO: write to egert about port forwarding -->
-            <!-- TODO: port forwarding in next steps -->
-
-            <p>
-                Currently, joining games via IP address only works for sessions created
-                within the player's local network. To let players connect through the internet,
-                we leveraged Steam for matchmaking using the AdvancedSteamSessions plugin.
-            </p>
-
-
-            <!-- TODO: image of UI to host and join games. caption: the menu screen where players can choose to host or join games
-                image of sessionbrowser widget with sessions hosted (take from zoom?). caption: the session browser leverages Steam to search for games the player can join. -->
-
-            <!-- We chose to use the AdvancedSteamSessions plugin because Unreal's online subsystem does not allow for
-                players to search for sessions outside their local network.
-
-                without the need for the use of IP addresses
-                and port forwarding, which was a no-no for security concerns.
-                , and we did not want to rely on the IP address implementation for hosting/joining games because of
-                security concerns.
-                Additionally, we did not want to use IP address with port forwarding as the main method, due to security
-                concerns
-                Since Unreal's built-in networking functionality can only search for sessions local to the network the
-                player is connected to,
-                Unreal CAN search for sessions. But it is limited to the local network the player is connected to.
-                By default, the only way a player can connect to a session outside their network is using an IP address
-                connection, with the help of port forwarding. For obvious security reasons, we opted to use the Steam
-                subsystem, since it does not require users to provide any information besides their steam account. -->
-
-            <!-- IP add
-                We elected
-                Creating and joining games via IP address limits the player to the local network they are connected to.
-
-                "Setting the project up to support IP Address hosting/joining was fairly straightforward and involved
-                the running of two separate console commands within Unreal to create and join a server. We wanted to
-                expand to Steam, as we wanted a way for players to join a networked game without having to disclose
-                their IP address" -->
-
-            <p>
-                <!-- Much of the challenges we faced were related to the incorporation of Steam multiplayer. We had to log -->
-                It was challenging to test Steam matchmaking in the standalone game instances we were running, as we
-                were unable to attach a debugger to them. Instead, we logged data to the screen to view data being
-                passed around. The logistics of testing our work in general also presented a challenge; we always needed
-                to use at least two computers at any time.
-                <!-- A challenge we faced with incorporating Steam matchmaking was being unable to attach
-                a debugger to the standalone game instances we were running to test Steam functionality, so we logged
-                data to the screen to view data being passed around. The logistics of testing our work were also
-                challenging; we always needed at least two computers at any
-                time. -->
-                <!-- log data to the screen to fix plugin-related bugs, since we couldn't figure out how to attach debuggers
-                to the standalone processes we were running to test Steam functionality. -->
-                <!-- though it sometimes required knowing the way memory was laid out
-                    in order to view data contained in, for example, a struct being passed around. -->
-                <!-- The process of testing games hosted on Steam in itself was also challenging, since it meant we always
-                        needed at least two computers at any time. -->
-                <!-- Can mention that Unreal does allow for basic testing of multiplayer functionality, and we used
-                that to ensure that MapMovers and physics were being replicated correctly across server and clients.
-                But if it involved Steam, then standalone process. And even if we had multiple standalone processes
-                running on one machine, we still couldn't figure out how to test on a single machine, due to only
-                being able to be logged on to a single account at a time. -->
-            </p>
-
-            <!-- TODO: gif of physics being replicated. caption: physics are handled ons the server then synchronised across all networked machines
-            gif of mapmovers MOVING and VFX caption: mapmovers require synchronisation of both location and particle systems across all networked machines -->
-            <figure>
-                <video autoplay loop muted playsinline>
-                    <source src="media/flog/physics-replication.mp4" type="video/mp4">
-                    This browser does not support video.
-                </video>
-                <!-- <img class="project-img" src="media/flog/physics-replication.gif" loading="lazy" alt="Physics replication"> -->
-                <figcaption>
-                    Physics are handled on the server, then synchronised across all networked machines.
-                </figcaption>
-            </figure>
-            <figure>
-                <video autoplay loop muted playsinline>
-                    <source src="media/flog/mapmover-replication.mp4" type="video/mp4">
-                    This browser does not support video.
-                </video>
-                <!-- <img class="project-img" src="media/flog/mapmover-replication.gif" loading="lazy" alt="MapMover replication"> -->
-                <figcaption>
-                    MapMovers require synchronisation of location data and particle systems across all
-                    networked machines. <br> 
-                    The MapMover here is triggered by the player on the lower left corner.
-                </figcaption>
-            </figure>
-
-            <!-- <figure>
-                <img class="project-img" src="media/flog/multiplayer-menu.png" alt="Multiplayer menu">
-                <figcaption>
-                    The menu screen where players can choose to host or join games. <br>
-                    The IP address of the host must be known in order to use the "Join IP" feature.
-                </figcaption>
-            </figure> -->
-            <figure>
-                <img class="project-img" src="media/flog/session-browser.png"
-                    alt="Joining a game: the multiplayer session browser">
-                <figcaption>
-                    The session browser feature leverages Steam for matchmaking.
-                </figcaption>
-            </figure>
-
-            <h2>What I Would Improve</h2>
-            <h3>Polishing Multiplayer Gameplay</h3>
-            <p>
-                Implementing a lobby will make the matchmaking system more robust, since players can currently
-                join an in-progress game at any time. Also, displaying a loading screen
-                when waiting for players to finish joining levels will create a smoother user experience.
-            </p>
-            <!-- <h3>Getting a Better Grasp of AdvancedSteamSessions</h3>
-            <p>
-                Given more time, I'd like to dig deeper into the use of the AdvancedSteamSessions, and get a better
-                understanding of how the plugin works. The multiplayer systems we've created to-date <em>work</em>,
-                but they don't work <em>well</em>. There are a lot of bugs that ruin the overall player experience.
-            </p> -->
-            <h3>Preventing Degenerate Strategies</h3>
-            <!-- <p>
-                Currently, players can wait at the start line for opponents to wreak havoc on each other, before
-                making their way to the hole without worrying about MapMovers being triggered on them and affecting
-                their score. Time could be factored into future scoring system iterations to avoid this. -->
-            <!-- Players could either be
-                penalised
-                for staying still for too long. Alternatively, players could be scored based on time alone, and not the
-                number of strokes made.
-
-                playtest -->
-            <!-- Because time isn't factored into the current implementation of our scoring system, players can simply
-                wait at the start line for their opponents to wreak havoc on each other, before slowly making their way
-                to the hole without the need to worry about MapMovers being triggered. Players could either be penalised
-                for staying still for too long. Alternatively, players could be scored based on time alone, and not the
-                number of strokes made.
-
-                playtest -->
-            <!-- </p> -->
-            <!-- <h3>Updating the Scoring System</h3> -->
-            <p>
-                Time could be factored into the scoring system. Currently, a player can simply wait
-                at the start line for their opponents to sabotage each other, before making their way to the hole
-                after everyone else has done so without worrying about MapMovers affecting their score.
-            </p>
-            <!-- <h3>Hold more playtests and </h3> -->
-            <h3>Better Signalling MapMovers to the Player</h3>
-            <p>
-                Adding <!-- indexical --> details conveying the "danger zones" of MapMovers might make them less
-                frustrating for players to navigate, and overall help ensure maps are not harder than intended to
-                traverse.
-            </p>
-
-            <figure>
-                <img class="project-img" src="media/flog/dragon.png" alt="Fire-breathing dragon">
-                <figcaption>
-                    For this fire-breathing dragon MapMover, scorch mark decals could be added to the ground to
-                    denote the boundaries of the danger zone.
-                </figcaption>
-            </figure>
-
+            <!-- </ul> -->
+            <button class="accordion" id="multiplayer-development"><i class="fas fa-network-wired"></i> Multiplayer Development</button>
+            <div class="panel" id="multiplayer-development-panel">
+                <ul>
+                    <li>
+                        Networked player movement and triggering of events associated with interactive obstacles and
+                        hazards across client and server machines.
+                    </li>
+                    <li>
+                        Investigated and contributed to incorporation of both AdvancedSteamSessions plugin and IP
+                        address for matchmaking.
+                    </li>
+                    <li>
+                        Handled spawning logic for when players load into levels and respawning logic for when
+                        players go out of bounds.
+                    </li>
+                </ul>
+                <br>
+                <figure>
+                    <video autoplay loop muted playsinline>
+                        <source src="media/flog/physics-replication.mp4" type="video/mp4">
+                        This browser does not support video.
+                    </video>
+                    <figcaption>
+                        Physics are handled on the server, then synchronised across all networked clients using reliable
+                        RPC calls for the fairest possible play experience.
+                    </figcaption>
+                </figure>
+                <br>
+                <figure>
+                    <video autoplay loop muted playsinline>
+                        <source src="media/flog/mapmover-replication.mp4" type="video/mp4">
+                        This browser does not support video.
+                    </video>
+                    <figcaption>
+                        Some interactive hazards like the one above use particle systems to communicate their
+                        activation. These "cosmetic" gameplay events are executed on all devices to keep their world
+                        states up-to-date. The interactive hazard above is triggered by the player on the lower left
+                        corner.
+                    </figcaption>
+                </figure>
+            </div>
+            <br>
+            <br>
+            <button class="accordion" id="level-design"><i class="fas fa-cubes"></i> Level Design</button>
+            <div class="panel" id="level-design-panel">
+                <ul>
+                    <li>
+                        Combined linear and non-linear spatial design to produce levels with multiple routes to the
+                        hole.
+                    </li>
+                    <li>
+                        Positioned interactive obstacles and hazards at choke points to increase player tension and
+                        engagement.
+                    </li>
+                    <li>
+                        Placed triggers for interactive obstacles and hazards outside optimal routes to the hole to
+                        create a
+                        cost associated with their activation.
+                    </li>
+                </ul>
+                <br>
+                <figure>
+                    <img class="project-img" src="media/flog/multiple-routes-1.png" alt="Multiple routes">
+                    <figcaption>Multiple routes (shown in red) can be taken to reach the hole.
+                    </figcaption>
+                </figure>
+                <figure>
+                    <img class="project-img" src="media/flog/multiple-routes-2.png"
+                        alt="Multiple routes and interactive hazards placed at choke points">
+                    <figcaption>
+                        Interactive fire-breathing dragon hazards placed at choke points formed by converging routes.
+                    </figcaption>
+                </figure>
+            </div>
+            <br>
+            <br>
+            <button class="accordion" id="game-design"><i class="fas fa-gamepad"></i> Game Design</button>
+            <div class="panel" id="game-design-panel">
+                <ul>
+                    <li>
+                        Designed a system that allows players to derail opponents by moving objects and
+                        toggling hazards in their environment.
+                    </li>
+                    <ul>
+                        <li>
+                            Prototyped early version of system to communicate its premise to the team.
+                        </li>
+                    </ul>
+                    <li>
+                        Created and maintained game design documentation.
+                    </li>
+                </ul>
+            </div>
+            <br>
+            <br>
+            <button class="accordion" id="challenges-faced"><i class="fas fa-exclamation"></i> Challenges Faced</button>
+            <div class="panel" id="challenges-faced-panel">
+                <ul>
+                    <li>
+                        Creating levels whose layouts supported our design goal of encouraging direct player interaction
+                        and confrontation.
+                    </li>
+                    <li>
+                        Testing Steam matchmaking implmentations in the standalone games instances we ran, as we could
+                        not attach a debugger to them.
+                    </li>
+                    <li>
+                        Getting server and client machines to travel seamlessly from one level to the next.
+                    </li>
+                </ul>
+            </div>
+            <br>
+            <br>
+            <button class="accordion" id="what-i-would-improve"><i class="fas fa-lightbulb"></i> What I Would Improve</button>
+            <div class="panel" id="what-i-would-improve-panel">
+                <ul>
+                    <li>
+                        Factor time into the scoring system to prevent degenerate strategies like a player waiting at
+                        the
+                        start line for everyone else to sabotage each other before slowly making their way to the hole.
+                    </li>
+                    <li>
+                        Implement a lobby system to make matchmaking more robust.
+                    </li>
+                    <li>
+                        Communicating the "danger zones" of interactive obstacles and hazards to make them less
+                        frustrating
+                        to navigate.
+                    </li>
+                </ul>
+                <br>
+                <figure>
+                    <img class="project-img" src="media/flog/dragon.png" alt="Fire-breathing dragon">
+                    <figcaption>
+                        For this fire-breathing dragon hazard, scorch mark decals could be added to the ground to
+                        denote the boundaries of the danger zone.
+                    </figcaption>
+                </figure>
+            </div>
+            <br>
+            <br>
             <h2 id="play-the-game">Play the Game!</h2>
             <h3>Installation Instructions</h3>
             <ol>
@@ -533,260 +233,10 @@
                 <li>
                     Run TrickShot.exe
                 </li>
-                <!-- <li>
-                    Enjoy!
-                </li> -->
             </ol>
             <br>
             <a href="https://drive.google.com/file/d/1JTRy_MhLrOIbq6tRRqbUmbFJxJSasTZD/view?usp=share_link"
                 class="button-target" target="floG download">Link to Build</a>
-            <!-- <p class="content-warning">
-                <b>CONTENT WARNING: This game may trigger seizures for people with photosensitive epilepsy.</b>
-            </p> -->
-
-            <!-- TODO: gif of dragon breathing fire. caption: in the case of this fire-breathing dragon, the ground could have decals of scorch marks added to denote the boundaries of the danger zone -->
-            <!-- than
-                intended to traverse
-                Without indexical elements, it can be difficult to navigate MapMovers that have been triggered. -->
-
-            <!-- It's about how the player perceives the level. If they feel like they're unable to control what's 
-                    happening around them, they're going to be frustrated -->
-
-            <!-- It can be difficult for a player to navigate MapMovers that get triggered; environments lack indexical
-                elements that help convey where "danger zones" lie. Players also sometimes struggle to make the
-                connection between a trigger and the MapMover it affects, since they aren't always placed within sight
-                of each other. Overall, making improvements to the environment and the placement of triggers in
-                relation to their corresponding MapMovers will be valuable in helping players find their way around
-                maps better. -->
-            <!-- It can be difficult for a player to navigate MapMovers that get triggered; environments lack indexical
-                elements that help convey where "danger zones" lie. Players also sometimes struggle to make the
-                connection between a trigger and the MapMover it affects, since they aren't always placed within sight
-                of each other. Overall, making improvements to the environment and the placement of triggers in
-                relation to their corresponding MapMovers will be valuable in helping players find their way around
-                maps better. -->
-            <!-- <p>
-                Furthermore, triggers aren't always placed within sight of the MapMovers they affect. Resolving this
-                might help players make better informed decisions on which triggers they want to aim for during a game.
-            </p> -->
-
-            <!-- TODO: process, how the team prioritised networking because it was at the core of gameplay.
-                Divvy up work to make sure everyone was learning something
-                Art took a backseat because none of us were specialists in art
-                BUT production should take a backseat because it is not what you want to show.
-                You could, however, talk about how time constraints, plus team goals, influenced what the 
-                team wanted to aim for by the end of the semester, and why networking was the priority
-                And you could also talk about how design choices were made to support the core goals -->
-            <!-- <p>
-
-
-                Audio and visual cues were
-
-
-                The level design in the game was leveraged to support the main
-                level, environmental, and sound design choices to
-                elevate the sense of anxiety the player
-                feels throughout the game.
-
-                something something jumpscares
-
-                unsettling
-
-                audio/visual cues
-            </p> -->
-            <!-- <h2>Pacing and Audio/Visual Cues</h2>
-            <p>
-                I arranged chase and puzzle rooms in a certain sequence to facilitate pacing, in an attempt to
-                strike a balance between periods of engagement (chase rooms) and rest (puzzle rooms) for the
-                player. However, I also used Freytag's Pyramid to guide my design and ensure that, even during said
-                moments of "rest" during the puzzle rooms, I continued to build tension in the form of audio and visual
-                cues before the player's final encounter with Balloon Ritchie.
-            </p>
-            <p>
-                I used lighting as the primary source of in-game tension. With each of the first three puzzle rooms
-                explored, the number of flickering ceiling lights increases to give the player an elevated sense of
-                concern that things are increasingly taking a turn for the worse. I also used darkness
-                within the third puzzle room, in which there are areas where ceiling lights are fused.
-            </p>
-            <p>
-                I used contrast in the fourth puzzle room to bring tension build-up to a head. Here, all ceiling lights
-                work perfectly fine, with none flickering. Furthermore, background music that was used in the first
-                three puzzle rooms is absent to add to the feeling of eeriness. The goal here was to create a "calm
-                before the storm" situation, and indicate to the player that something awaits them in the next room.
-                This next room is where the player must encounter Balloon Ritchie one last time before they can escape
-                and beat the game.
-            </p>
-            <p>
-                In chase rooms, lighting and background music are significantly different to communicate impending
-                danger to the player. Ceiling lights turn red to create an ominous atmosphere. Background music
-                features a higher BPM, dissonant chords, and a high-pitched raid siren intro to fuel a perception of
-                urgency.
-            </p> -->
-            <!-- <p>
-                In chase rooms, graffiti is used on walls to signal the player about the upcoming encounter with Balloon
-                Ritchie. Ceiling lights turn red to produce an enhanced sense of danger. In conjunction with this, a  (red lights, raid siren, chase music. scope, so we had to outsource this music)
-            </p> -->
-            <!-- <h2>Creating an Environmental Narrative</h2>
-            <p>
-                Part of early team discussions revolved around the game's narrative design, and how that would be
-                delivered to the player. One stretch goal included using alternate textures on the walls and pipes
-                featuring claw marks to warn the player of impending danger. Another involved the placement of limp bits
-                of rubber throughout later puzzle levels to imply that their stalker is, in fact, made of balloons.
-                Because of scope concerns and time constraints, however, I included the storyline as "hidden" vignettes
-                in-game. More specifically, by exploring the levels, the player will discover small posters whose
-                content, if put together, serves to give them context and clue them in on the backstory.
-            </p> -->
-            <!-- <h2>Audiovisual Cues</h2>
-            <p>
-                Using a bunch of triggers
-            </p> -->
-            <!-- <h2>Snappy Controls</h2>
-            <p>
-                At the heart of <i>TapRacing</i> is its snappy and responsive control system. If tracks are to be
-                constructed such that their geometry features sets of consecutive corners and tight turns, then players
-                need to be equipped with the means to navigate such perils. It was thus important that vehicles in the
-                game be able to turn at the push of a button, because of the intended fast-paced, reflex-reliant player
-                experience. To this end, I had to make sure that the physics were tweaked such that the handling model
-                performed as expected.
-            </p>
-            <h2>Checkpoint System</h2>
-            <p>
-                The handling model is set up to treat head-on collisions with barriers as crashes, after which
-                the player gets reset on the track following a one-second delay. In order to prevent player
-                frustration, a checkpoint system was added to identify the best location on the track to reset player
-                vehicles. Currently, the player is reset a small distance from the corner where the impact occurred.
-                This was done to give them enough time to react and clear the corner as soon as they step on the
-                accelerator.
-            </p>
-            <p>
-                The checkpoint system also serves as a way to mitigate cheating behaviours. Because all checkpoints in
-                a track must be cleared in order before the player is considered to have completed a lap, this means
-                that attempts to cut corners and find "shortcuts" around tracks are discouraged. Through playtesting
-                and understanding where cheating is more likely to occur, it will become clearer as to which areas
-                should feature more checkpoints or, in more extreme cases, have their geometry reworked.
-            </p> -->
-            <!-- <h2>What I Would Improve</h2> -->
-            <!-- <h3>AI Cars</h3> -->
-            <!-- <ul>
-                <li>
-                    Playtests revealed that finding keys in puzzle levels can be frustratingly difficult. More keys were
-                    added to the larger puzzle rooms to remedy this, with little to no avail. Leveraging lighting
-                    instead to subtly guide the player towards keys is a possible fix. A UI hint system could be used in
-                    conjunction with this, to explicitly show the player where keys are placed and
-                    prevent them from getting stuck in a level.
-                </li><br>
-                <li>
-                    The introduction of the player to their pursuer in the first chase room is a little abrupt, as it
-                    sometimes caught playtesters off-guard. As a result, pacing could use some improvement in
-                    this section of the game. Alternatively, the graffiti on the walls in this level could be made more
-                    prominent to better signal the player about the upcoming encounter with Balloon Ritchie.
-                </li><br> -->
-            <!-- <li>
-                    Something about the UI and how it can be improved. It's difficult to see the keys and the doors and
-                    figure out which is the right door and which isn't. Players also struggled to figure out what they
-                    needed to do at the beginning despite the instructional text at the top left, meaning onboarding can
-                    also use some improvement
-                </li><br> -->
-            <!-- <li>
-                    Level layout could be improved by adding an increased variety of textures and environmental objects
-                    (such as posters and litter) to make the tunnels look more "lived in". To make the levels more
-                    claustrophic and create a more pronounced sensation of anxiety in players, pathways could be made
-                    narrower or the ceiling could be lowered.
-                </li><br>
-                <li>
-                    AI movement behaviours could be more refined. Because the agent always travels at a constant speed
-                    toward the player, it can be too fast or too slow at times. Varying this so it speeds up when far
-                    away from the player and slower when nearby may help produce a more balanced (and therefore
-                    engaging) experience overall.
-                </li>
-            </ul> -->
-            <!-- <p> -->
-            <!-- napkin sketches - would probably have made the level layouts much more interesting, since what we did
-                was OH let's just create a map however we feel like it. -->
-
-            <!-- probably refine the AI as well because it CAN clip through walls and get stuck. Also refine the final
-                scene where the entity is revealed because the damn agent won't stay still. -->
-
-            <!-- what you would change? make the process modular to speed up the process of generating new rooms -->
-
-            <!-- better use of vignettes, right now it's just a bunch of posters that the player can find if they explore
-                the level enough. The contents are the same, though -->
-
-            <!-- Maybe improve pacing a little because the first chase room the player encounters can be a but abrupt, if
-                they fail to pay attention to the writing on the wall that says "RUN" -->
-
-            <!-- adding some juice to the game. having the pickups fly toward the player, accompanied by a swooshing
-                sound, would make for a more satisfying experience. Bonus points if the pickup flew in an arc... -->
-
-            <!-- It would be cool to have AI vehicles that the player can race against in a single player race mode. At
-                the very least, AI agents must be able to "see" ahead, anticipate approaching corners, and establish
-                the direction in which they must steer. Because of the way the handling model is set up to only allow 90
-                degree turns and sideways strafing, however, regular pathfinding behaviours coupled with steering forces
-                added to the AI vehicle will not comply with the movement rules the player conforms to. -->
-            <!-- </p> -->
-            <!-- <p>
-                A quick solution would be to add track and corner information into the checkpoint system itself. As AI
-                vehicles pass through these checkpoints, they will obtain data that they can then use to navigate the
-                track, such as the distance to the next corner and the direction they will need to steer in (a binary
-                left/right value). Their movement vectors can then be modified directly. The risk
-                with this approach is that agents' behaviours may not seem "natural" enough. If all agents receive the
-                same track data and have nothing else to differentiate between them, then they will likely all drive the
-                exact same way around the course. To remedy this, a heuristic could be added to each agent that impacts
-                their individual ability to estimate when to turn into a corner. This might result in more organic
-                behaviour, such as making mistakes and crashing or taking suboptimal lines through turns. Nevertheless,
-                this approach ignores more complex behaviours expected of a driver, such as identifying when to overtake
-                a vehicle directly ahead, and taking an optimal driving line.
-            </p>
-            <h3>An Updated Handling Model</h3>
-            <p>
-                It might also be interesting to play around with different handling models to see what adds more
-                dimension to the game. Modifying behaviour such that vehicles slow down slightly when steering
-                will allow for the inclusion of a "handling" stat to vehicles in the future that references this amount
-                of speed lost while cornering. A better handling stat could mean less speed lost, and vice versa. As
-                with the addition of any other stat, though, this will require fine-tuning, balancing, and playtesting
-                to prevent certain vehicles from being disproportionately powerful compared to others.
-            </p> -->
-
-            <!-- Something about making it so players can't always hug the inside of turns and dominate the track
-            Balancing boost systems, adding ability to slipstream, so at least cars from behind can have a chance
-            of overtaking the one in front. Also, worse handling means more "drift" sideways when taking corners,
-            and, as a result, more speed reduction.
-
-            Different game modes, adding AI, animating crashes instead of having only text show up. -->
-            <!-- <h2>
-                Design Goals
-            </h2>
-            <p>
-                What do you want players to feel while playing this game, and how did this influence your design
-                choices?
-                Did this evolve over time? How and why? What about the level design? The aesthetics? Audio? Environment
-                design?
-                How do all of this come together to support your design goals?
-            </p> -->
-            <!-- <h2>Core Systems</h2>
-            <p>
-                What are the core systems in the game? Why were these included? What is their individual significance in
-                contributing to the overall result?
-            </p>
-            <h2>
-                Additional Sections
-            </h2> -->
-            <!-- <p>
-                Add more sections here based on project-specific details worth discussing in more detail, or just
-                implementation specifics you're proud of and want to show off. For
-                example:<br>
-                <b>Design Goals: </b>What do you want players to feel while playing this game, and how did this
-                influence your design
-                choices?
-                Did this evolve over time? How and why? What about the level design? The aesthetics? Audio? Environment
-                design?
-                How do all of this come together to support your design goals?<br>
-                <b>Core Systems: </b>What are the core systems in the game? Why were these included? What is their
-                individual significance in
-                contributing to the overall result?<br>
-                <b>Next steps, Game economy, tool creation, documentation, content creation, challenges you ran into,
-                    pattern recognition, why you made some decisions</b>
-
-            </p> -->
 
         </div>
     </div>

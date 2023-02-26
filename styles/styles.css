@@ -1,0 +1,659 @@
+/* COLOUR PALETTE:
+WHITE fffcf2
+GREY 403d39
+BLACK 252422
+BLUE 294066 */
+
+/* 
+    current palette
+    text: 293F65
+    background: fffcf2
+    button: 6e8ec4
+    button-hover: 7f99c5
+    button-active: 41649c
+    a-focus: 294066
+    navbar-bg: 252422
+    dropdown-hover: 403D39
+*/
+
+* {
+    font-family: 'Helvetica', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header h1,
+header h2,
+header p,
+.content h1,
+.content h2,
+.content h3,
+.content p,
+.content li,
+.note,
+.accordion-header #text,
+figcaption {
+    color: #293F65;
+}
+
+/* h3 {
+    font-size: 0.85em;
+} */
+
+body {
+    margin: 0px;
+    width: 100%;
+    background-color: #fffcf2;
+}
+
+#wrapper {
+    display: block;
+    max-width: 1010px;
+
+    /* Centre the layout. */
+    margin: 0 auto;
+    padding: 60px 10px;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* .fullwrap */
+.card-wrapper {
+    position: relative;
+    /* float: left; */
+    /* display: inline-block; */
+
+    /* Make images resize proportionally */
+    max-width: 495px;
+    height: auto;
+
+    /* aspect-ratio: 13 / 11; */
+
+    margin: 0 5px;
+    margin-bottom: 10px;
+}
+
+figure {
+    margin-top: 0em;
+    margin-bottom: 0em;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+figcaption {
+    margin-top: 0.1em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto 1280 / 720;
+}
+
+/* .halved {
+    max-width: 45%; */
+
+/* Make the media respect aspect ratio when resizing. */
+/* object-fit: contain;
+} */
+
+/* figure {
+    display: inline-block;
+} */
+
+/* https://code-boxx.com/text-over-image-hover-html-css/ */
+/* .fullcap */
+.caption {
+    /* (C1) DIMENSIONS */
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    /* max-height: 636px; */
+    /* height: 95.5%; */
+
+    /* (C2) POSITION */
+    position: absolute;
+    top: 0px;
+    /* top: 20px; */
+    left: 0;
+    text-align: center;
+    padding: 0 15px;
+
+    /* (C3) COLORS */
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+
+    /* (D) SHOW/HIDE */
+    visibility: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+
+    border-radius: 15px;
+
+    /* aspect-ratio: 13 / 11;
+    object-fit: contain; */
+}
+
+/* .fullwrap:hover .fullcap */
+.card-wrapper:hover .caption {
+    visibility: visible;
+    opacity: 1;
+}
+
+.caption button {
+    background-color: #6e8ec4;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    padding: 0.5rem 0.85rem;
+    border-radius: 5px;
+    transition-duration: 0.2s;
+}
+
+.button-target {
+    background-color: #6e8ec4;
+    color: white !important;
+    text-decoration: none;
+    border: none;
+    font-size: 1rem;
+    padding: 0.6rem 0.85rem;
+    margin: 20px 0px;
+    /* size: 10em 5em; */
+    border-radius: 5px;
+    transition-duration: 0.2s;
+}
+
+.button-target-top {
+    padding: 0.6rem 0.85rem;
+    margin: 9px 0px;
+
+    /* Because apparently adding this makes it suddenly obey instructions. */
+    display: inline-block;
+    /* top: 1000px;
+    position:; */
+}
+
+.button-target-group {
+    margin: 20px 0px 20px 4px;
+    padding: 0.6rem 0.6rem;
+}
+
+.caption button:hover,
+.button-target:hover {
+    background-color: #7f99c5;
+}
+
+.caption button:active,
+.button-target:active {
+    background-color: #41649c;
+}
+
+.note {
+    font-size: 1.5rem;
+}
+
+.content-warning {
+    color: rgb(141, 2, 2) !important;
+    font-size: 1.5rem;
+}
+
+footer {
+    background-color: #252422;
+    display: flex;
+    /* justify-content: center; */
+}
+
+.footer-div {
+    /* width: 1000px; */
+    padding: 0 10px;
+}
+
+footer p {
+    color: #6e8ec4;
+    font-size: smaller;
+    font-weight: bold;
+}
+
+footer small {
+    color: #fffcf2;
+}
+
+/* Remove the underline. */
+a,
+footer a {
+    text-decoration: none;
+}
+
+a {
+    font-weight: bold;
+}
+
+/* Make the links match the overall colour scheme. */
+a:link {
+    color: #6e8ec4;
+}
+
+a:visited {
+    color: #6e8ec4;
+}
+
+a:focus {
+    color: #294066;
+}
+
+a:active {
+    color: #294066;
+}
+
+/* ============================= NAVBAR ============================= */
+/* Fix navigation bar to the top of the screen. */
+#navigation {
+    width: 100vw;
+    /* padding: 0 10px; */
+    position: fixed;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    top: 0px;
+    background-color: #252422;
+    /* color: #6e8ec4; */
+    z-index: 1;
+}
+
+#navigation-container {
+    width: 100vw;
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+.navbar,
+.navbar span {
+    color: #6e8ec4;
+}
+
+.navbar {
+    padding: 0 10px;
+}
+
+/* Centre-align the navbar by leveraging flexbox. */
+#navigation {
+    align-items: center;
+    /* justify-content: center; */
+    position: fixed;
+
+}
+
+/* Make sure pipes used for layout spacing are the same size as actual navbar
+ text. */
+#navigation p {
+    margin-top: 3px;
+    font-size: xx-large;
+}
+
+/* Affects name in navbar. */
+.navbar a {
+    color: #6e8ec4;
+    text-align: center;
+    font-weight: bolder;
+    font-size: medium;
+    /* padding: 8.5px 0; */
+
+    /* Get rid of the underline. */
+    text-decoration: none;
+}
+
+.navbar {
+    padding-top: 7.5px;
+}
+
+/* Dropdown button */
+.dropdown-button {
+    /* Ensure sufficient space is allocated around. */
+    padding: 8.5px 16px;
+
+    /* Get rid of CSS defaults to match overall theme. */
+    border: none;
+    outline: none;
+    font-size: inherit;
+    color: #6e8ec4;
+    background-color: inherit;
+}
+
+/* Change background colour on hover using an ease-in transition. */
+.navbar .dropdown:hover .dropdown-button {
+    transition: background-color 0.1s ease-in;
+    background-color: #6e8ec4;
+
+    /* Ensure text is legible. */
+    /* But also add some snazz using a transition. */
+    transition: background-color 0.1s ease-in;
+    color: black;
+}
+
+.dropdown-content {
+    /* Use ease-in transition for dropdown menu to match the results produced
+    by the previous style rule. */
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.1s ease-in;
+
+    position: absolute;
+    /* right: 20px; */
+    background-color: #6e8ec4;
+    min-width: 100px;
+}
+
+/* Format dropdown content text. */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* Make dropdown links grey when hovering over them */
+.dropdown-content a:hover {
+    transition: background-color 0.1s ease-in;
+    background-color: #403D39;
+    transition: color 0.1s ease-in;
+    color: #FFFCF2;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    /* display: block; */
+    visibility: visible;
+    opacity: 1;
+}
+
+/* .navbar,
+.dropdown-button,
+.dropdown-content,
+.navbar a { */
+/* font-size: smaller; */
+/* padding: 5px 5px 5px 5px; */
+/* padding-left: 5px;
+    padding-right: 5px; */
+/* } */
+
+.dropdown-content a {
+    padding-left: 17px;
+    padding-bottom: 10px;
+}
+
+/* .img img {
+    max-width: 1010px;
+    height: auto;
+} */
+
+.slick-carousel {
+    margin-bottom: 65px;
+}
+
+.slick-carousel .prev-arrow {
+    position: absolute;
+    bottom: -50px;
+    left: 30%;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    background: #293F65;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    display: inline-block;
+}
+
+.slick-carousel .next-arrow {
+    position: absolute;
+    bottom: -50px;
+    right: 30%;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    background: #293F65;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    display: inline-block;
+}
+
+#title {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+    background-color: #eee;
+    color: #293F65;
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.accordion:hover {
+    background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+    padding: 0 18px;
+    background-color: gray;
+    display: none;
+    overflow: hidden;
+}
+
+.accordion:after {
+    content: '\02795';
+    /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+    margin-top: px;
+}
+
+.active:after {
+    content: "\2796";
+    /* Unicode character for "minus" sign (-) */
+}
+
+@media screen and (min-width: 350px) {
+    .content-card-img {
+        /* position: relative; */
+        display: block;
+        /* margin: 10px auto; */
+        max-width: 495px;
+        object-fit: contain;
+        /* height: auto; */
+    }
+
+    .navbar a,
+    .dropdown-button,
+    .dropdown-content a {
+        font-size: 0.7rem;
+        text-align: left;
+        /* line-height: 0.1rem; */
+    }
+
+    /* .dropdown-content {
+        right: 10px;
+    } */
+
+    .navbar {
+        padding-top: 4px;
+    }
+
+    .caption h1 {
+        font-size: 1rem;
+    }
+
+    .caption p {
+        font-size: 0.75rem;
+    }
+}
+
+@media screen and (min-width: 450px) {
+    .content-card-img {
+        /* position: relative; */
+        display: block;
+        /* margin: 10px auto; */
+        max-width: 400px;
+        object-fit: contain;
+        /* height: auto; */
+    }
+
+    .caption h1 {
+        font-size: 1.3rem;
+    }
+
+    .caption p {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (min-width: 550px) {
+    .content-card-img {
+        /* position: relative; */
+        display: block;
+        /* margin: 10px auto; */
+        max-width: 500px;
+        object-fit: contain;
+        /* height: auto; */
+    }
+
+    .navbar a,
+    .dropdown-button,
+    .dropdown-content a {
+        font-size: 0.85rem;
+    }
+
+    .navbar {
+        padding-top: 7.5px;
+    }
+
+    .caption h1 {
+        font-size: xx-large;
+    }
+
+    .caption p {
+        font-size: medium;
+    }
+}
+
+@media screen and (min-width: 650px) {
+
+    .navbar a,
+    .dropdown-button,
+    .dropdown-content a {
+        font-size: 1rem;
+    }
+
+    .content-card-img {
+        /* position: relative; */
+        display: block;
+        /* margin: 10px auto; */
+        max-width: 600px;
+        object-fit: contain;
+        /* height: auto; */
+    }
+}
+
+@media screen and (min-width: 750px) {
+    .content-card-img {
+        /* position: relative; */
+        display: block;
+        /* margin: 10px auto; */
+        max-width: 700px;
+        object-fit: contain;
+        /* height: auto; */
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .content-card-img {
+        /* position: relative; */
+        display: block;
+        /* margin: 10px auto; */
+        max-width: 800px;
+        object-fit: contain;
+        /* height: auto; */
+    }
+}
+
+@media screen and (min-width: 950px) {
+    .content-card-img {
+        /* position: relative; */
+        display: block;
+        /* margin: 10px auto; */
+        max-width: 900px;
+        object-fit: contain;
+        /* height: auto; */
+    }
+}
+
+@media screen and (min-width: 1050px) {
+    .content-card-img {
+        display: block;
+        /* margin: 10px auto; */
+        max-width: 1010px;
+        object-fit: contain;
+        /* aspect-ratio: auto 1280 / 720; */
+        /* height: auto; */
+    }
+}
+
+/* .fullwrap img */
+.card-wrapper img {
+    border-radius: 15px;
+    width: 100%;
+    /* max-width: 100%;
+    height: 100%; */
+}
+
+.project-img {
+    /* max-width: 49.75%; */
+    /* height: 100%; */
+
+    max-width: 100%;
+
+    /* Make the image respect aspect ratio when resizing. */
+    object-fit: contain;
+}
+
+.project-img-halved {
+    max-width: 49%;
+
+    /* Make the image respect aspect ratio when resizing. */
+    object-fit: contain;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* .content-card-img {
+    display: block;
+    margin: 10px auto;
+    max-width: 1010px;
+    height: auto;
+} */
