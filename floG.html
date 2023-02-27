@@ -33,9 +33,6 @@
     </div>
     <div id="wrapper">
         <a href="index.html" class="button-target button-target-top">&#8672; Back to Home</a>
-        <p>
-            <!-- <b>CONTENT WARNING: This video may trigger seizures for people with photosensitive epilepsy.</b> -->
-        </p>
         <video controls muted>
             <source src="media/flog/flog-gameplay.mp4" type="video/mp4">
             This browser does not support video.
@@ -46,41 +43,21 @@
                 <a href="#play-the-game" class="button-target">Play Game</a>
             </div>
             <p>
-                <i>floG</i> (short for <i>For The Love of Golf</i>) is a networked multiplayer simultaneous minigolf
+                <i>floG</i> (short for <i>For The Love of Golf</i>) is a networked multiplayer simultaneous golf
                 game where players can derail opponents using interactive obstacles and hazards that are moved or
                 activated using triggers distributed over the map.
             </p>
             <h2>Fast Facts</h2>
             <p>
-                <!-- <b>Keywords: </b> <br> -->
                 <b>Team Size: </b>4<br>
-                <b>Roles: </b>Game Designer, Level Designer, and Multiplayer Developer<br>
+                <b>Roles: </b>Multiplayer Programmer, Game Designer, and Level Designer<br>
                 <b>Timeframe: </b>13 weeks<br>
                 <b>Engine: </b>Unreal 5<br>
                 <b>Language: </b>Blueprints Visual Scripting<br>
             </p>
             <br>
-            <!-- <h2>Responsibilities</h2> -->
-            <!-- <ul> -->
-            <!-- <li>
-                    Designed the MapMovers system, allowing the player to move objects and toggle hazards in their
-                    environment to give themselves an edge and derail opponents.
-                </li> -->
-            <!-- <li>
-                    Created maps whose layouts encourage confrontation and interaction among players.
-                </li> -->
-            <!-- <li>
-                    Investigated and contributed to incorporation of both AdvancedSteamSessions plugin and IP address
-                    for matchmaking.
-                </li>
-                <li>
-                    Networked player movement and MapMovers interactions across client and server machines.
-                </li>
-                <li>
-                    Designed and implemented menu screen UI and layout.
-                </li> -->
-            <!-- </ul> -->
-            <button class="accordion" id="multiplayer-development"><i class="fas fa-network-wired"></i> Multiplayer Development</button>
+            <button class="accordion" id="multiplayer-development"><i class="fas fa-network-wired"></i> Multiplayer
+                Programming</button>
             <div class="panel" id="multiplayer-development-panel">
                 <ul>
                     <li>
@@ -193,23 +170,26 @@
             </div>
             <br>
             <br>
-            <button class="accordion" id="what-i-would-improve"><i class="fas fa-lightbulb"></i> What I Would Improve</button>
+            <button class="accordion" id="what-i-would-improve"><i class="fas fa-lightbulb"></i> What I Would
+                Improve</button>
             <div class="panel" id="what-i-would-improve-panel">
-                <ul>
-                    <li>
-                        Factor time into the scoring system to prevent degenerate strategies like a player waiting at
-                        the
-                        start line for everyone else to sabotage each other before slowly making their way to the hole.
-                    </li>
-                    <li>
-                        Implement a lobby system to make matchmaking more robust.
-                    </li>
-                    <li>
-                        Communicating the "danger zones" of interactive obstacles and hazards to make them less
-                        frustrating
-                        to navigate.
-                    </li>
-                </ul>
+                <h3>Polishing Multiplayer Gameplay</h3>
+                <p>
+                    Implementing a lobby will make the matchmaking system more robust, since players can currently join
+                    an in-progress game at any time. Also, displaying a loading screen when waiting for players to
+                    finish joining levels will create a smoother user experience.
+                </p>
+                <h3>Preventing Degenerate Strategies</h3>
+                <p>
+                    Time could be factored into the scoring system. Currently, a player can simply wait at the start
+                    line for their opponents to sabotage each other, before making their way to the hole after everyone
+                    else has done so without worrying about interactive objects and hazards affecting their score.
+                </p>
+                <h3>Better Signalling Interactive Obstacles and Hazards</h3>
+                <p>
+                    Adding details conveying the "danger zones" of MapMovers might make them less frustrating for
+                    players to navigate, and overall help ensure maps are not harder than intended to traverse.
+                </p>
                 <br>
                 <figure>
                     <img class="project-img" src="media/flog/dragon.png" alt="Fire-breathing dragon">

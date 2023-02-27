@@ -13,7 +13,10 @@
         crossorigin="anonymous">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- JS -->
+    <script src="src/main.js"></script>
 
     <!-- jQuery to help with refactoring common page elements. -->
     <script src="https://code.jquery.com/jquery-3.6.3.js"
@@ -30,31 +33,10 @@
     </div>
     <div id="wrapper">
         <a href="index.html" class="button-target button-target-top">&#8672; Back to Home</a>
-        <p>
-            <!-- <b>CONTENT WARNING: This video may trigger seizures for people with photosensitive epilepsy.</b> -->
-        </p>
         <video controls muted>
             <source src="media/mrbl/mrbl-gameplay.mp4" type="video/mp4">
             This browser does not support video.
         </video>
-        <!-- <p><a href="blank-slate.html">&lt; Back to Home</a></p>
-        <div class="slick-carousel">
-            <div class="slick-item">
-                <div class="img">
-                    <img class="content-card-img" src="media/project1-1.png">
-                </div>
-            </div>
-            <div class="slick-item">
-                <div class="img">
-                    <img class="content-card-img" src="media/project1-2.png">
-                </div>
-            </div>
-            <div class="slick-item">
-                <div class="img">
-                    <img class="content-card-img" src="media/project1-3.png">
-                </div>
-            </div>
-        </div> -->
         <div class="content">
             <div id="title">
                 <h1>mrbl.</h1>
@@ -64,279 +46,169 @@
                     <a href="#play-the-game" class="button-target button-target-group">Play Game</a>
                 </div>
             </div>
+            <p>
+                A mashup of the action puzzle shooters Luxor, Bust-a-Move, and Breakout. Players must make trick shots
+                using pinpoint timing and accuracy to clear marbles bouncing around an arena by shooting projectiles of
+                matching colours at them.
+            </p>
             <h2>Fast Facts</h2>
             <p>
-                <!-- <b>Keywords: </b> <br> -->
                 <b>Role: </b>Sole Developer<br>
                 <b>Timeframe: </b>7 weeks<br>
                 <b>Engine: </b>Unity3D<br>
                 <b>Language: </b>C#<br>
             </p>
-            <h2>Concept and Design Goals</h2>
-            <p>
-                <i>mrbl.</i> remixes mechanics of the action puzzle shooters Luxor, Bust-a-Move, and Breakout to create
-                a new-yet-familiar medley of an experience.
-                The core experience is focused on encouraging the player to take risks and rely on pinpoint timing and
-                accuracy to make trick shots <!-- quickly and --> consistently.
-
-
-                <!-- Speed, precision,
-                and colour matching are the focus of gameplay.
-                
-                Gameplay focuses on fast-paced moments filled with
-                manoeuvring obstacles and tackling technical sections of track, whilst racing against the clock to
-                complete laps as quickly as possible. -->
-
-
-                <!-- I designed a matching system that tracks the number of balls in the arena, such that only colours that
-               exist are presented to the player. I also made the system manage ball speed based on quantity to prevent
-                crowded levels from being too overwhelming. -->
-            </p>
-            <p>
-                Players use a cannon to clear marbles bouncing around an arena by
-                launching projectiles of a matching colour at them. If a projectile touches a marble of
-                the wrong colour or remains unmatched for too long, it turns into a marble <!-- becomes "stale" -->
-                itself. Marbles destroy the cannon upon impact, so players need to
-                keep their cannon away from them. Targets, worth bonus points if hit, are placed in obscure locations
-                throughout levels.
-                <!--Players will use their trusty cannon to clear a bunch of marbles bouncing around an arena by
-                launching projectiles of the same colour at them. However, if a projectile either touches a marble of
-                the wrong colour or remains unmatched for too long, it turns into a marble <becomes "stale" --><!-- , and
-                joins others in
-                aimlessly bouncing around the arena. While the goal is to clear marbles, players will need to keep
-                their cannon away from them, as the marbles will destroy it upon impact! Players can also aim for
-                targets that are placed in obscure locations throughout levels to gain bonus points.-->
-            </p>
-            <!-- (DONE) TODO: design goals? -->
-            <!-- TODO: the way you handle loading in balls for a level could also be mentioned -->
-            <!-- TODO: you cal also talk about the OO design, where the singleton stuff was important -->
-            <!-- <h2>Responsibilities</h2>
-            <ul>
-                <li>this</li>
-                <li>is</li>
-                <li>a</li>
-                <li>list</li>
-                <li>of</li>
-                <li>your</li>
-                <li>responsibilities</li>
-            </ul> -->
-            <!-- <h2>Technical Details</h2> -->
-            <!-- <h2>OO Design</h2>
-            <p>
-                In the current iteration, levels are loaded in sequence as the player completes them. The loading of
-                levels, as well as other state-related data, is handled by a singleton StateManager class that persists
-                in between scenes.
-            </p> -->
-            <!-- <h2>OO Design: Marbles and Projectiles</h2>
-            <p>
-                Marbles keep track of their individual colour, as well as whether they have been matched. Projectiles
-                have similar fields, but also have additional logic
-                added to handle colour matching during collisions. This includes event triggers that mark matched
-                marbles and projectiles for removal at the end of the update loop by a manager class.
-                It made sense, then, to make projectiles inherit from a Marble class, and then have methods added or
-                overridden as necessary within the Projectile class itself. -->
-            <!-- matched marbles and projectiles for removal triggering events. marble vs pro and pro vs pro
-                Marking gameobj's for removal by a manager class by the end of the update loop that frame -->
-
-            <!-- </p> -->
-
-            <!-- <p>
-                you could also make
-                I also learned about how to implement certain design
-                patterns in Unity. This included creating a singleton GameManager class that could persist between
-                scenes during runtime, and modifying a MonoBehaviour to behave like a generic C# class. I also learned
-                about the different lifecycle hooks Unity affords, and how to leverage them to ensure that classes and
-                GameObjects are populated with all the data they need each time a new scene gets loaded.
-
-                TODO: And you can also talk about how you determine which of a projectile and a marble to destroy upon
-                collision, since you dont want to call destroy on an object that doesnt exist anymore
-            </p> -->
-            <!-- <h2>Things I'm Particularly Proud Of</h2>
-            <ul>
-                <li>
-                    Programming bouncy physics for marbles and projectiles that felt just right and weren't
-                    overwhelmingly difficult to control
-                </li>
-                <li>
-
-                </li>
-                <li>
-                    Playing
-                </li>
-            </ul> -->
-            <!-- <h2>Getting Familiar with Unity's Quirks</h2>
-            <p>
-                I used this project to get more deeply acquainted with Unity's intricacies. Because bouncy physics are
-                a cornerstone to <i>mrbl.</i>, I had to tinker around with its built-in physics engine until the way the
-                marbles and projectiles behaved felt just right. I also learned about how to implement certain design
-                patterns in Unity. This included creating a singleton GameManager class that could persist between
-                scenes during runtime, and modifying a MonoBehaviour to behave like a generic C# class. I also learned
-                about the different lifecycle hooks Unity affords, and how to leverage them to ensure that classes and
-                GameObjects are populated with all the data they need each time a new scene gets loaded.
-            </p> -->
-
-            <!-- TODO: capitalise on the way you handle the colour matching. Data structure of choice was dict. why? You might have to refine this -->
-            <h2>Projectile Generation System <!-- Colour Matching System --></h2>
-            <p>
-                The player is able to see the colour of the next projectile they will shoot in-game. This colour is
-                determined by RNG, but
-                will match that of a marble already present in the arena, to prevent levels from dragging on
-                unfairly
-                if the player isn't given colours they
-                need.<!-- selected from The player is always given projectiles whose colours match those of marbles already in the arena. -->
-            </p>
-            <p>
-                To do this, the colour of the next projectile the player shoots is selected at random from a dictionary
-                that tracks quantities of marbles and projectiles in the arena. The key is
-                the colour, and the value is the count. The count gets updated each time a marble or projectile is
-                instantiated or destroyed. When all instances of a colour have been cleared, the corresponding entry is
-                removed from the dictionary altogether.
-
-                <!-- TODO: gif showing the next colour feature, just zoom into cannon shooting. caption: the player can see the colour of the next projectile OR the colour of the next projectile is picked based on marbles in the arena -->
-
-                <!-- a dictionary is used to track quantities of marbles and projectiles in the arena. The colour
-                of the next projectile the player shoots is selected at random from this same dictionary. The key is
-                the colour, and the value is the count. The count gets updated each time a marble or projectile is
-                instantiated or destroyed. When all instances of a colour have been cleared, the corresponding entry is
-                removed from the dictionary altogether. -->
-
-                <!-- A dictionary is used to track quantities of marbles and projectiles in the arena, with the key being the colour, and the value being the count. Each time a marble or projectile is instantiated, it is logged in the dictionary. When a colour's quantity == 0, it is removed from the dictionary. The colour of the next marble the player shoots is then obtained by grabbing a random colour from the dictionary. The player is therefore always given projectiles whose colours match those of marbles in the arena. This prevents levels from dragging on due to situations where the
-                player isn't given the colour they need, which can be construed as unfair.
-                
-                Each time a marble or projectile is instantiated, it is added to an underlying dictionary where keys are colours and values are the quantities of each colour. If the dictionary does not already contain an entry for a colour, one is created. When a colour's quantity == 0, it is removed from the dictionary. The colour of the next marble the player shoots is then obtained by grabbing a random colour from the dictionary. This ensures the player is 
-            
-                Because levels are complete as soon as all marbles in the arena are cleared across all waves, I found it
-                important that the player's cannon always gets loaded with a projectile whose colour matches at least
-                one existing marble in the arena. This prevents levels from dragging on due to situations where the
-                player isn't given the colour they need, which can be construed as unfair.
-            </p>
-            <p>
-                This inherent need to keep an active inventory of all the projectiles and marbles in the arena meant
-                that dictionaries were the best data structure for the job. The key for the dictionary is the colour,
-                and the value is a running total of marbles/projectiles of that colour. Projectile colours are selected
-                at random from the dictionary's keys. Colours are removed from the dictionary when their count reaches
-                zero to ensure that a valid selection always occurs for the next projectile's colour. -->
-            </p>
-            <figure>
-                <!-- <img class="project-img" src="media/mrbl/projectile-generation-system-1.gif" -->
-                <!-- alt="Projectile generation system in action"> -->
-                <video autoplay loop muted playsinline>
-                    <source src="media/mrbl/projectile-generation-system.mp4" type="video/mp4">
-                    This browser does not support video.
-                </video>
-                <figcaption>The colour of the next projectile is picked based on marbles present in the arena.
-                </figcaption>
-            </figure>
-
-            <h2>Target System</h2>
-            <p>
-                To further centre gameplay around precision, the player is rewarded with bonus points
-                for making trick shots and hitting optional targets in harder-to-reach areas.
-                <!-- However, due to the added complexity targets bring,
-                clearing them is completely optional, and isn't required to complete a level. -->
-
-                <!-- TODO: gif showing target feature, aiming for target in level 3. caption: the player can aim at targets in harder-to-reach location for bonus points -->
-
-                <!-- making trick shots leveraging the bouncy physics.
-                I wanted to find ways to reward the player for successfully pulling off cleverly-positioned trick shots,
-                because of how the bouncy game physics lends itself to such play styles. This gave rise to the
-                target system where the player can knock down targets placed in harder-to-reach areas to earn a point
-                bonus. However, hitting targets is completely optional, and isn't required of the player to complete a
-                level. -->
-            </p>
-            <figure>
-                <!-- <img class="project-img" src="media/mrbl/target-system-1.gif" alt="Aiming at a target"> -->
-                <video autoplay loop muted playsinline>
-                    <source src="media/mrbl/target-system.mp4" type="video/mp4">
-                    This browser does not support video.
-                </video>
-                <figcaption>
-                    The player can aim at optional targets for bonus points.
-                </figcaption>
-            </figure>
-            <h2>Preventing Players from Feeling Overwhelmed</h2>
-            <p>
-                Marbles slow down as the arena fills up. This prevents players from feeling
-                overwhelmed, and keeps them focused on the primary goal of clearing marbles
-                during gameplay, instead of dodging them. When the player clears enough marbles,
-                they start speeding up again to maintain a balance of difficulty.
-            </p>
-            <figure>
-                <!-- <img class="project-img" src="media/mrbl/overwhelmed-1-1.gif" alt="Marbles slowing down"> -->
-                <video autoplay loop muted playsinline>
-                    <source src="media/mrbl/overwhelmed-slow-down.mp4" type="video/mp4">
-                    This browser does not support video.
-                </video>
-                <figcaption>Marbles slow down as the arena fills up.</figcaption>
-            </figure>
-            <figure>
-                <!-- <img class="project-img" src="media/mrbl/overwhelmed-2-1.gif" alt="Marbles speeding up"> -->
-                <video autoplay loop muted playsinline>
-                    <source src="media/mrbl/overwhelmed-speed-up.mp4" type="video/mp4">
-                    This browser does not support video.
-                </video>
-                <figcaption>Marbles speed up as the arena empties to maintain a balance of difficulty.</figcaption>
-            </figure>
-            <!-- TODO: gif showing marble slowdown feature. caption: marbles slow down as the arena fills up -->
-            <!-- TODO: gif showing marble speedup feature. caption: marbles speed up as the arena empties to maintain a balance of difficulty -->
-
-            <!-- players focused on clearing marbles during gameplay instead of dodging them if the arena gets
-                too full, and prevent them from feeling overwhelmed. 
-                from feeling overwhelmed if the arena gets too full
-                Players can fill the arena very quickly if they miss a lot due to poor judgment. This can be
-                overwhelming, and forces the player to focus on dodging marbles instead of clearing them. This is
-                mitigated
-
-                In the current iteration, I tried to mitigate this issue by decreasing the speed at which marbles travel
-                around based on how many there are in total bouncing around in the arena. The larger the number of
-                marbles present, the slower they travel, until a certain lower bound is reached. As soon as the player
-                is able to clear enough marbles, they start speeding up again to maintain a balance of difficulty. -->
-            <!-- It's easy for players to overcrowd the arena if they spam-launch a large number of projectiles
-                continuously or just happen to make a lot of misses due to poor aim. Either way, this causes the arena
-                to fill up with bouncing marbles very quickly, making it very challenging for the player to avoid
-                collisions. This can be overwhelming, as it forces the player to focus more on dodging marbles instead
-                of clearing them, thus going against the goal of the game.
-            </p>
-            <p>
-                In the current iteration, I tried to mitigate this issue by decreasing the speed at which marbles travel
-                around based on how many there are in total bouncing around in the arena. The larger the number of
-                marbles present, the slower they travel, until a certain lower bound is reached. As soon as the player
-                is able to clear enough marbles, they start speeding up again to maintain a balance of difficulty.
-            </p> -->
-            <!-- <p>
-                In a future iteration, I want to experiment with restricting the player's projectile fire rate to prevent them from filling up the arena by spam-firing projectiles. TODO: put into next steps
-            </p> -->
-
-            <h2>Next Steps</h2>
-            <h3>
-                Encouraging Trick Shots
-            </h3>
-            <p>
-                <i>mrbl.</i> is about precision and making trick shots. Besides targets, however, the
-                player has little reason to play aggressively. To incentivise this, longer-range
-                shots could be rewarded with more points.
-            </p>
-            <!-- <p>
-                Precision and finding ways to leverage the bouncy game physics has always been at the core of
-                <i>mrbl.</i>
-                As such, I want to encourage players to take more risks with the physics system. As it stands,
-                however, the only reason players really have to make trick shots is to try and knock down targets. To
-                further incentivise this style of play, I would like to modify the scoring mechanic such that
-                longer-distance shots are acknowledged and rewarded appropriately. An alternative is to account for the
-                number of bounces a projectile makes before matching with a marble, and factoring that into the player's
-                score.
-            </p> -->
-            <h3>Designing for Accessibility</h3>
-            <p>
-                <i>mrbl.</i>'s mechanics revolve around the use of colour, so accessible design is important.
-                Symbols could be used to denote colours in-game. Alternatively, the colour scheme could be made
-                configurable.
-            </p>
-            <h3>Pickups</h3>
-            <p>
-                Power-ups that fall from the top of the screen can add variety to the game. Power-downs could also be
-                dropped occasionally to keep gameplay interesting, by giving the player something else to avoid.
-            </p>
+            <button class="accordion" id="game-design"><i class="fas fa-gamepad"></i> Game Design</button>
+            <div class="panel" id="game-design-panel">
+                <ul>
+                    <li>
+                        Designed a system that ensures players are only given projectiles whose colours match marbles
+                        and
+                        other projectiles in the arena to prevent levels from dragging on unfairly if players are not
+                        given
+                        colours they need.
+                    </li>
+                    <li>
+                        Added targets to further centre gameplay around precision, by rewarding the player with
+                        bonus points for making trick shots and hitting optional targets in harder-to-reach areas.
+                    </li>
+                    <li>
+                        Created a system that slows marbles down as the arena fills up to prevent players from feeling
+                        overwhelmed and keep them focused on clearing marbles. As the arena empties, marbles start
+                        speeding up again to maintain a balance of difficulty.
+                    </li>
+                </ul>
+                <br>
+                <figure>
+                    <video autoplay loop muted playsinline>
+                        <source src="media/mrbl/projectile-generation-system.mp4" type="video/mp4">
+                        This browser does not support video.
+                    </video>
+                    <figcaption>The colour of the next projectile is picked based on marbles present in the arena.
+                    </figcaption>
+                </figure>
+                <figure>
+                    <video autoplay loop muted playsinline>
+                        <source src="media/mrbl/target-system.mp4" type="video/mp4">
+                        This browser does not support video.
+                    </video>
+                    <figcaption>
+                        The player can aim at optional targets for bonus points.
+                    </figcaption>
+                </figure>
+                <figure>
+                    <video autoplay loop muted playsinline class="halved">
+                        <source src="media/mrbl/overwhelmed-slow-down.mp4" type="video/mp4">
+                        This browser does not support video.
+                    </video>
+                    <video autoplay loop muted playsinline class="halved">
+                        <source src="media/mrbl/overwhelmed-speed-up.mp4" type="video/mp4">
+                        This browser does not support video.
+                    </video>
+                    <figcaption>Marbles slow down as the arena fills up, and speed up as the arena empties to maintain a
+                        balance of difficulty.</figcaption>
+                </figure>
+            </div>
+            <br>
+            <br>
+            <button class="accordion" id="gameplay-programming"><i class="fas fa-code"></i> Gameplay
+                Programming</button>
+            <div class="panel" id="gameplay-programming-panel">
+                <ul>
+                    <li>
+                        Leveraged a dictionary to track quantities of marbles and projectiles in the arena, so that the
+                        player is only given projectiles whose colours match marbles and other projectiles in the arena.
+                    </li>
+                    <ul>
+                        <li>
+                            The key is the colour, and the value is the count.
+                        </li>
+                        <li>
+                            The count gets updated each time a marble or projectile is instantiated or destroyed.
+                        </li>
+                        <li>
+                            When all instances of a colour have been cleared, the corresponding entry is removed from
+                            the
+                            dictionary altogether.
+                        </li>
+                        <li>
+                            The colour of the next projectile the player shoots is selected at random from this
+                            dictionary.
+                        </li>
+                    </ul>
+                    <li>
+                        Used coroutines to define time-based gameplay events, like iframe animation sequences when the
+                        player gets hit and the spawning sequence of marbles at the beginning of a wave.
+                    </li>
+                    <li>
+                        Added line-of-sight aim guard using a line renderer to both help with player aim and communicate
+                        the
+                        colour of the next projectile being launched.
+                    </li>
+                </ul>
+                <br>
+                <figure>
+                    <video autoplay loop muted playsinline>
+                        <source src="media/mrbl/projectile-generation-system.mp4" type="video/mp4">
+                        This browser does not support video.
+                    </video>
+                    <figcaption>A dictionary was used to ensure players are given projectiles whose colours match
+                        marbles
+                        and
+                        other projectiles in the arena.
+                    </figcaption>
+                </figure>
+                <figure>
+                    <video autoplay loop muted playsinline class="halved">
+                        <source src="media/mrbl/iframe.mp4" type="video/mp4">
+                        This browser does not support video.
+                    </video>
+                    <video autoplay loop muted playsinline class="halved">
+                        <source src="media/mrbl/spawning.mp4" type="video/mp4">
+                        This browser does not support video.
+                    </video>
+                    <figcaption>
+                        Coroutines were used to define iframe animation sequences when the player gets hit and spawn
+                        sequences of marbles at the start of a wave.
+                    </figcaption>
+                </figure>
+                <figure>
+                    <video autoplay loop muted playsinline>
+                        <source src="media/mrbl/aim-guard.mp4" type="video/mp4">
+                        This browser does not support video.
+                    </video>
+                    <figcaption>
+                        A line renderer was used to help player aim and to show the colour of the next projectile.
+                    </figcaption>
+                </figure>
+            </div>
+            <br>
+            <br>
+            <button class="accordion" id="next-steps"><i class="fas fa-lightbulb"></i> Next Steps</button>
+            <div class="panel" id="next-steps-panel">
+                <h3>
+                    Encouraging Trick Shots
+                </h3>
+                <p>
+                    <i>mrbl.</i> is about precision and making trick shots. Besides targets, however, the
+                    player has little reason to play aggressively. To incentivise this, longer-range
+                    shots could be rewarded with more points.
+                </p>
+                <h3>Designing for Accessibility</h3>
+                <p>
+                    <i>mrbl.</i>'s mechanics revolve around the use of colour, so accessible design is important.
+                    Symbols could be used to denote colours in-game. Alternatively, the colour scheme could be made
+                    configurable.
+                </p>
+                <h3>Pickups</h3>
+                <p>
+                    Power-ups that fall from the top of the screen can add variety to the game. Power-downs could also
+                    be
+                    dropped occasionally to keep gameplay interesting, by giving the player something else to avoid.
+                </p>
+            </div>
+            <br>
+            <br>
             <h2 id="play-the-game">Play the Game!</h2>
             <h3>Installation Instructions</h3>
             <p>
@@ -347,55 +219,15 @@
                 This build runs best on Chrome and Edge browsers.
             </p>
             <br>
-            <!-- <br> -->
             <a href="https://juuu-jiii.github.io/Beetle/" target="mrbl. build" class="button-target">Link to Build</a>
             <br>
             <br>
             <h2>Link to Repo</h2>
             <p>
-                Click the button below to get access to the project's repository:
+                Click the button below to access the project's repository:
             </p>
             <br>
             <a href="https://github.com/juuu-jiii/Beetle" class="button-target" target="mrbl. repo link">mrbl. Repo</a>
-            <!-- <p class="content-warning">
-                <b>CONTENT WARNING: This video may trigger seizures for people with photosensitive epilepsy.</b>
-            </p> -->
-
-            <!-- <h2>
-                Design Goals
-            </h2>
-            <p>
-                What do you want players to feel while playing this game, and how did this influence your design
-                choices?
-                Did this evolve over time? How and why? What about the level design? The aesthetics? Audio? Environment
-                design?
-                How do all of this come together to support your design goals?
-            </p> -->
-            <!-- <h2>Core Systems</h2>
-            <p>
-                What are the core systems in the game? Why were these included? What is their individual significance in
-                contributing to the overall result?
-            </p>
-            <h2>
-                Additional Sections
-            </h2> -->
-            <!-- <p>
-                Add more sections here based on project-specific details worth discussing in more detail, or just
-                implementation specifics you're proud of and want to show off. For
-                example:<br>
-                <b>Design Goals: </b>What do you want players to feel while playing this game, and how did this
-                influence your design
-                choices?
-                Did this evolve over time? How and why? What about the level design? The aesthetics? Audio? Environment
-                design?
-                How do all of this come together to support your design goals?<br>
-                <b>Core Systems: </b>What are the core systems in the game? Why were these included? What is their
-                individual significance in
-                contributing to the overall result?<br>
-                <b>Next steps, Game economy, tool creation, documentation, content creation, challenges you ran into,
-                    pattern recognition, why you made some decisions</b>
-
-            </p> -->
 
         </div>
     </div>

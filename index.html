@@ -13,7 +13,10 @@
         crossorigin="anonymous">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- JS -->
+    <script src="src/main.js"></script>
 
     <!-- jQuery to help with refactoring common page elements. -->
     <script src="https://code.jquery.com/jquery-3.6.3.js"
@@ -58,62 +61,77 @@
                 <div class="caption">
                     <h1>floG</h1>
                     <p>
-                        A networked multiplayer simultaneous minigolf game where players
-                        can derail opponents using MapMovers: player-activated hazards and
-                        movable objects. Good aim and timing are vital to sabotaging
-                        opponents whilst maintaining a good score. Because anyone can
-                        trigger anything, no one is safe!
+                        <b>Multiplayer Programming, Game Design, Level Design</b>
                     </p>
                     <p>
-                        I designed the MapMovers system and worked it into level layouts
-                        to encourage player interaction and confrontation. I also worked
-                        on multiplayer, by contributing to adding Steam and IP
-                        address matchmaking and synchronising player movement and
-                        MapMovers interactions across connected machines.
+                        A networked multiplayer simultaneous golf
+                        game where players can derail opponents using interactive obstacles and hazards that are moved
+                        or
+                        activated using triggers distributed over the map.
                     </p>
+                    <ul>
+                        <li>
+                            Networked player movement/interactions on server/clients
+                        </li>
+                        <li>
+                            Added Steam and IP address matchmaking
+                        </li>
+                        <li>
+                            Created levels facilitating player interaction/confrontation
+                        </li>
+                        <li>
+                            Designed the system of interactive obstacles and hazards that allow players to sabotage each
+                            other
+                        </li>
+                    </ul>
                     <br>
                     <a href="floG.html" class="button-target">Learn More</a>
                     <!-- <button>Learn More</button> -->
                 </div>
             </div>
-            <!-- <div class="card-wrapper">
-                <img class="content-card-img" src="media/index thumbnails/the-tunnels.png" alt="The Tunnels thumbnail">
+            <div class="card-wrapper">
+                <img class="content-card-img" src="media/index thumbnails/boids-interactive.png" alt="Boids Interactive thumbnail">
                 <div class="caption">
-                    <h1>The Tunnels</h1>
+                    <h1>Boids Interactive</h1>
                     <p>
-                        A first-person psychological horror walking simulator set in RIT's
-                        underground dormitory tunnel system. Players must escape from an
-                        entity while trying to find their way back to their dorm room after
-                        a long day of classes.
+                        <b>AI Programming, Interactive Experience</b>
                     </p>
                     <p>
-                        I designed and created levels for the game using audio and visual
-                        cues to create an immersive, yet eerie and unsettling atmosphere.
-                        I also designed and structured the player's in-game encounters and
-                        tasks to facilitate pacing and a build-up of tension and anxiety
-                        over time.
+                        An interactive version of Craig Reynolds's boids simulation, with 
+                        modifications and additions made to the original framework to 
+                        facilitate the creation of generative art.
                     </p>
                     <br>
-                    <a href="the-tunnels.html" class="button-target">Learn More</a>
+                    <a href="boids-interactive.html" class="button-target">Learn More</a>
                 </div>
-            </div> -->
+            </div>
             <div class="card-wrapper">
                 <img class="content-card-img" src="media/index thumbnails/tapracing.png" alt="TapRacing thumbnail">
                 <div class="caption">
                     <h1>TapRacing</h1>
                     <p>
-                        An isometric reinvention of the traditional 3D, steering based racing
-                        game, where vehicles can only strafe sideways and turn 90 degrees
-                        instantaneously in either direction. The chase camera is locked
-                        to the same orientation, so being able to differentiate right from
-                        left at all times is key!
+                        <b>Game Design, Gameplay Programming</b>
                     </p>
                     <p>
-                        I designed a simple and snappy handling model to facilitate fast-paced
-                        gameplay, and also implemented a checkpoint system to ensure a fair
-                        experience. I created everything in this project (except the
-                        car model) using Unreal 4's built-in editor tools.
+                        An isometric reinvention of the traditional, 3D, steering-based racer. Vehicles
+                        can turn 90 degrees instantaneously in either direction and strafe sideways, and the chase
+                        camera
+                        is locked to the same orientation throughout!
                     </p>
+                    <ul>
+                        <li>
+                            Designed and developed a snappy handling model for fast-paced gameplay
+                        </li>
+                        <li>
+                            Added checkpoint system to track laps/prevent cheating
+                        </li>
+                        <li>
+                            Created shaders using Unreal's material editor
+                        </li>
+                        <li>
+                            Implemented particle systems using Unreal's VFX editors
+                        </li>
+                    </ul>
                     <br>
                     <a href="tapracing.html" class="button-target">Learn More</a>
                     <!-- <button>Learn More</button> -->
@@ -124,17 +142,28 @@
                 <div class="caption">
                     <h1>mrbl.</h1>
                     <p>
+                        <b>Game Design, Gameplay Programming</b>
+                    </p>
+                    <p>
                         A mashup of the action puzzle shooters Luxor, Bust-a-Move, and Breakout.
                         Players must make trick shots using pinpoint timing and accuracy to
                         clear marbles bouncing around an arena by shooting projectiles of
                         matching colours at them.
                     </p>
-                    <p>
-                        I created a colour matching system that ensures players are given
-                        projectiles whose colours match those of marbles present in the arena. To
-                        encourage players to make more trick shots, I placed targets in obscure
-                        locations throughout levels that are worth bonus points if hit.
-                    </p>
+                    <ul>
+                        <li>
+                            Designed and developed a colour matching system that gives players
+                            projectiles whose colours match those of marbles and other projectiles
+                            present in the arena
+                        </li>
+                        <li>
+                            Used coroutines to define time-based animation and gameplay event
+                            sequences
+                        </li>
+                        <li>
+                            Placed targets strategically in levels to promote trick shots
+                        </li>
+                    </ul>
                     <br>
                     <a href="mrbl.html" class="button-target">Learn More</a>
                     <!-- <button>Learn More</button> -->

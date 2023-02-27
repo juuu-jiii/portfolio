@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szun Kidd Choi's Portfolio • mrbl.</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- JS -->
+    <script src="src/main.js"></script>
+
+    <!-- jQuery to help with refactoring common page elements. -->
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="navigation">
+        <div id="navigation-container">
+            <script>
+                $("#navigation-container").load("master-utils/navbar.html");
+            </script>
+        </div>
+    </div>
+    <div id="wrapper">
+        <a href="index.html" class="button-target button-target-top">&#8672; Back to Home</a>
+        <video controls muted>
+            <source src="media/boids-interactive/boids-interactive-video.mp4" type="video/mp4">
+            This browser does not support video.
+        </video>
+        <div class="content">
+            <div id="title">
+                <h1>Boids Interactive</h1>
+                <div class="button-container">
+                    <a href="https://github.com/juuu-jiii/Stork2D" target="mrbl. repo link"
+                        class="button-target button-target-group">Repo</a>
+                    <a href="#try-it-out" class="button-target button-target-group">Try it Out!</a>
+                </div>
+            </div>
+            <p>
+                An interactive version of Craig Reynolds's boids simulation, with
+                modifications and additions made to the original framework to
+                facilitate the creation of generative art.
+            </p>
+            <h2>Fast Facts</h2>
+            <p>
+                <b>Role: </b>Sole Developer<br>
+                <b>Timeframe: </b>7 weeks<br>
+                <b>Engine: </b>Unity2D<br>
+                <b>Language: </b>C#<br>
+            </p>
+            <h2>Flocking Rules</h2>
+            <p>
+                Flocking rules are mathematical functions that describe the movement behaviours of a single AI agent in
+                response to others around it. Combinations of multiple flocking rules governing an agent's movement can
+                result in emergent behaviour when several agents are placed in close proximity to each other. For this
+                project, I included a total of eight flocking rules:
+            </p>
+            <ol>
+                <li>
+                    Cohesion: prevents agents from breaking off from the flock, by steering each agent towards the
+                    average position of its neighbours.
+                </li>
+                <li>
+                    Alignment: forces agents to move in the same general direction, by adjusting each agent's velocity
+                    such that it matches the average velocity of its neighbours.
+                </li>
+                <li>
+                    Separation: states that agents should stay some minimum distance apart to avoid collisions, despite
+                    the previous two rules bringing them together.
+                </li>
+                <li>
+                    Lifespan: determines how long an agent is alive for, and therefore the duration of the current
+                    simulation run altogether.
+                </li>
+                <li>
+                    Tendency Toward User Interaction Location: Agents are “attracted” to the location of the cursor
+                    while the user holds down the left mouse button.
+                </li>
+                <li>
+                    Environment Retention: Keeps agents within the screen's bounds.
+                </li>
+                <li>
+                    Obstacle Avoidance: prevents agents from flying through obstacles placed by the user within the
+                    environment.
+                </li>
+                <li>
+                    Speed Limitation: prevents agents from travelling at arbitrarily fast speeds.
+                </li>
+            </ol>
+            <h2>How do they Move?</h2>
+            <p>
+                The influence of each of the eight flocking rules above is a numerical value that determines the weight
+                of each rule in physics calculations. These calculations are performed for each agent by manipulating
+                their velocities, then setting their positions on-screen manually after each frame.
+                I ignored physical properties and behaviours like gravity and collisions in this project because I did
+                not find them relevant. As a result, this meant that I was able to disregard Unity's physics library and
+                rigid body system in favour of the mathematical approach described above which led to improved
+                performance.
+            </p>
+            <p>
+
+            </p>
+            <h2>Interactivity</h2>
+            <p>
+                Aside from user-defined obstacle placement and making agents flock to the user's cursor while the left
+                mouse button is held down, several interactive and customisable elements are featured:
+            </p>
+            <ul>
+                <li>
+                    the influence of variables and rules can be adjusted using sliders;
+                </li>
+                <li>
+                    the colour of agent trails can be customised;
+                </li>
+                <li>
+                    the theme/colour palette of the simulation can be switched; and
+                </li>
+                <li>
+                    the visibility of placed obstacles can be toggled on/off
+                </li>
+            </ul>
+
+            <h2 id="try-it-out">Try it Out!</h2>
+            <h3>Installation Instructions</h3>
+            <p>
+                No installation required; this is an online WebGL build! Simply click the button below to be redirected
+                to the application in-browser. Make sure to enable fullscreen mode for the best experience!
+            </p>
+            <p>
+                This build runs best on Chrome and Edge browsers.
+            </p>
+            <br>
+            <a href="https://juuu-jiii.github.io/Stork2D/build.html" target="Boids Interactive build"
+                class="button-target">Link to Build</a>
+            <br>
+            <br>
+            <h2>Link to Repo</h2>
+            <p>
+                Click the button below to access the project's repository:
+            </p>
+            <br>
+            <a href="https://github.com/juuu-jiii/Stork2D" class="button-target"
+                target="Boids Interactive repo link">Boids Interactive Repo</a>
+
+        </div>
+    </div>
+    <div id="footer-container">
+        <script>
+            $("#footer-container").load("master-utils/footer.html");
+        </script>
+    </div>
+</body>
+
+</html>
