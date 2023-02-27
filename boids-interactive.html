@@ -41,15 +41,17 @@
             <div id="title">
                 <h1>Boids Interactive</h1>
                 <div class="button-container">
-                    <a href="https://github.com/juuu-jiii/Stork2D" target="mrbl. repo link"
+                    <a href="https://github.com/juuu-jiii/Stork2D" target="Boids Interactive repo link"
                         class="button-target button-target-group">Repo</a>
+                    <a href="https://juuu-jiii.github.io/Stork2D/final-paper.pdf" target="Boids Interactive paper"
+                        class="button-target button-target-group">Paper</a>
                     <a href="#try-it-out" class="button-target button-target-group">Try it Out!</a>
                 </div>
             </div>
             <p>
-                An interactive version of Craig Reynolds's boids simulation, with
-                modifications and additions made to the original framework to
-                facilitate the creation of generative art.
+                An interactive version of Craig Reynolds's boids simulation containing 90 agents, with
+                modifications and additions made to the original framework to facilitate the interactive creation of
+                generative art.
             </p>
             <h2>Fast Facts</h2>
             <p>
@@ -67,48 +69,47 @@
             </p>
             <ol>
                 <li>
-                    Cohesion: prevents agents from breaking off from the flock, by steering each agent towards the
-                    average position of its neighbours.
+                    Cohesion: steers each agent towards the average position of its neighbours.
                 </li>
                 <li>
-                    Alignment: forces agents to move in the same general direction, by adjusting each agent's velocity
-                    such that it matches the average velocity of its neighbours.
+                    Alignment: adjusts each agent's velocity to match the average velocity of its neighbours.
                 </li>
                 <li>
-                    Separation: states that agents should stay some minimum distance apart to avoid collisions, despite
-                    the previous two rules bringing them together.
+                    Separation: makes agents stay some minimum distance apart to avoid collisions.
                 </li>
                 <li>
-                    Lifespan: determines how long an agent is alive for, and therefore the duration of the current
-                    simulation run altogether.
+                    Lifespan: determines the duration of the current simulation run.
                 </li>
                 <li>
-                    Tendency Toward User Interaction Location: Agents are “attracted” to the location of the cursor
-                    while the user holds down the left mouse button.
+                    Tendency Toward User Interaction Location: "attracts" agents to the cursor position when the
+                    left mouse button is held.
                 </li>
                 <li>
-                    Environment Retention: Keeps agents within the screen's bounds.
+                    Environment Retention: keeps agents within the screen's bounds.
                 </li>
                 <li>
-                    Obstacle Avoidance: prevents agents from flying through obstacles placed by the user within the
-                    environment.
+                    Obstacle Avoidance: makes agents avoid user-placed obstacles in the environment.
                 </li>
                 <li>
-                    Speed Limitation: prevents agents from travelling at arbitrarily fast speeds.
+                    Max Speed: prevents agents from travelling at arbitrarily fast speeds.
                 </li>
             </ol>
+            <p>
+                These influence of the above rules is adjustable using sliders in the application. On top of these
+                rules,
+                agents' visual range and distance they can see ahead of themselves in a straight line can also be
+                adjusted.
+            </p>
             <h2>How do they Move?</h2>
             <p>
-                The influence of each of the eight flocking rules above is a numerical value that determines the weight
-                of each rule in physics calculations. These calculations are performed for each agent by manipulating
-                their velocities, then setting their positions on-screen manually after each frame.
+                The influence of each of the flocking rules above is a numerical value that determines the weight
+                of each rule in physics calculations. Each agent keeps track of its own velocity vector, and physics
+                calculations are performed for each agent by manipulating said velocity vectors individually. The
+                positions of each agent are then set on-screen manually after each frame.
                 I ignored physical properties and behaviours like gravity and collisions in this project because I did
                 not find them relevant. As a result, this meant that I was able to disregard Unity's physics library and
                 rigid body system in favour of the mathematical approach described above which led to improved
                 performance.
-            </p>
-            <p>
-
             </p>
             <h2>Interactivity</h2>
             <p>
@@ -129,6 +130,20 @@
                     the visibility of placed obstacles can be toggled on/off
                 </li>
             </ul>
+            <h2>Results</h2>
+            <p>
+                Results are quite mixed. The system conveys various types of flocking behaviours based on supplied
+                parameters, but it can be rather difficult to see the individual effects of each flocking rule at
+                times, especially when there are many flocking rules (more than 4 or 5) working together to affect an
+                agent's velocity at the same time. A possible reason for this is mathematical inaccuracies
+                that might have been accounted for had Unity's physics library and rigid body system been used. Another
+                potentially related explanation for this is the finicky nature of the flocking rules themselves.
+                Some flocking rules have a greater effect on resultant behaviour than others, and so some rules can
+                overpower others. A solution for this would be to fine-tune the weights of each rule under the hood
+                and limit the number of rules that can be applied at any one time to 4 or 5 at most to make the effects
+                of individual rules more pronounced.
+            </p>
+
 
             <h2 id="try-it-out">Try it Out!</h2>
             <h3>Installation Instructions</h3>
@@ -151,7 +166,13 @@
             <br>
             <a href="https://github.com/juuu-jiii/Stork2D" class="button-target"
                 target="Boids Interactive repo link">Boids Interactive Repo</a>
-
+            <h2>Link to Paper</h2>
+            <p>
+                Click the button below to access the research paper associated with this project:
+            </p>
+            <br>
+            <a href="https://juuu-jiii.github.io/Stork2D/final-paper.pdf" class="button-target"
+                target="Boids Interactive paper">Boids Interactive paper</a>
         </div>
     </div>
     <div id="footer-container">

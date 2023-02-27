@@ -434,7 +434,7 @@ a:active {
 
 /* Style the buttons that are used to open and close the accordion panel */
 .accordion {
-    background-color: #eee;
+    background-color: #dadad3;
     color: #293F65;
     font-size: large;
     font-weight: bold;
@@ -450,13 +450,13 @@ a:active {
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active,
 .accordion:hover {
-    background-color: #ccc;
+    background-color: #ece9da;
 }
 
 /* Style the accordion panel. Note: hidden by default */
 .panel {
     padding: 0 18px;
-    background-color: gray;
+    background-color: #dadad3;
     display: none;
     overflow: hidden;
 }
@@ -506,8 +506,9 @@ a:active {
         font-size: 1rem;
     }
 
-    .caption p {
-        font-size: 0.75rem;
+    .caption p,
+    li {
+        font-size: 0.7rem;
     }
 }
 
@@ -525,8 +526,9 @@ a:active {
         font-size: 1.3rem;
     }
 
-    .caption p {
-        font-size: 0.9rem;
+    .caption p,
+    li {
+        font-size: 0.85rem;
     }
 }
 
@@ -554,7 +556,8 @@ a:active {
         font-size: xx-large;
     }
 
-    .caption p {
+    .caption p,
+    li {
         font-size: medium;
     }
 }
