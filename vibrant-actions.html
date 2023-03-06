@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szun Kidd Choi's Portfolio • floG</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- JS -->
+    <script src="src/main.js"></script>
+
+    <!-- jQuery to help with refactoring common page elements. -->
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="navigation">
+        <div id="navigation-container">
+            <script>
+                $("#navigation-container").load("master-utils/navbar.html");
+            </script>
+        </div>
+    </div>
+    <div id="wrapper">
+        <a href="index.html" class="button-target button-target-top">&#8672; Back to Home</a>
+        <video controls muted>
+            <source src="media/vibrant-actions/vibrant-actions-gameplay.mp4" type="video/mp4">
+            This browser does not support video.
+        </video>
+        <div class="content">
+            <div id="title">
+                <h1>Vibrant Actions</h1>
+                <div class="button-container">
+                    <a href="https://juuu-jiii.itch.io/vibrant-actions" target="Vibrant Actions itch page"
+                        class="button-target button-target-group"><i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        itch.io</a>
+                    <a href="#play-the-game" class="button-target button-target-group">Play Game</a>
+                </div>
+            </div>
+            <p>
+                <i>Vibrant Actions</i> is a first-person collect-a-thon game-for-change about cleaning a trash-laden
+                coastline, aimed at 6th graders in the US.
+                Players are shown effects of environmental pollution and can reverse
+                damage done via sustainable waste management practices, with the goal of encouraging them to model these
+                good practices in their daily lives.
+            </p>
+            <h2>Fast Facts</h2>
+            <p>
+                <b>Team Size: </b>4<br>
+                <b>Roles: </b>Game Designer, Game Developer, and Process/Project Management<br>
+                <b>Timeframe: </b>7 weeks<br>
+                <b>Engine: </b>Unity<br>
+                <b>Language: </b>C#<br>
+            </p>
+            <br>
+            <button class="accordion" id="game-design"><i class="fa-solid fa-gamepad"></i> Game Design</button>
+            <div class="panel" id="game-design-panel">
+                <ul>
+                    <li>
+                        Researched sustainable waste management practices, their relevance in early middle school
+                        curricula, and how a designer might approach conveying the topic to a younger audience through
+                        interactivity and play.
+                    </li>
+                    <li>
+                        Used the procedural rhetoric to guide core gameplay loop design.
+                    </li>
+                    <li>
+                        Designed a minigame where the player recycles trash by disposing it in the correct bin.
+                    </li>
+                    <li>
+                        Created a feedback-driven experience by leveraging sound effects and animations.
+                    </li>
+                    <ul>
+                        <li>
+                            Added juice by animating trash flying to the player in an arc when collected,
+                            accompanied by swoosh and thunk sound effects.
+                        </li>
+                        <li>
+                            Added different sounds to the recycling minigame that play depending on whether the player
+                            sorts trash into the correct bin.
+                        </li>
+                    </ul>
+                    <li>
+                        Contributed to and maintained core design documentation.
+                    </li>
+                </ul>
+                <br>
+                <figure>
+                    <video controls loop muted playsinline>
+                        <source src="media/vibrant-actions/swoosh-thunk.mp4" type="video/mp4">
+                        This browser does not support video.
+                    </video>
+                    <figcaption>
+                        Trash flies toward the player in an arc when collected, accompanied by swoosh and thunk sound
+                        effects. <b>The above clip has sound.</b>
+                    </figcaption>
+                </figure>
+                <br>
+                <figure>
+                    <video controls loop muted playsinline>
+                        <source src="media/vibrant-actions/recycling-minigame.mp4" type="video/mp4">
+                        This browser does not support video.
+                    </video>
+                    <figcaption>
+                        The recycling minigame. To give the player
+                        feedback, different sounds play depending on whether they choose the right bin. <b>The above
+                            clip has sound.</b>
+                    </figcaption>
+                </figure>
+            </div>
+            <br>
+            <br>
+            <button class="accordion" id="gameplay-programming"><i class="fa-solid fa-code"></i> Gameplay
+                Programming</button>
+            <div class="panel" id="gameplay-programming-panel">
+                <ul>
+                    <li>
+                        Developed player feedback systems that were used to add juice to the experience.
+                    </li>
+                    <ul>
+                        <li>
+                            Spherically lerped the movement of trash when collected to make it fly in an arc towards the
+                            player's location.
+                        </li>
+                        <li>
+                            Used two AudioSources to schedule playback of the swoosh and thunk sound effects when
+                            players interact with trash.
+                        </li>
+                    </ul>
+                    <li>
+                        Wrote gameplay logic for a recycling minigame where the player sorts trash collected into
+                        recycling and landfill bins.
+                    </li>
+                    <ul>
+                        <li>
+                            Developed an inventory system to be used alongside the recycling minigame by using a stack
+                            to create the impression that the player is pulling trash out of their bag, one at a time,
+                            to be disposed of.
+                        </li>
+                    </ul>
+                    <li>
+                        Built a StateManager to handle switching of input setups and camera views when the player
+                        transitions between collecting and recycling trash in the scene.
+                    </li>
+                    <li>
+                        Programmed compass-like arrow UI that points the player to the nearest uncollected piece of
+                        trash.
+                    </li>
+                    <li>
+                        Added volume sliders for music and sound effects in the main menu screen.
+                    </li>
+                </ul>
+                <br>
+                <figure>
+                    <video controls loop muted playsinline>
+                        <source src="media/vibrant-actions/swoosh-thunk.mp4" type="video/mp4">
+                        This browser does not support video.
+                    </video>
+                    <figcaption>
+                        Spherically lerping the movement of trash when collected makes it fly toward the player in an
+                        arc. Two AudioSources were used to schedule playback of accompanying swoosh and thunk sound
+                        effects. <b>The above clip has sound.</b>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <video controls loop muted playsinline>
+                        <source src="media/vibrant-actions/recycling-minigame.mp4" type="video/mp4">
+                        This browser does not support video.
+                    </video>
+                    <figcaption>
+                        The recycling minigame. To give the player
+                        feedback, different sounds play depending on whether they choose the right bin. The next
+                        item in the player's inventory is displayed at the bottom of the screen. <b>The above
+                            clip has sound.</b>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <video autoplay loop muted playsinline>
+                        <source src="media/vibrant-actions/arrow.mp4" type="video/mp4">
+                        This browser does not support video.
+                    </video>
+                    <figcaption>
+                        Compass-like arrow UI that points the player to the nearest uncollected piece of trash.
+                    </figcaption>
+                </figure>
+                <figure>
+                    <video autoplay loop muted playsinline>
+                        <source src="media/vibrant-actions/switching-states.mp4" type="video/mp4">
+                        This browser does not support video.
+                    </video>
+                    <figcaption>
+                        Switching states between collecting and recycling trash requires changing input setups and
+                        camera views.
+                    </figcaption>
+                </figure>
+            </div>
+            <br>
+            <br>
+            <button class="accordion" id="process-and-project-management"><i class="fa-solid fa-list-check"></i>
+                Process/Project
+                Management</button>
+            <div class="panel" id="process-and-project-management-panel">
+                <ul>
+                    <li>
+                        Directed cross-functional team of 4 using Agile principles and Scrum methodologies.
+                    </li>
+                    <li>
+                        Scheduled regular standup meetings and facilitated brainstorming sessions to make sure the team
+                        was on the same page regarding project goals throughout the course of development.
+                    </li>
+                    <li>
+                        Tracked project timeline and managed scope with respect to upcoming deadlines.
+                    </li>
+                    <li>
+                        Maintained project Trello board.
+                    </li>
+                </ul>
+            </div>
+            <br>
+            <br>
+            <button class="accordion" id="challenges-faced"><i class="fa-solid fa-circle-exclamation"></i> Challenges
+                Faced</button>
+            <div class="panel" id="challenges-faced-panel">
+                <ul>
+                    <li>
+                        Creating an experience appropriate for the game's target audience (5th and 6th graders in the
+                        US).
+                    </li>
+                    <ul>
+                        <li>
+                            Striking a balance between engagement and learning, keeping in mind the project's
+                            educational
+                            goals.
+                        </li>
+                        <li>
+                            Making sure good habits depicted through gameplay were grounded in real-life best practices.
+                            <!-- Making sure the experience felt lightweight yet impactful, from picking a control scheme all the
+                        way to game feel and feedback systems. -->
+                        </li>
+                    </ul>
+                    <li>
+                        Finding an efficient, sensible, and readable way to handle player state and transitions between
+                        states.
+                    </li>
+                    <li>
+                        Managing internal communications, development processes, and project scope over a short
+                        turnaround period, whilst acknowledging teammates' wellbeing, schedules, and external
+                        commitments.
+                    </li>
+                </ul>
+            </div>
+            <br>
+            <br>
+            <button class="accordion" id="what-i-would-improve"><i class="fa-solid fa-lightbulb"></i> What I Would
+                Improve</button>
+            <div class="panel" id="what-i-would-improve-panel">
+                <h3>Beautifying Environments and Tying Progression to Feedback</h3>
+                <p>
+                    Having coastal and marine life appear gradually as the player cleans the beach up will make the
+                    environment feel livelier. It will also positively reinforce the player's actions in-game, by giving
+                    them a visual representation of their progress.
+                </p>
+                <h3>Obtaining More Feedback</h3>
+                <p>
+                    Holding more playtests with people from our target audience will help us better understand how we
+                    can further enhance and tweak the experience to be as educational and engaging as possible.
+                </p>
+                <h3>Smoother Camera Movements when Switching States</h3>
+                <p>
+                    Currently, the camera jumps between positions when the player changes state between collecting and
+                    recycling trash. Lerping its movement between these two positions will make the transition less
+                    jarring and provide a smoother experience overall.
+                </p>
+                <br>
+                <figure>
+                    <video autoplay loop muted playsinline>
+                        <source src="media/vibrant-actions/jarring-state-transition.mp4" type="video/mp4">
+                        This browser does not support video.
+                    </video>
+                    <figcaption>
+                        The camera makes a sudden jump between positions when the player switches states between
+                        collecting and recycling trash, which can be jarring.
+                    </figcaption>
+                </figure>
+            </div>
+            <br>
+            <br>
+            <h2 id="play-the-game">Play the Game!</h2>
+            <h3>Installation Instructions</h3>
+            <ol>
+                <li>
+                    Click the button below to get access to Vibrant Actions.zip
+                </li>
+                <li>
+                    Download and extract the contents of Vibrant Actions.zip
+                </li>
+                <li>
+                    Run GamesForChange.exe
+                </li>
+            </ol>
+            <br>
+            <a href="https://drive.google.com/file/d/1H9DsHgx1e3TXFgzI8_HbOfKYgFox5GpM/view?usp=sharing"
+                class="button-target" target="Vibrant Actions download">Link to Build</a>
+
+        </div>
+    </div>
+    <div id="footer-container">
+        <script>
+            $("#footer-container").load("master-utils/footer.html");
+        </script>
+    </div>
+</body>
+
+</html>
