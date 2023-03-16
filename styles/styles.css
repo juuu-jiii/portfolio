@@ -507,7 +507,7 @@ a:active {
     }
 
     .caption p,
-    li {
+    .index-ul {
         font-size: 0.7rem;
     }
 }
@@ -527,7 +527,7 @@ a:active {
     }
 
     .caption p,
-    li {
+    .index-ul {
         font-size: 0.85rem;
     }
 }
@@ -557,7 +557,7 @@ a:active {
     }
 
     .caption p,
-    li {
+    .index-ul {
         font-size: medium;
     }
 }
