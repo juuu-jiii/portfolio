@@ -27,7 +27,9 @@ function init() {
     anchor = anchor ? '#' + anchor : undefined;
     if (anchor) {
         let accordion = document.querySelector(anchor);
-        if (accordion) {
+
+        // Make sure this is actually an accordion before proceeding to open it.
+        if (accordion && accordion.classList.contains("accordion")) {
             accordion.classList.add("active");
             document.querySelector(`${anchor}-panel`).style.display = "block";
         }
