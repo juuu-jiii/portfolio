@@ -42,9 +42,11 @@
                 <h1>Boids Interactive</h1>
                 <div class="button-container">
                     <a href="https://github.com/juuu-jiii/Stork2D" target="Boids Interactive repo link"
-                        class="button-target button-target-group">Repo</a>
+                        class="button-target button-target-group">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Repo</a>
                     <a href="https://juuu-jiii.github.io/Stork2D/final-paper.pdf" target="Boids Interactive paper"
-                        class="button-target button-target-group">Paper</a>
+                        class="button-target button-target-group">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Paper</a>
                     <a href="#try-it-out" class="button-target button-target-group">Try it Out!</a>
                 </div>
             </div>
@@ -104,17 +106,21 @@
             <p>
                 The influence of each of the flocking rules above is a numerical value that determines the weight
                 of each rule in physics calculations. Each agent keeps track of its own velocity vector, and physics
-                calculations are performed for each agent by manipulating said velocity vectors individually. The
+                calculations are performed for each agent, rule-by-rule, by manipulating said velocity vectors
+                individually to obtain a net force that drives movement. The
                 positions of each agent are then set on-screen manually after each frame.
-                I ignored physical properties and behaviours like gravity and collisions in this project because I did
-                not find them relevant. As a result, this meant that I was able to disregard Unity's physics library and
-                rigid body system in favour of the mathematical approach described above which led to improved
-                performance.
+            </p>
+            <p>
+                I ignored physical properties and behaviours like gravity and collisions in this project because they
+                were irrelevant. As a result, I was able to disregard Unity's physics library and
+                rigid body system altogether in favour of the mathematical approach described above, leading to
+                improved performance.
             </p>
             <h2>Interactivity</h2>
             <p>
                 Aside from user-defined obstacle placement and making agents flock to the user's cursor while the left
-                mouse button is held down, several interactive and customisable elements are featured:
+                mouse button is held down, several interactive and customisable elements are featured to facilitate
+                creation of generative art:
             </p>
             <ul>
                 <li>
@@ -135,7 +141,10 @@
                 Results are quite mixed. The system conveys various types of flocking behaviours based on supplied
                 parameters, but it can be rather difficult to see the individual effects of each flocking rule at
                 times, especially when there are many flocking rules (more than 4 or 5) working together to affect an
-                agent's velocity at the same time. A possible reason for this is mathematical inaccuracies
+                agent's velocity at the same time.
+            </p>
+            <p>
+                A possible reason for this is mathematical inaccuracies
                 that might have been accounted for had Unity's physics library and rigid body system been used. Another
                 potentially related explanation for this is the finicky nature of the flocking rules themselves.
                 Some flocking rules have a greater effect on resultant behaviour than others, and so some rules can
@@ -156,7 +165,7 @@
             </p>
             <br>
             <a href="https://juuu-jiii.github.io/Stork2D/build.html" target="Boids Interactive build"
-                class="button-target">Link to Build</a>
+                class="button-target"><i class="fa-solid fa-arrow-up-right-from-square"></i> Link to Build</a>
             <br>
             <br>
             <h2>Link to Repo</h2>
@@ -164,15 +173,16 @@
                 Click the button below to access the project's repository:
             </p>
             <br>
-            <a href="https://github.com/juuu-jiii/Stork2D" class="button-target"
-                target="Boids Interactive repo link">Boids Interactive Repo</a>
+            <a href="https://github.com/juuu-jiii/Stork2D" class="button-target" target="Boids Interactive repo link">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Boids Interactive Repo</a>
             <h2>Link to Paper</h2>
             <p>
                 Click the button below to access the research paper associated with this project:
             </p>
             <br>
             <a href="https://juuu-jiii.github.io/Stork2D/final-paper.pdf" class="button-target"
-                target="Boids Interactive paper">Boids Interactive paper</a>
+                target="Boids Interactive paper">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Boids Interactive paper</a>
         </div>
     </div>
     <div id="footer-container">
