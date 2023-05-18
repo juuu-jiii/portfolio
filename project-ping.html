@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Szun Kidd Choi's Portfolio • Boids Interactive</title>
+    <title>Szun Kidd Choi's Portfolio • Project Ping</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
@@ -39,29 +39,58 @@
         </video>
         <div class="content">
             <div id="title">
-                <h1>Boids Interactive</h1>
+                <h1>Project Ping</h1>
                 <div class="button-container">
-                    <a href="https://github.com/juuu-jiii/Stork2D" target="Boids Interactive repo link"
+                    <a href="https://github.com/juuu-jiii/multiplayer-unreal" target="Project Ping repo link"
                         class="button-target button-target-group">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Repo</a>
-                    <a href="https://juuu-jiii.github.io/Stork2D/final-paper.pdf" target="Boids Interactive paper"
-                        class="button-target button-target-group">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Documentation</a>
+                    <a href="https://docs.google.com/document/d/11afqbzBTLIlEJci-9zL_ExfiHl89vZ1_NWmw8ohPVcw/edit?usp=sharing"
+                        target="Project Ping documentation" class="button-target button-target-group">
                         <i class="fa-solid fa-arrow-up-right-from-square"></i> Paper</a>
-                    <a href="#try-it-out" class="button-target button-target-group">Try it Out!</a>
                 </div>
             </div>
             <p>
-                An interactive version of Craig Reynolds's boids simulation containing 90 agents, with
-                modifications and additions made to the original framework to facilitate the interactive creation of
-                generative art.
+                <i>Project Ping</i> is an in-progress plug-and-play networked multiplayer asset that uses Steam for
+                matchmaking. It started as a project for an Independent Study class in Tools Development, and I have
+                since continued to expand on it. As this is my formal introduction to networking in Unreal, I
+                documented my processes with the hopes of them someday coming in handy to anyone going down the same
+                rabbit holes I did.
+            </p>
+            <p>
+                The end goal is to create a well-documented general-purpose multiplayer asset that any gameplay
+                logic can be applied on top of, and to learn the ins and outs of the Unreal networking framework
+                along the way.
             </p>
             <h2>Fast Facts</h2>
             <p>
                 <b>Role: </b>Sole Developer<br>
-                <b>Timeframe: </b>7 weeks<br>
-                <b>Engine: </b>Unity2D<br>
-                <b>Language: </b>C#<br>
+                <b>Timeframe: </b>10 weeks (currently in progress)<br>
+                <b>Engine: </b>Unreal 5.0<br>
+                <b>Plugins: </b>AdvancedSteamSessions, SteamSockets<br>
+                <b>Languages: </b>C++, Blueprints Visual Scripting<br>
             </p>
+            <h2>Prioritising Flexibility and Scalability</h2>
+            <p>
+                As one of the goals of this project was to create a general-purpose networked multiplayer asset, I
+                developed with flexibility in mind, and added minimal gameplay logic to test the systems I was
+                developing. That way, any bugs I ran into would most likely be coming from netcode and not gameplay
+                code. Furthermore, this meant the asset would also allow logic for many kinds of games to be slapped
+                on top of it.
+            </p>
+            <p>
+                I gained experience creating and documenting a codebase for scalability, since this project would need
+                to support longer-term development (not just for a semester). I also learned lots about the main
+                classes in Unreal's gameplay framework, like the Game Instance and Player State.
+            </p>
+            <h2>Looking Under the Hood</h2>
+            <p>
+
+            </p>
+
+            - to keep project in scope, need to make baby versions of functionality of systems that are commonly
+            found in multiplayer games. Like the session browser.
+
+            Ben's multimouse page is a fabulous example you can pull from.
             <h2>Flocking Rules</h2>
             <p>
                 Flocking rules are mathematical functions describing movement of an AI agent in
@@ -70,29 +99,29 @@
             </p>
             <ol>
                 <li>
-                    <b>Cohesion:</b> steers each agent towards the average position of its neighbours.
+                    Cohesion: steers each agent towards the average position of its neighbours.
                 </li>
                 <li>
-                    <b>Alignment:</b> adjusts each agent's velocity to match the average velocity of its neighbours.
+                    Alignment: adjusts each agent's velocity to match the average velocity of its neighbours.
                 </li>
                 <li>
-                    <b>Separation:</b> makes agents stay some minimum distance apart to avoid collisions.
+                    Separation: makes agents stay some minimum distance apart to avoid collisions.
                 </li>
                 <li>
-                    <b>Lifespan:</b> determines the duration of the current simulation run.
+                    Lifespan: determines the duration of the current simulation run.
                 </li>
                 <li>
-                    <b>Tendency Towards Location:</b> "attracts" agents to the cursor position when the
+                    Tendency Toward User Interaction Location: "attracts" agents to the cursor position when the
                     left mouse button is held.
                 </li>
                 <li>
-                    <b>Environment Retention:</b> keeps agents within the screen's bounds.
+                    Environment Retention: keeps agents within the screen's bounds.
                 </li>
                 <li>
-                    <b>Obstacle Avoidance:</b> makes agents avoid user-placed obstacles in the environment.
+                    Obstacle Avoidance: makes agents avoid user-placed obstacles in the environment.
                 </li>
                 <li>
-                    <b>Max Speed:</b> prevents agents from travelling at arbitrarily fast speeds.
+                    Max Speed: prevents agents from travelling at arbitrarily fast speeds.
                 </li>
             </ol>
             <p>
@@ -138,8 +167,8 @@
             <p>
                 This could be because of the finicky nature of the flocking rules themselves.
                 Some rules have a more noticeable effect on resultant behaviour, and so certain rules can
-                overpower others. Fine-tuning the ranges of weights each rule can be adjusted to,
-                alongside allowing 4-5 flocking rules to be applied at any one time maximum, might help make the effects
+                overpower others. Fine-tuning the ranges of weights each rule can be adjusted to on the front end
+                alongside allowing 4-5 flocking rules to be applied at any one time maximum might help make the effects
                 of individual rules more pronounced.
             </p>
 

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szun Kidd Choi's Portfolio • Quack Attack</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- JS -->
+    <script src="src/main.js"></script>
+
+    <!-- jQuery to help with refactoring common page elements. -->
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="navigation">
+        <div id="navigation-container">
+            <script>
+                $("#navigation-container").load("master-utils/navbar.html");
+            </script>
+        </div>
+    </div>
+    <div id="wrapper">
+        <a href="index.html" class="button-target button-target-top">&#8672; Back to Home</a>
+        <video controls muted>
+            <source src="media/vibrant-actions/vibrant-actions-gameplay.mp4" type="video/mp4">
+            This browser does not support video.
+        </video>
+        <div class="content">
+            <div id="title">
+                <h1>Quack Attack</h1>
+                <div class="button-container">
+                    <a href="https://team-five.itch.io/quack-attack" target="Quack Attack itch page"
+                        class="button-target button-target-group"><i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        itch.io</a>
+                    <a href="https://github.com/IWarmyI/QuackAttack" target="Quack Attack repo link"
+                        class="button-target button-target-group"><i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        Repo</a>
+                    <a href="#play-the-game" class="button-target button-target-group">Play Game</a>
+                </div>
+            </div>
+            <p>
+                <i>Quack Attack</i> is a 2D platformer where resource management and
+                pinpoint accuracy are your keys to success.
+                Play as a rogue rubber ducky on a mission to
+                make Rubber Ducky Day an official holiday. Jump and dash through government
+                buildings and use your trusty water gun to shoot sentient office supplies
+                getting between you and the president's desk!
+            </p>
+            <p>
+                This game was partway through development when I joined
+                the team. My goals with this project were to create a more accessible
+                onboarding experience through a set of five tutorial levels, as well as
+                to extend and polish existing systems and mechanics.
+            </p>
+            <p>
+                <i>
+                    All gameplay footage shown here is thanks to my team's contributions
+                    and endless perseverance!
+                </i>
+            </p>
+            <h2>Fast Facts</h2>
+            <p>
+                <b>Team Size: </b>4<br>
+                <b>Roles: </b>Game Designer and Process/Project Management<br>
+                <b>Timeframe: </b>14 weeks<br>
+                <b>Engine: </b>Unity<br>
+                <b>Language: </b>C#<br>
+            </p>
+            <br>
+            <button class="accordion" id="game-design"><i class="fa-solid fa-gamepad"></i> Game Design</button>
+            <div class="panel" id="game-design-panel">
+                <ul>
+                    <li>
+                        Contributed to level design and rapidly iterated in 1-2 week cycles:
+                    </li>
+                    <ul>
+                        <li>
+                            Investigated tutorial design/player onboarding methods and how a level designer
+                            might try to structure earlier levels to create an experience that is
+                            accessible to a wider range of players.
+                        </li>
+                        <li>
+                            Blocked out levels using sketches prior to implementation to facilitate design
+                            discussions with the team.
+                        </li>
+                    </ul>
+                    <li>
+                        Scripted the camera to dynamically adjust its position so players can see further ahead
+                        of themselves and better anticipate platform/enemy positions:
+                    </li>
+                    <ul>
+                        <li>
+                            Used ease-in and ease-out movements when panning and zooming camera to reduce motion
+                            sickness.
+                        </li>
+                        <li>
+                            Exposed all variables related to camera movement to the editor for easy modification.
+                        </li>
+                    </ul>
+                    <li>
+                        Prepared surveys for and helped run playtests, compiling feedback and trends into documentation
+                        and playtest-specific spreadsheets for discussion with the team to drive the next iteration.
+                    </li>
+                    <li>
+                        Added character customisation functionality via a "wardrobe" screen.
+                    </li>
+                    <!-- <ul>
+                        <li>
+                            Adhered to minimalist principles when designing UI and customisation options to prevent
+                            choice paralysis.
+                        </li>
+                    </ul> -->
+                    <li>
+                        Tweaked physics to give players more immediate and predictable control over the character.
+                    </li>
+                    <li>
+                        Contributed to, and maintained, design documentation and project artefacts.
+                    </li>
+                </ul>
+                <br>
+                Need:
+                - the three images of level 1 showing the process (grab from docs)
+                - (level sketches ?)
+                - wardrobe screen gif (to mp4)
+                - camera movement gif (to mp4)
+                <figure>
+                    <video controls loop muted playsinline>
+                        <source src="media/vibrant-actions/swoosh-thunk.mp4" type="video/mp4">
+                        This browser does not support video.
+                    </video>
+                    <figcaption>
+                        Trash flies toward the player in an arc when collected, accompanied by swoosh and thunk sound
+                        effects. <b>The above clip has sound.</b>
+                    </figcaption>
+                </figure>
+                <br>
+                <figure>
+                    <video controls loop muted playsinline>
+                        <source src="media/vibrant-actions/recycling-minigame.mp4" type="video/mp4">
+                        This browser does not support video.
+                    </video>
+                    <figcaption>
+                        The recycling minigame. To give the player
+                        feedback, different sounds play depending on whether they choose the right bin. <b>The above
+                            clip has sound.</b>
+                    </figcaption>
+                </figure>
+            </div>
+            <br>
+            <br>
+            <button class="accordion" id="process-and-project-management"><i class="fa-solid fa-list-check"></i>
+                Process/Project Management</button>
+            <div class="panel" id="process-and-project-management-panel">
+                <ul>
+                    <li>
+                        Directed an interdisciplinary team of 4 using Agile principles and Scrum methodologies.
+                    </li>
+                    <li>
+                        Worked to ensure team members were doing okay mentally and physically throughout the weeks,
+                        discussing project goals and vision as needed.
+                    </li>
+                    <li>
+                        Maintained a 2-week sprint cycle with sprint planning and sprint progress/retrospective meetings
+                        held at the beginning and end of each sprint, respectively.
+                    </li>
+                    <li>
+                        Scheduled and coordinated team standups and check-ins with stakeholders.
+                    </li>
+                    <li>
+                        Managed timeline/scope based on sprint deadlines and development goals by maintaining project
+                        Trello board.
+                    </li>
+                </ul>
+            </div>
+            <br>
+            <br>
+            <button class="accordion" id="challenges-faced"><i class="fa-solid fa-circle-exclamation"></i> Challenges
+                Faced</button>
+            <div class="panel" id="challenges-faced-panel">
+                <ul>
+                    <li>
+                        Designing levels that supported the goal of making onboarding accessible, and that showcased
+                        the game's mechanics and controls effectively.
+                    </li>
+                    <li>
+                        Coming up with a playtest strategy that allowed the team to get detailed feedback about areas
+                        in which the game could be improved.
+                    </li>
+                    <li>
+                        Promptly addressing burnout and production grind during times when classes and life got busy.
+                    </li>
+                </ul>
+            </div>
+            <br>
+            <br>
+            <button class="accordion" id="what-i-would-improve"><i class="fa-solid fa-lightbulb"></i> What I Would
+                Improve</button>
+            <div class="panel" id="what-i-would-improve-panel">
+                <h3>Rewarding Progression Through Unlockables</h3>
+                <p>
+                    Locking cosmetic items in the wardrobe screen behind progression walls is one way to make
+                    progression meaningful and encourage players to keep going. Some cosmetic items could also be
+                    hidden away within secret or hard-to-reach locations in levels to reward exploration.
+                </p>
+                <h3>Addressing Difficulty Spikes in Tutorials</h3>
+                <p>
+                    Some levels in the set of five tutorial levels were perceived to be more difficult than others
+                    during the most recent round of playtesting. Simplifying the layouts of these levels based on
+                    feedback will smooth out the learning curve, alongside conducting more playtesting as needed.
+                </p>
+                <h3>Further Polishing Camera Movement</h3>
+                <p>
+                    The current camera system gives players better spatial perception, but we observed that it can still
+                    cause motion sickness in some people. Making the camera's panning smoother, or zooming out further
+                    to reduce the amount of panning required overall may fix this problem.
+                </p>
+            </div>
+            <br>
+            <br>
+            <h2>itch.io Page</h2>
+            <p>
+                Click the button below to access the project's itch.io page:
+            </p>
+            <br>
+            <a href="https://team-five.itch.io/quack-attack" target="Quack Attack itch page" class="button-target">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Quack Attack itch.io Page</a>
+            <br>
+            <br>
+            <h2 id="play-the-game">Play the Game!</h2>
+            <h3>Installation Instructions</h3>
+            <ol>
+                <li>
+                    Click the button below to get access to QuackAttack7.zip
+                </li>
+                <li>
+                    Download and extract the contents of QuackAttack7.zip
+                </li>
+                <li>
+                    Run Operation Quack Attack.exe
+                </li>
+            </ol>
+            <h3>Controls*</h3>
+            <ul>
+                <li>Space - Jump</li>
+                <li>D - Move Right</li>
+                <li>A - Move Left</li>
+                <li>Shift - Dash </li>
+                <li>E - Shoot Water</li>
+                <li>Q - Quack</li>
+                <li>Tab - Pause</li>
+                <li>R - Restart</li>
+            </ul>
+            <p><b>*These bindings can be remapped in the options menu.</b></p>
+            <br>
+            <a href="https://drive.google.com/file/d/19HSLujirIUcVt1Zf1R0bcprr3QJOzKH7/view?usp=sharing"
+                class="button-target" target="Quack Attack download"><i
+                    class="fa-solid fa-arrow-up-right-from-square"></i> Link to Build</a>
+            <br>
+            <br>
+            <h2>Link to Repo</h2>
+            <p>
+                Click the button below to access the project's repository:
+            </p>
+            <br>
+            <a href="https://github.com/IWarmyI/QuackAttack" target="Quack Attack repo link" class="button-target"><i
+                    class="fa-solid fa-arrow-up-right-from-square"></i> Quack Attack Repo</a>
+        </div>
+    </div>
+    <div id="footer-container">
+        <script>
+            $("#footer-container").load("master-utils/footer.html");
+        </script>
+    </div>
+</body>
+
+</html>
