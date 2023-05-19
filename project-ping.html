@@ -102,8 +102,8 @@
                         the menu.
                     </li>
                     <li>
-                        When the server leaves a game, the session is destroyed on all machines (including the server)
-                        and all players are returned to the menu.
+                        When the server leaves a game, sessions are destroyed on all machines (including server).
+                        All players are returned to the menu.
                     </li>
                 </ul>
             </ul>
@@ -133,7 +133,7 @@
                 I gained experience creating and documenting a codebase for scalability, since this project would need
                 to support longer-term development (not just for a semester). Additionally, playing around with source
                 code and extending Unreal's classes has given me more experience working with C++. I also learned about
-                how the different classes in Unreal's gameplay classes work (like the Game Instance and Player State),
+                how Unreal's gameplay classes work (like the Game Instance and Player State),
                 and how they fit into the networking framework.
             </p>
             <h2>Looking Under the Hood</h2>
@@ -141,14 +141,17 @@
                 Throughout development, I needed to continuously get a better understanding of what was happening under
                 the hood. This was particularly true when I was testing implementations that depended on Steam, which
                 required the program to be run as a standalone process, and not within the editor. This meant that I,
-                sadly, did not have access to the lovely Blueprints debugger.
+                sadly, did not have access to Unreal's Blueprints debugger.
             </p>
             <p>
                 I was stuck logging text to the screen for a while, until I came across a
                 <a href="https://forums.unrealengine.com/t/how-do-i-view-logs-in-standalone-mode/461715/2"
                     target="Standalone logs forum post">forum post</a>
                 about how to open a separate log window for a game running standalone. Additionally, after
-                some digging around, I figured out how to attach the Visual Studio debugger to a standalone game.
+                some digging around, I figured out how to <a
+                    href="https://unrealcommunity.wiki/debugging-a-packaged-build-o9c2ta8f"
+                    target="Attach debugger to standalone game">attach the Visual Studio debugger to a standalone
+                    game.</a>
                 These two discoveries were exactly what I needed to get a better picture of the program flow when
                 running in standalone mode. Combining them, I was able to improve my productivity in effectively
                 diagnosing and fixing issues as they arose.
