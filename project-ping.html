@@ -57,9 +57,9 @@
                 rabbit holes I did.
             </p>
             <p>
-                The end goal is to create a well-documented general-purpose multiplayer asset that any gameplay
-                logic can be applied on top of, and to learn the ins and outs of the Unreal networking framework
-                along the way.
+                The end goal is to create a well-documented and configurable general-purpose multiplayer asset that any
+                gameplay logic can be applied on top of, and to learn the ins and outs of the Unreal networking
+                framework along the way.
             </p>
             <h2>Fast Facts</h2>
             <p>
@@ -68,6 +68,21 @@
                 <b>Engine: </b>Unreal 5.0<br>
                 <b>Plugins: </b>AdvancedSteamSessions, SteamSockets<br>
                 <b>Languages: </b>C++, Blueprints Visual Scripting<br>
+            </p>
+            <h2>Project Status</h2>
+            <p>
+                Currently, creating and joining sessions for up to 4 players is supported via a session browser menu.
+                Replication of player movement across all connected machines is handled via the use of the
+                ThirdPersonCharacter Blueprint. To further demonstrate replication, the server starts a game once
+                players have joined by pressing Enter to enable input on all connected machines.
+            </p>
+            <p>
+                Each player keeps track of their own score, which is incremented by pressing Backspace. Two maps are
+                included to demonstrate both persistent scores and seamless travel across levels for both client and
+                server machines. Finally, clients can leave midway through a game by bringing up a "pause" menu via
+                pressing Esc. The session is destroyed on their machine and they are returned to the menu. If the server
+                leaves, however, the session is destroyed on all machines (including the server) and all players are
+                returned to the menu.
             </p>
             <h2>Prioritising Flexibility and Scalability</h2>
             <p>
@@ -79,97 +94,46 @@
             </p>
             <p>
                 I gained experience creating and documenting a codebase for scalability, since this project would need
-                to support longer-term development (not just for a semester). I also learned lots about the main
-                classes in Unreal's gameplay framework, like the Game Instance and Player State.
+                to support longer-term development (not just for a semester). Additionally, playing around with source
+                code and extending Unreal's classes has given me more experience working with C++. I also learned about
+                how the different classes in Unreal's gameplay classes work (like the Game Instance and Player State),
+                and how they fit into the networking framework.
             </p>
             <h2>Looking Under the Hood</h2>
             <p>
-
-            </p>
-
-            - to keep project in scope, need to make baby versions of functionality of systems that are commonly
-            found in multiplayer games. Like the session browser.
-
-            Ben's multimouse page is a fabulous example you can pull from.
-            <h2>Flocking Rules</h2>
-            <p>
-                Flocking rules are mathematical functions describing movement of an AI agent in
-                relation to others around it. Combining several flocking rules results in emergent behaviour when
-                multiple agents are placed near each other. I used eight flocking rules in this project:
-            </p>
-            <ol>
-                <li>
-                    Cohesion: steers each agent towards the average position of its neighbours.
-                </li>
-                <li>
-                    Alignment: adjusts each agent's velocity to match the average velocity of its neighbours.
-                </li>
-                <li>
-                    Separation: makes agents stay some minimum distance apart to avoid collisions.
-                </li>
-                <li>
-                    Lifespan: determines the duration of the current simulation run.
-                </li>
-                <li>
-                    Tendency Toward User Interaction Location: "attracts" agents to the cursor position when the
-                    left mouse button is held.
-                </li>
-                <li>
-                    Environment Retention: keeps agents within the screen's bounds.
-                </li>
-                <li>
-                    Obstacle Avoidance: makes agents avoid user-placed obstacles in the environment.
-                </li>
-                <li>
-                    Max Speed: prevents agents from travelling at arbitrarily fast speeds.
-                </li>
-            </ol>
-            <p>
-                The influence of these rules, alongside agents' visual range and view distance, are all adjustable using
-                sliders.
-            </p>
-            <h2>How do they Move?</h2>
-            <p>
-                The influence of each flocking rule is a numerical value corresponding to the weight
-                of each rule in physics calculations. Physics are calculated for each agent, rule-by-rule,
-                to obtain a net force vector used to update each agent's on-screen movement for that frame.
+                Throughout development, I needed to continuously get a better understanding of what was happening under
+                the hood. This was particularly true when I was testing implementations that depended on Steam, which
+                required the program to be run as a standalone process, and not within the editor. This meant that I,
+                sadly, did not have access to the lovely Blueprints debugger.
             </p>
             <p>
-                With this approach (and ignoring gravity and collisions), I avoided
-                Unity's physics and rigid body system altogether, improving performance.
+                I was stuck logging text to the screen for a while, until I came across a
+                <a href="https://forums.unrealengine.com/t/how-do-i-view-logs-in-standalone-mode/461715/2"
+                    target="Standalone logs forum post">forum post</a>
+                about how to open a separate log window for a game running standalone. Additionally, after
+                some digging around, I figured out how to attach the Visual Studio debugger to a standalone game.
+                These two discoveries were exactly what I needed to get a better picture of the program flow when
+                running in standalone mode. Combining them, I was able to improve my productivity in effectively
+                diagnosing and fixing issues as they arose.
             </p>
-            <h2>Interactivity</h2>
+            <h2>Next Steps</h2>
             <p>
-                Aside from user-defined obstacle placement and making agents flock to the user's cursor while the left
-                mouse button is held down, several interactive and customisable elements are featured to facilitate
-                creation of generative art:
+            <h3>Addressing Edge Cases</h3>
+            <h3>Migrating Implementations over to C++</h3>
+            <p>
+                With some of the program's functionality prototyped and working, implementing it in C++
+                will lead to performance gains. Second, and perhaps just as important, this will allow for standalone
+                games to be debugged via Visual Studio (as mentioned above), saving time on fixing issues.
             </p>
-            <ul>
-                <li>
-                    the influence of variables and rules can be adjusted using sliders;
-                </li>
-                <li>
-                    the colour of agent trails can be customised;
-                </li>
-                <li>
-                    the theme/colour palette of the simulation can be switched; and
-                </li>
-                <li>
-                    the visibility of placed obstacles can be toggled on/off
-                </li>
-            </ul>
-            <h2>Results</h2>
-            <p>
-                Results are mixed. Based on supplied parameters, various types of flocking behaviours can be observed,
-                but it can sometimes be hard to see the individual effects of each flocking rule, especially when there
-                are more than 4-5 simultaneously affecting an agent's velocity.
-            </p>
-            <p>
-                This could be because of the finicky nature of the flocking rules themselves.
-                Some rules have a more noticeable effect on resultant behaviour, and so certain rules can
-                overpower others. Fine-tuning the ranges of weights each rule can be adjusted to on the front end
-                alongside allowing 4-5 flocking rules to be applied at any one time maximum might help make the effects
-                of individual rules more pronounced.
+            <h3>Adding More Functionality</h3>
+            - addressing edge cases: if a machine gets disconnected the session doesn't get destroyed on their
+            machine and they cannot join/host again until they restart the game. This applies for both the server
+            and clients. Additionally, the current implementation does not account for the scenario where the client
+            loads into a map faster than the server when travelling across levels, which can cause issues with
+            initialisation logic.
+            - more functionality: lobbies, scoreboards, chat, showing player names above their characters... more
+            things you'd expect to see in a networked multiplayer game.
+            - migrate implementation over to C++: for performance improvements and ability to debug standalone
             </p>
 
 
