@@ -34,7 +34,7 @@
     <div id="wrapper">
         <a href="index.html" class="button-target button-target-top">&#8672; Back to Home</a>
         <video controls muted>
-            <source src="media/vibrant-actions/vibrant-actions-gameplay.mp4" type="video/mp4">
+            <source src="media/quack-attack/quack-attack-footage.mp4" type="video/mp4">
             This browser does not support video.
         </video>
         <div class="content">
@@ -67,7 +67,7 @@
             <p>
                 <i>
                     All gameplay footage shown here is thanks to my team's contributions
-                    and endless perseverance!
+                    and perseverance!
                 </i>
             </p>
             <h2>Fast Facts</h2>
@@ -97,8 +97,8 @@
                         </li>
                     </ul>
                     <li>
-                        Scripted the camera to dynamically adjust its position so players can see further ahead
-                        of themselves and better anticipate platform/enemy positions:
+                        Scripted the camera to dynamically adjust its position and zoom level so players can see further
+                        ahead of themselves and better anticipate platform/enemy positions:
                     </li>
                     <ul>
                         <li>
@@ -116,46 +116,55 @@
                     <li>
                         Added character customisation functionality via a "wardrobe" screen.
                     </li>
-                    <!-- <ul>
+                    <ul>
                         <li>
-                            Adhered to minimalist principles when designing UI and customisation options to prevent
-                            choice paralysis.
+                            Designed minimalist UI and customisation options to prevent choice paralysis.
                         </li>
-                    </ul> -->
-                    <li>
-                        Tweaked physics to give players more immediate and predictable control over the character.
-                    </li>
+                    </ul>
                     <li>
                         Contributed to, and maintained, design documentation and project artefacts.
                     </li>
                 </ul>
-                <br>
-                Need:
-                - the three images of level 1 showing the process (grab from docs)
-                - (level sketches ?)
-                - wardrobe screen gif (to mp4)
-                - camera movement gif (to mp4)
-                - diegetic ui image of tutorials, show dialogue?
                 <figure>
-                    <video controls loop muted playsinline>
-                        <source src="media/vibrant-actions/swoosh-thunk.mp4" type="video/mp4">
-                        This browser does not support video.
-                    </video>
+                    <img class="project-img-halved" src="media/quack-attack/level-1-part-1.png"
+                        alt="First part of Level 1">
+                    <img class="project-img-halved" src="media/quack-attack/level-1-part-2.png"
+                        alt="Second part of Level 1">
                     <figcaption>
-                        Trash flies toward the player in an arc when collected, accompanied by swoosh and thunk sound
-                        effects. <b>The above clip has sound.</b>
+                        On the left is the first half of Level 1 where players learn to move/jump/double jump
+                        in a risk-free space. To the right is the second half of Level 1, which reinforces mechanics
+                        taught with hazards included as an added challenge. This ensured that players had mastered
+                        mechanics taught well enough to advance.
                     </figcaption>
                 </figure>
                 <br>
                 <figure>
-                    <video controls loop muted playsinline>
-                        <source src="media/vibrant-actions/recycling-minigame.mp4" type="video/mp4">
+                    <video autoplay loop muted playsinline class="halved">
+                        <source src="media/quack-attack/wardrobe-screen.mp4" type="video/mp4">
+                        This browser does not support video.
+                    </video>
+                    <video autoplay loop muted playsinline class="halved">
+                        <source src="media/quack-attack/custom-character.mp4" type="video/mp4">
                         This browser does not support video.
                     </video>
                     <figcaption>
-                        The recycling minigame. To give the player
-                        feedback, different sounds play depending on whether they choose the right bin. <b>The above
-                            clip has sound.</b>
+                        Left: the wardrobe screen where players can customise their character's appearance. <br>
+                        Right: the customised character in-game.
+                    </figcaption>
+                </figure>
+                <br>
+                <figure>
+                    <video autoplay loop muted playsinline class="halved">
+                        <source src="media/quack-attack/camera-movement-1.mp4" type="video/mp4">
+                        This browser does not support video.
+                    </video>
+                    <video autoplay loop muted playsinline class="halved">
+                        <source src="media/quack-attack/camera-movement-2.mp4" type="video/mp4">
+                        This browser does not support video.
+                    </video>
+                    <figcaption>
+                        The in-game camera adjusts its position and zoom level to give players better spatial
+                        perception with the help of ease-ins and ease-outs to reduce motion sickness.
                     </figcaption>
                 </figure>
             </div>
@@ -215,19 +224,27 @@
                     progression meaningful and encourage players to keep going. Some cosmetic items could also be
                     hidden away within secret or hard-to-reach locations in levels to reward exploration.
                 </p>
+                <h3>Further Polishing Camera Movement</h3>
+                <p>
+                    The current camera system gives players better spatial perception, but it can still
+                    cause motion sickness in some people. Making the camera's panning smoother, or zooming out further
+                    to reduce the amount of panning required overall may fix this problem.
+                </p>
                 <h3>Addressing Difficulty Spikes in Tutorials</h3>
                 <p>
                     Some levels in the set of five tutorial levels were perceived to be more difficult than others
                     during the most recent round of playtesting. Simplifying the layouts of these levels based on
                     feedback will smooth out the learning curve, alongside conducting more playtesting as needed.
                 </p>
-                Need: playtesting chart that you created
-                <h3>Further Polishing Camera Movement</h3>
-                <p>
-                    The current camera system gives players better spatial perception, but we observed that it can still
-                    cause motion sickness in some people. Making the camera's panning smoother, or zooming out further
-                    to reduce the amount of panning required overall may fix this problem.
-                </p>
+                <!-- <figure>
+                    <img class="project-img" src="media/quack attack/playtest-results.png"
+                        alt="Chart of latest playtest results">
+                    <figcaption>
+                        A bar chart of the latest playtest results, where testers ranked levels based on how challenging
+                        they found them. The lower a level's score, the easier testers found it.
+                    </figcaption>
+                </figure>
+                Need: playtesting chart that you created -->
             </div>
             <br>
             <br>

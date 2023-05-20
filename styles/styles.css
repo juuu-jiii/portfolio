@@ -650,6 +650,8 @@ a:active {
 
     /* Make the image respect aspect ratio when resizing. */
     object-fit: contain;
+
+    border-radius: 5px;
 }
 
 .button-container {
