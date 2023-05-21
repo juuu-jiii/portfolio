@@ -34,7 +34,7 @@
     <div id="wrapper">
         <a href="index.html" class="button-target button-target-top">&#8672; Back to Home</a>
         <video controls muted>
-            <source src="media/boids-interactive/boids-interactive-video.mp4" type="video/mp4">
+            <source src="media/project-ping/project-ping-footage.mp4" type="video/mp4">
             This browser does not support video.
         </video>
         <div class="content">
@@ -57,7 +57,7 @@
                 rabbit holes I did.
             </p>
             <p>
-                The end goal is to create a well-documented, general-purpose multiplayer asset that any
+                The end goal is to create a well-documented, general-purpose multiplayer framework that any
                 gameplay logic can be applied on top of, and to learn the ins and outs of the Unreal networking
                 framework along the way.
             </p>
@@ -78,6 +78,9 @@
                     <li>
                         Sessions are created through the use of a listen server.
                     </li>
+                    <li>
+                        Matchmaking uses Steam with the help of AdvancedSteamSessions and SteamSockets plugins.
+                    </li>
                 </ul>
                 <li>
                     Replication of movement across all connected machines via the ThirdPersonCharacter Blueprint.
@@ -90,8 +93,7 @@
                 </li>
                 <li>
                     Each player keeps track of their score within their own Player State class, which then persists
-                    across
-                    levels during seamless travel.
+                    across levels during seamless travel.
                 </li>
                 <li>
                     Session destruction logic:
@@ -180,35 +182,25 @@
             </p>
 
 
-            <h2 id="try-it-out">Try it Out!</h2>
-            <h3>Installation Instructions</h3>
-            <p>
-                No installation required; this is an online WebGL build! Simply click the button below to be redirected
-                to the application in-browser. Make sure to enable fullscreen mode for the best experience!
-            </p>
-            <p>
-                This build runs best on Chrome and Edge browsers.
-            </p>
-            <br>
-            <a href="https://juuu-jiii.github.io/Stork2D/build.html" target="Boids Interactive build"
-                class="button-target"><i class="fa-solid fa-arrow-up-right-from-square"></i> Link to Build</a>
-            <br>
-            <br>
+
             <h2>Link to Repo</h2>
             <p>
                 Click the button below to access the project's repository:
             </p>
             <br>
-            <a href="https://github.com/juuu-jiii/Stork2D" class="button-target" target="Boids Interactive repo link">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> Boids Interactive Repo</a>
+            <a href="https://github.com/juuu-jiii/multiplayer-unreal" class="button-target"
+                target="Project Ping repo link">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Project Ping Repo</a>
+            <br>
+            <br>
             <h2>Link to Paper</h2>
             <p>
-                Click the button below to access the research paper associated with this project:
+                Click the button below to access the documentation associated with this project:
             </p>
             <br>
-            <a href="https://juuu-jiii.github.io/Stork2D/final-paper.pdf" class="button-target"
-                target="Boids Interactive paper">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> Boids Interactive paper</a>
+            <a href="https://docs.google.com/document/d/11afqbzBTLIlEJci-9zL_ExfiHl89vZ1_NWmw8ohPVcw/edit?usp=sharing"
+                class="button-target" target="Project Ping documentation">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Project Ping documentation</a>
         </div>
     </div>
     <div id="footer-container">
