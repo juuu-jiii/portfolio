@@ -54,7 +54,7 @@ body {
 
     /* Centre the layout. */
     margin: 0 auto;
-    padding: 60px 10px;
+    padding: 60px 10px 100px 10px;
 }
 
 main {
@@ -215,6 +215,13 @@ footer {
 .footer-div {
     /* width: 1000px; */
     padding: 0 10px;
+}
+
+/* Make footer stick to the bottom of the screen. */
+#footer-container {
+    width: 100vw;
+    position: fixed;
+    bottom: 0px;
 }
 
 footer p {
